@@ -3,11 +3,9 @@
 one:
   title: MyString
   description: MyText
-  artist: MyString
-  url: MyString
+  poster: MyString
 
 two:
   title: MyString
   description: MyText
-  artist: MyString
-  url: MyString
+  poster: MyString
