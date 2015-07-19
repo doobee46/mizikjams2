@@ -3,9 +3,9 @@
    <div class="item brand">
      <%= link_to (image_tag("mjlogo.png")), root_path%>
    </div>
-    <a class="item ">
-      <i class="grid layout icon"></i> Browse
-    </a>
+     <%= link_to videos_path , data: { no_turbolink: true }, class:'item' do %>
+       <i class="grid layout icon"></i> Browse
+     <%end%> 
      <% if user_signed_in?%>
     <div class="ui simple dropdown item">
       Account
@@ -24,7 +24,7 @@
           <%end%>
       <%end%>
     <div class="right item">
-      <div class="ui input"><input placeholder="Search..." type="text"></div>
+      <div class="ui input"><input placeholder="Search Videos..." type="text"></div>
     </div>
   </div>
 </div>

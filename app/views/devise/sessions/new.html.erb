@@ -1,7 +1,8 @@
 <div class="ui grid container">
-    <div class="ui three column grid">
+    <div class="ui three column centered grid">
         <div class="column">
-            <h1 class="ui header">Sign In</h1>
+            <h1 class="ui header title">Sign In</h1>
+            <p class="sub">Create playlists with your favorite music videos &amp; share them with friends!</p>
         </div>
     </div>
 </div>
@@ -33,10 +34,9 @@
             Or
           </div>
           <div class="center aligned column">
-            <button class="ui facebook button">
-              <i class="facebook icon"></i>
-              Facebook
-            </button>
+             <%= link_to user_omniauth_authorize_path(:facebook),class:'ui facebook button' do%>
+              <i class="facebook icon"></i>Facebook
+            <%end%>
           </div>
         </div>      
 </div>
