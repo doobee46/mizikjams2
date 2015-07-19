@@ -3,7 +3,7 @@
    <div class="item brand">
      <%= link_to (image_tag("mjlogo.png")), root_path%>
    </div>
-     <%= link_to videos_path , data: { no_turbolink: true }, class:'item' do %>
+     <%= link_to videos_path , data: { no_turbolink: true }, class:'item nav' do %>
        <i class="grid layout icon"></i> Browse
      <%end%> 
      <% if user_signed_in?%>
