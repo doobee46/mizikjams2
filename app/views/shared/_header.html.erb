@@ -1,0 +1,30 @@
+<div class="ui attached stackable menu">
+  <div class="ui container">
+   <div class="item brand">
+     <%= link_to (image_tag("mjlogo.png")), root_path%>
+   </div>
+    <a class="item ">
+      <i class="grid layout icon"></i> Browse
+    </a>
+     <% if user_signed_in?%>
+    <div class="ui simple dropdown item">
+      Account
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item"><i class="edit icon"></i> Edit Profile</a>
+        <a class="item"><i class="settings icon"></i> Account Settings</a>
+        <%=link_to destroy_user_session_path, method: :delete , data: { no_turbolink: true }, class:'item' do %>
+          <i class="sign out icon"></i> Sign Out
+        <%end%> 
+      </div>
+    </div>
+      <%else%>
+          <%= link_to user_session_path , data: { no_turbolink: true }, class:'item' do %>
+          <i class="sign in icon"></i> Sign In
+          <%end%>
+      <%end%>
+    <div class="right item">
+      <div class="ui input"><input placeholder="Search..." type="text"></div>
+    </div>
+  </div>
+</div>
