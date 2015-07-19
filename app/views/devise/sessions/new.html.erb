@@ -27,7 +27,9 @@
               </div>
                 <%= f.button "Sign In" , class: 'ui teal button', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sign in..."} %>
             </div>
-            <%= render "devise/shared/links"%>
+            <div class="actions">
+                <%= render "devise/shared/links"%>
+            </div> 
           </div>
           <%end%>        
           <div class="ui vertical divider">

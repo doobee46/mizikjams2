@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
   if Rails.env.development?
-    has_attached_file :image, :styles => { :main=> "564x394#",:medium => "208x200#", :thumb => "100x100>", :avatar =>"64x64#", }, :default_url => "default_:style.png"
+    has_attached_file :image, :styles => { :main=> "1214x450#",:medium => "208x200#", :thumb => "100x100>", :avatar =>"64x64#", }, :default_url => "default_:style.png"
   else
     has_attached_file :image, :styles => { :main=> "564x394#",:medium => "208x200#", :thumb => "100x100>", :avatar =>"64x64>", }, :default_url => "default_:style.png",
                       :storage => :dropbox,
