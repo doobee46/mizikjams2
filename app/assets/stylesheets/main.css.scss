@@ -1,3 +1,8 @@
+.message.closable {
+  margin-left: 20%;
+  margin-right: 20%;
+ }
+
 h1.ui.header.title{
     color:#008CE3;
     font-size: 20px;
@@ -42,9 +47,16 @@ p.sub{
 
 .song_info{
     position: relative;
-    top: -250px;
+    top: -350px;
     left: 50px;
     width: 550px;
+}
+
+.song_info img{
+    width: 113px;
+    height: 69px;
+    position: relative;
+    top: 25px;
 }
 
 .song_info h2{
@@ -79,7 +91,7 @@ p.sub{
     font-style: italic;
     position: relative;
     top: -50px;
-    color: #F90094;
+    color: #FFF;
 }
 
 .play img{
@@ -124,4 +136,8 @@ p.sub{
     font-size: 14px;
     font-weight: 700;
     color: #fff;   
+}
+
+.message{
+    margin-top:15px;
 }
