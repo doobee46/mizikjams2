@@ -1,27 +1,28 @@
-<div class="ui attached stackable menu">
-  <div class="ui container">
-   <div class="item brand">
-     <%= link_to (image_tag("mjlogo.png")), root_path%>
-   </div>
-     <%= link_to videos_path , data: { no_turbolink: true }, class:'item nav' do %>
-       <i class="grid layout icon"></i> Browse
-     <%end%> 
-     <% if user_signed_in?%>
-    <div class="ui simple dropdown item">
-      Account
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item"><i class="edit icon"></i> Edit Profile</a>
-        <a class="item"><i class="settings icon"></i> Account Settings</a>
-        <%=link_to destroy_user_session_path, method: :delete , data: { no_turbolink: true }, class:'item' do %>
-          <i class="sign out icon"></i> Sign Out
-        <%end%> 
+ <div class="ui fixed menu">
+    <div class="ui container">
+      <div href="#" class="header item">
+        <div class=" brand">
+         <%= link_to (image_tag("mjlogo.png")), root_path%>
+          </div>
       </div>
-    </div>
-      <%if current_user.admin?%>
-       <div class="ui simple dropdown item">
-          Admin
+      <%= link_to videos_path , data: { no_turbolink: true }, class:'item nav' do %>
+       <i class="grid layout icon"></i> Videos
+     <%end%>
+       <% if user_signed_in?%>
+        <div class="ui simple dropdown item">
+          Account
           <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item"><i class="edit icon"></i> Edit Profile</a>
+            <a class="item"><i class="settings icon"></i> Account Settings</a>
+            <%=link_to destroy_user_session_path, method: :delete , data: { no_turbolink: true }, class:'item' do %>
+              <i class="sign out icon"></i> Sign Out
+            <%end%> 
+          </div>
+        </div> 
+        <%if current_user.admin?%> 
+        <div class="ui simple dropdown item">
+          Admin<i class="dropdown icon"></i>
           <div class="menu">
             <%=link_to admin_path, data: { no_turbolink: true }, class:'item' do %>
               <i class="dashboard icon"></i> Goto Admin
@@ -33,17 +34,26 @@
             <%end%> 
           </div>
         </div>
-         <div class="item">
+        <div class="item">
             <div class="ui primary button">Upload videos</div>
          </div>
-      <%end%>
-      <%else%>
-          <%= link_to user_session_path , data: { no_turbolink: true }, class:'item' do %>
-          <i class="sign in icon"></i> Sign In
           <%end%>
-      <%end%>
-    <div class="right item">
-      <div class="ui input"><input placeholder="Search Videos..." type="text"></div>
+          <%else%>
+              <%= link_to user_session_path , data: { no_turbolink: true }, class:'item' do %>
+              <i class="sign in icon"></i> Sign In
+              <%end%>
+          <%end%>
+        <div class="right item">
+            <div class="ui fluid category search">
+              <div class="ui icon input">
+                <input class="prompt" placeholder="Search animals..." type="text">
+                <i class="search icon"></i>
+              </div>
+              <div class="results"></div>
+            </div>
+          <!--<div class="ui input"><input placeholder="Search Videos..." type="text"></div>-->
+        </div>
     </div>
   </div>
-</div>
+
+    

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def admin
+     
   end
 
   def about

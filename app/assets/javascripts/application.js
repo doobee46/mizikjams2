@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
+
+
+
+$('.ui.primary.button').click(function() {
+  $('.ui.modal').modal('show');
+});

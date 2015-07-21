@@ -20,9 +20,18 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :poster %><br>
-    <%= f.text_field :poster %>
+     <%= f.label :poster %><br>
+     <%= f.file_field :poster%> 
   </div>
+   <div class="field">
+    <%= f.label :Wistia %><br>
+    <%= f.text_field :Wistia %>
+  </div>
+  <div class="field">
+    <%= f.label :blurb %><br>
+    <%= f.text_field :blurb %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

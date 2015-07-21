@@ -7,7 +7,7 @@ class Video < ActiveRecord::Base
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
   #validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  #validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   #validate :listing_limit, :on => :create
   do_not_validate_attachment_file_type :image
   Paperclip.options[:content_type_mappings] = {nil => "image/png"}

@@ -2,7 +2,8 @@
     text-decoration:none;
  }
 
-a.item.nav{
-     text-transform:uppercase;
-     font-weight:bold;
+.ui.menu .item{
+     text-transform:uppercase !important;
+     font-family: 'Lato', sans-serif;
+     font-weight:bold !important;
  }
