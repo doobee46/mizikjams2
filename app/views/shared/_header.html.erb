@@ -22,7 +22,7 @@
         </div> 
         <%if current_user.admin?%> 
         <div class="ui simple dropdown item">
-          Admin<i class="dropdown icon"></i>
+          <a class="ui olive empty circular label"></a>Admin<i class="dropdown icon"></i>
           <div class="menu">
             <%=link_to admin_path, data: { no_turbolink: true }, class:'item' do %>
               <i class="dashboard icon"></i> Goto Admin
