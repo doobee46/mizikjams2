@@ -13,8 +13,9 @@
           Account
           <i class="dropdown icon"></i>
           <div class="menu">
-            <a class="item"><i class="edit icon"></i> Edit Profile</a>
-            <a class="item"><i class="settings icon"></i> Account Settings</a>
+            <%=link_to edit_user_registration_path, data: { no_turbolink: true }, class:'item' do %>
+              <i class="edit icon"></i> Edit Account
+            <%end%> 
             <%=link_to destroy_user_session_path, method: :delete , data: { no_turbolink: true }, class:'item' do %>
               <i class="sign out icon"></i> Sign Out
             <%end%> 
@@ -27,8 +28,6 @@
             <%=link_to admin_path, data: { no_turbolink: true }, class:'item' do %>
               <i class="dashboard icon"></i> Goto Admin
             <%end%> 
-            <!--<a class="item"><i class="edit icon"></i> </a>
-            <a class="item"><i class="settings icon"></i> Account Settings</a>-->
             <%=link_to destroy_user_session_path, method: :delete , data: { no_turbolink: true }, class:'item' do %>
               <i class="upload icon"></i> Upload videos
             <%end%> 
@@ -51,7 +50,6 @@
               </div>
               <div class="results"></div>
             </div>
-          <!--<div class="ui input"><input placeholder="Search Videos..." type="text"></div>-->
         </div>
     </div>
   </div>
