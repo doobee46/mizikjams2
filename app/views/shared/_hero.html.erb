@@ -1,16 +1,20 @@
 <div class="ui grid container">
     <div class="column">
-        <div class="hero">
-           <%= image_tag('hero.jpg')%>
-            <div class="play">
-               <%=image_tag('play_btn_off.png')%>
-            </div>
+       <ul class="bxslider">
+         <%@main.each do |video|%>
+          <li>
+          <%= image_tag video.image.url(:large), class:"slider_img"%>
             <div class="song_info">
-                <%-#image_tag('hotlogo.png')%>
-                <h2>Nu Look </h2>
-                <p>Official video <span>"confessions"</span> of nu look </p>
-                <p class="blurb">"....Jan mwen orgueilleux mwen pat pense ke’l te posib "</p>
+                 <div class="play">
+                   <%=image_tag('play_btn_off.png')%>
+                </div>
+                <%=image_tag('hotlogo.png', class:'ticker')%>
+                <h2><%=video.band%> </h2>
+                <p>Official video <span><%= video.title%></span> </p>
+                <p class="blurb"><%=video.blurb%></p>
             </div>
-        </div>  
+          </li>
+          <%end%>
+        </ul> 
     </div>
 </div>

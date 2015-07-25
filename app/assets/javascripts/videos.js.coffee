@@ -16,4 +16,9 @@ $ ->
     return
   return
 
-	
+
+$(document).ready ->
+  $('.bxslider').bxSlider()
+  auto: true,
+  autoControls: true
+  return

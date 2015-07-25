@@ -4,7 +4,8 @@ class VideosController < ApplicationController
   respond_to :html
 
   def index
-    @videos = Video.all
+      @videos = Video.all
+      @main = @videos.limit(10)
     respond_with(@videos)
   end
 
@@ -42,6 +43,6 @@ class VideosController < ApplicationController
     end
 
     def video_params
-        params.require(:video).permit(:title, :description, :image ,:wistia ,:blurb)
+        params.require(:video).permit(:title, :description, :image ,:wistia ,:blurb, :band)
     end
 end

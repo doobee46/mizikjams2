@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   devise :omniauthable, omniauth_providers: [:facebook]
     
   if Rails.env.development?
-    has_attached_file :avatar, :styles => { :large=> "564x394#",:medium => "208x200#", :thumb => "100x100>", :avatar =>"64x64#", }, :default_url => "default_:style.png"
+    has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "100x100#", :avatar =>"18x18#", }, :default_url => "default_:style.png"
   else
-    has_attached_file :avatar, :styles => { :large=> "564x394#",:medium => "208x200#", :thumb => "100x100>", :avatar =>"64x64>", }, :default_url => "default_:style.png",
+    has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "100x100#", :avatar =>"18x18#", }, :default_url => "default_:style.png",
                       :storage => :dropbox,
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
