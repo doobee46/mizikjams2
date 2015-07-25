@@ -4,6 +4,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
+    
+  if Rails.env.development?
+    has_attached_file :avatar, :styles => { :large=> "564x394#",:medium => "208x200#", :thumb => "100x100>", :avatar =>"64x64#", }, :default_url => "default_:style.png"
+  else
+    has_attached_file :avatar, :styles => { :large=> "564x394#",:medium => "208x200#", :thumb => "100x100>", :avatar =>"64x64>", }, :default_url => "default_:style.png",
+                      :storage => :dropbox,
+                      :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+  end
+  validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/  
 
   #->Prelang (user_login/devise)
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)

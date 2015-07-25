@@ -3,9 +3,9 @@
         <!--<div class="ui primary button">Upload videos</div>-->
         <div class="ui huge header">
             <a class="ui blue image label">
-              <%= image_tag("user.png")%>
+              <%= image_tag current_user.avatar.url, class: "img-circle",size: "18x18" %>
               <!--<img src="/images/avatar/small/veronika.jpg">-->
-              Veronika
+              <%= current_user.username %>
               <div class="detail">Admin</div>
             </a>
             Admin Dashboard
@@ -14,7 +14,7 @@
           <a class="active item">
             statistics   
           </a>
-          <a class="item">
+          <a class=" item">
             Manage users 
           </a>
           <a class="item">
@@ -30,46 +30,21 @@
           </div>
         </div>
         <div class="ui segment">
-           <div class="ui statistics">
-              <div class="statistic">
-                <div class="value">
-                  220
+            <div class="ui grid container">
+                <div class="column">
+                     <h2 class="ui horizontal divider header">
+                        <i class="users icon"></i>
+                         Active Users
+                     </h2>
+                      <%= line_chart User.group(:created_at).count %>
+                       <div class="ui statistics ">
+                           <h2 class="ui horizontal divider header">
+                            <i class="unhide icon"></i>
+                             Views Summary
+                           </h2>
+                         <%= render :partial =>"pages/statistics"%> 
+                      </div>
                 </div>
-                <div class="label">
-                 Likes
-                </div>
-              </div>
-              <div class="statistic">
-                <div class="value">
-                  31,200
-                </div>
-                <div class="label">
-                  Views
-                </div>
-              </div> <div class="statistic">
-                <div class="value">
-                  1500
-                </div>
-                <div class="label">
-                  Videos
-                </div>
-              </div>
-                <div class="statistic">
-                <div class="value">
-                 500
-                </div>
-                <div class="label">
-                  Artists
-                </div>
-              </div>
-              <div class="statistic">
-                <div class="value">
-                  2200
-                </div>
-                <div class="label">
-                  Members
-                </div>
-              </div>
             </div>
           <p></p>
         </div>

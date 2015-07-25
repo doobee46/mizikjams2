@@ -18,6 +18,3 @@
 
 
 
-$('.ui.primary.button').click(function() {
-  $('.ui.modal').modal('show');
-});

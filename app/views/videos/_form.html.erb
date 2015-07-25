@@ -1,4 +1,4 @@
-<%= form_for(@video) do |f| %>
+<%= form_for(video) do |f| %>
   <% if @video.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
@@ -12,27 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <div class="ui input upload">
+      <%= f.text_field :title ,:placeholder => "Video title" %>   
+    </div>
   </div>
+
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <div class="ui input upload">
+      <%= f.text_area :description ,:placeholder => "DESCRIPTION" %>   
+    </div>
   </div>
+
   <div class="field">
-     <%= f.label :poster %><br>
-     <%= f.file_field :poster%> 
+      <%= f.file_field :image %>   
   </div>
-   <div class="field">
-    <%= f.label :Wistia %><br>
-    <%= f.text_field :Wistia, :placeholder => "Link" , :length => "10" %>
-  </div>
+
   <div class="field">
-    <%= f.label :blurb %><br>
-    <%= f.text_field :blurb %>
+    <div class="ui input upload">
+      <%= f.text_field :Wistia,:placeholder => "WISTIA NUMBER" %>   
+    </div>
+  </div>
+  
+  <div class="field">
+    <div class="ui input upload">
+     <%= f.text_field :blurb ,:placeholder => "BLURB" %>   
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button "Publish", class: 'positive ui button right', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publishing..."} %>
   </div>
 <% end %>

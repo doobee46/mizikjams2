@@ -6,3 +6,14 @@ $ ->
   $(".message.closable .close.icon").on "click", ->
     $('.message.closable').fadeOut("slow")
     false
+    
+$ ->
+  $('.play img').hover (->
+    @src = @src.replace('_off', '_on')
+    return
+  ), ->
+    @src = @src.replace('_on', '_off')
+    return
+  return
+
+	

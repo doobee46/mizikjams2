@@ -3,23 +3,21 @@
         <div class="ui small modal">
           <i class="close icon"></i>
           <div class="header">
-           Upload Video to CDN Account
+           <i class="upload icon"></i>Publish Video
           </div>
           <div class="image content">
-             <div data-percent="41" class="ui violet progress">
-              <div style="transition-duration: 300ms; width: 38%;" class="bar"></div>
-              <div class="progress">60%</div>
-            </div>
+            <%=render partial: "videos/form", locals:{video: @video}%>
           </div>
-          <div class="actions">
+          <!--<div class="actions">
             <div class="ui black deny button">
               Nope
             </div>
+              
             <div class="ui positive right labeled icon button">
               Yep, that's me
               <i class="checkmark icon"></i>
             </div>
-          </div>
+          </div>-->
         </div>
     </div>
 </div>

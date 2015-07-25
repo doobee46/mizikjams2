@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
      def admin
-     
+          @video = Video.new
      end
 
      def about
@@ -9,5 +9,5 @@ class PagesController < ApplicationController
      def contact
      end
     
-            
+  
 end
