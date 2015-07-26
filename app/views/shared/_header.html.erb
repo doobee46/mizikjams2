@@ -2,7 +2,7 @@
     <div class="ui container">
       <div href="#" class="header item">
         <div class=" brand">
-         <%= link_to (image_tag("mjlogo.png")), root_path%>
+           <%= link_to (image_tag"mjlogo.png",:data => { :no_turbolink => true }),root_path%>
           </div>
       </div>
       <%= link_to videos_path , data: { no_turbolink: true }, class:'item nav' do %>

@@ -205,15 +205,21 @@ p.sub{
 }
 
 .video_info h3.ui.header{
-  
-font-family: "Open Sans Condensed",sans-serif;
-color: #FFF;
-font-size: 18px;
-font-weight: 400;
-text-transform: capitalize;
-letter-spacing: 1px;
+    position: relative;
+    left: -39px;
+    font-family: "lato",sans-serif;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: -25px;
 }
 
+.show_header{
+    position:relative;
+    top:30px
+}
 
 
 

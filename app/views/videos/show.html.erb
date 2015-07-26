@@ -11,10 +11,24 @@
                    <div class="ui medium rectangle test ad" data-text="Ad Unit 1"></div>   
                 </div>
                 <div class ="video_info">
-                   <h3 class="ui header"><%=@video.title%></h3>  
+                   <h3 class="ui header">Title: <%=@video.title%></h3>
+                   <h3 class="ui header">Band: <%=@video.band%></h3>
+                   <h3 class="ui header">
+                      <%= image_tag @video.image.url(:avatar),:class =>"ui image"%>
+                      <div class="content">
+                        Album: I Got this 
+                      </div>
+                    </h3>
                 </div>
             </div> 
         </div>
+    </div>
+</div>
+<div class="ui grid container">
+    <div class="column">
+        <h3 class="ui dividing large header show_header ">
+         Featured Band
+        </h3>
     </div>
 </div>
 
@@ -23,9 +37,3 @@
 
 
 
-<p id="notice"><%= notice %></p>
-
-
-
-<%= link_to 'Edit', edit_video_path%> |
-<%= link_to 'Back', videos_path %>
