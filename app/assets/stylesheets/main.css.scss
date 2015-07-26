@@ -59,7 +59,7 @@ p.sub{
     position: relative;
     top: -285px;
     left: 50px;
-    width: 620px;
+    width: 780px;
 }
 
 .song_info img.ticker{
@@ -156,3 +156,70 @@ p.sub{
 .message{
     margin-top:45px;
 }
+
+
+.btn-upload{
+    margin-bottom:20px;
+}
+
+
+.show-bg{
+    width:100%;
+    height:450px;
+    display:block;
+    background:#1A1A1A;
+    margin-top:-35px;
+}
+
+.video-wrapper{
+    position:relative;
+    top:-15px;
+    width:816px;
+}
+
+.ads-wrapper{
+    width:311px;
+    height:265px;
+    border-bottom:1px dotted #888;
+    position: relative;
+    left: -37px;
+    top: 15px;
+}
+
+.left_col{
+    width:816px!important;
+    height:450px;
+}
+.right_col{
+    width:311px !important;
+    height:450px;
+    border-right:1px dotted #888;
+    position: relative !important;
+    top: -15px;
+    padding:0px;
+}
+
+.video_info{
+    position:relative;
+    top:25px;
+}
+
+.video_info h3.ui.header{
+  
+font-family: "Open Sans Condensed",sans-serif;
+color: #FFF;
+font-size: 18px;
+font-weight: 400;
+text-transform: capitalize;
+letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+

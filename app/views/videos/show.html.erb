@@ -1,19 +1,31 @@
+<div class="show-bg">
+    <div class="ui grid container">
+        <div class="two column row">
+            <div class="twelve wide column ">
+                <div class ="video-wrapper">
+                    <%=render :partial => 'videos/video'%> 
+                </div>
+            </div>
+            <div class=" right floated left aligned four wide column right_col ">
+                <div class ="ads-wrapper">
+                   <div class="ui medium rectangle test ad" data-text="Ad Unit 1"></div>   
+                </div>
+                <div class ="video_info">
+                   <h3 class="ui header"><%=@video.title%></h3>  
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @video.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
 
-<p>
-  <strong>Poster:</strong>
-  <%= @video.poster %>
-</p>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Edit', edit_video_path%> |
 <%= link_to 'Back', videos_path %>

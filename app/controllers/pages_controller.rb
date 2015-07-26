@@ -1,13 +1,19 @@
 class PagesController < ApplicationController
-     def admin
-          @video = Video.new
-     end
-
-     def about
-     end
-
-     def contact
-     end
     
+      def admin
+        
+      end
+
+      def about
+      end
+
+      def contact
+      end
+     
+      def create
+        @video = Video.new(video_params)
+        @video.save
+        respond_with(@video)
+      end
   
 end
