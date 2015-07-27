@@ -1,8 +1,8 @@
+<% provide(:title, "admin") %>
 <div class="ui grid container">
     <div class="column">
-        <!--<div class="ui primary button">Upload videos</div>-->
-        <div class="ui huge header">
-            <a class="ui blue image label">
+         <div class="ui huge header">
+            <a class="ui right floated blue image admin_info label">
               <%= image_tag current_user.avatar.url, class: "img-circle",size: "18x18" %>
               <!--<img src="/images/avatar/small/veronika.jpg">-->
               <%= current_user.username %>
@@ -10,44 +10,33 @@
             </a>
             Admin Dashboard
         </div>
-        <div class="ui inverted pointing menu">
-          <a class="active item">
-            statistics   
-          </a>
-          <a class=" item">
-            Manage users 
-          </a>
-          <a class="item">
-            Manage videos 
-          </a>
-          <div class="right menu">
-            <div class="item">
-              <div class="ui transparent icon input">
-                <input placeholder="Search..." type="text">
-                <i class="search link icon"></i>
+        <div class="ui top attached tabular menu">
+          <a class="active item" data-tab="first">statistics</a>
+          <a class="item" data-tab="second">Manage users</a>
+          <a class="item" data-tab="third">Manage Videos</a>
+        </div>
+        <div class="ui bottom attached active tab segment" data-tab="first">
+             <h2 class="ui horizontal divider header">
+                <i class="users icon"></i>
+                 Active Users
+             </h2>
+              <%= line_chart User.group(:created_at).count %>
+               <div class="ui statistics ">
+                   <h2 class="ui horizontal divider header">
+                    <i class="unhide icon"></i>
+                     Views Summary
+                   </h2>
+                 <%= render :partial =>"pages/statistics"%> 
               </div>
-            </div>
-          </div>
         </div>
-        <div class="ui segment">
-            <div class="ui grid container">
-                <div class="column">
-                     <h2 class="ui horizontal divider header">
-                        <i class="users icon"></i>
-                         Active Users
-                     </h2>
-                      <%= line_chart User.group(:created_at).count %>
-                       <div class="ui statistics ">
-                           <h2 class="ui horizontal divider header">
-                            <i class="unhide icon"></i>
-                             Views Summary
-                           </h2>
-                         <%= render :partial =>"pages/statistics"%> 
-                      </div>
-                </div>
-            </div>
-          <p></p>
+        <div class="ui bottom attached tab segment" data-tab="second">
+          Second
         </div>
-    </div>
-</div>
+        <div class="ui bottom attached tab segment" data-tab="third">
+          Third
+        </div>
+        
+        
+       
+        
 <%= render :partial =>"pages/modal"%>

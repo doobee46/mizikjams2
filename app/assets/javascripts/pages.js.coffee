@@ -8,3 +8,6 @@ $(document).ready ->
     return
  return
 
+$(document).ready ->
+  $('.ui.top.attached.tabular.menu a.active.item').tab history: false
+return

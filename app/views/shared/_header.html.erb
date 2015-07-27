@@ -21,6 +21,7 @@
             <%end%> 
           </div>
         </div> 
+        
         <%if current_user.admin?%> 
         <div class="ui simple dropdown item">
           <a class="ui olive empty circular label"></a>Admin<i class="dropdown icon"></i>
@@ -32,16 +33,23 @@
               <i class="upload icon"></i> Upload videos
             <%end%> 
           </div>
-        </div>
-        <div class="item">
-            <div class="ui primary button">Upload videos</div>
          </div>
+        
+         
+          <% unless :title == "admin" %>
+          <div class="item">
+              <div class="ui primary button">Upload videos</div>
+          </div>
           <%end%>
+        
+          <%end%>
+        
           <%else%>
               <%= link_to user_session_path , data: { no_turbolink: true }, class:'item' do %>
               <i class="sign in icon"></i> Sign In
               <%end%>
           <%end%>
+        
         <div class="right item">
             <div class="ui fluid category search">
               <div class="ui icon input">

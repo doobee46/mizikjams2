@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725205607) do
+ActiveRecord::Schema.define(version: 20150726204614) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -48,12 +48,16 @@ ActiveRecord::Schema.define(version: 20150725205607) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "blurb"
-    t.string   "Wistia"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "band"
+    t.string   "key"
+    t.string   "album_file_name"
+    t.string   "album_content_type"
+    t.integer  "album_file_size"
+    t.datetime "album_updated_at"
   end
 
 end

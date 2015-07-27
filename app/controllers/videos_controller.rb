@@ -5,7 +5,8 @@ class VideosController < ApplicationController
 
   def index
       @videos = Video.all
-      @main = @videos.limit(10)
+      @main = @videos.take(10)
+      @video= @videos.shuffle.take(1)
     respond_with(@videos)
   end
 
@@ -43,6 +44,6 @@ class VideosController < ApplicationController
     end
 
     def video_params
-        params.require(:video).permit(:title, :description, :image ,:wistia ,:blurb, :band)
+        params.require(:video).permit(:title, :description, :image ,:key ,:blurb, :band, :album)
     end
 end

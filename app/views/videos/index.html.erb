@@ -1,13 +1,29 @@
+<% provide(:title, "home") %>
 <%=render :partial =>'shared/hero'%>
 <div class="ui grid container">
-    <div class="column">
-        <h3 class="ui dividing large center aligned featured header ">
-         Hot This Week on Mizikjams
-        </h3>
-    </div>
+    <h3 class="ui dividing large center aligned featured header ">
+        Hot This Week on Mizikjams
+    </h3>
 </div>
 <div class="ui grid container">
-    <div class="column">
-       
+    <div class="two column row">       
+        <div class="eight wide column ">
+            <%@videos.shuffle.take(1).each do |video|%>
+              <%= image_tag video.image.url(:square)%>
+                <div class="index_info">
+                    <div class="index_play">
+                       <%=link_to image_tag('play_btn_off.png'), video_path(video),method: :get%>
+                    </div>
+                    <h2><%=video.band%> </h2>
+                    <p>Official video <span><%= video.title%></span> </p>
+                </div>
+            <%end%>
+        </div>
+        <div class="four wide column  ">
+           
+        </div> 
+        <div class="four wide column  ">
+           
+        </div>
     </div>
 </div>
