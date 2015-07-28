@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -11,7 +12,8 @@ class VideosController < ApplicationController
   end
 
   def show
-    respond_with(@video)
+      impressionist @video 
+    respond_with(@video)  
   end
 
   def new

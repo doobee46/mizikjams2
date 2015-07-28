@@ -14,8 +14,11 @@
                     <div class="index_play">
                        <%=link_to image_tag('play_btn_off.png'), video_path(video),method: :get%>
                     </div>
-                    <h2><%=video.band%> </h2>
-                    <p>Official video <span><%= video.title%></span> </p>
+                    <div class="index_details">
+                        <h4><%=video.views%> views</h4>
+                        <h2><%=video.band%> </h2>
+                        <p>Official video <span><%= video.title%></span> </p>  
+                    </div>   
                 </div>
             <%end%>
         </div>

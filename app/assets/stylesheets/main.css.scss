@@ -177,7 +177,7 @@ img.slider_img{
 
 .video-wrapper{
     position:relative;
-    top:-15px;
+    top:-14px;
     width:816px;
 }
 
@@ -236,18 +236,32 @@ img.slider_img{
     left:25px;
 }
 
-.index_info h2{
-    font-size:18px;
-    color:#fff;
-    font-family:"lato",sans-serif;
-    margin-bottom:3px;
+.index_details{
+    position:relative;
+    top:20px;
 }
 
-.index_info p{
+.index_details h2{
     font-size:16px;
     color:#fff;
     font-family:"lato",sans-serif;
-    margin-top:-3px;
+    margin:0px;
+    padding:0px;
+}
+
+.index_details h4{
+    font-size:14px;
+    color:#fff;
+    font-family:"lato",sans-serif;
+    margin:0px;
+    padding:0px;
+}
+
+.index_details p{
+    font-size:13px;
+    color:#fff;
+    font-family:"lato",sans-serif;
+    margin:0px;
 }
 .index_play{
     position: relative;

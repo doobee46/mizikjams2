@@ -1,5 +1,7 @@
 class Video < ActiveRecord::Base
-   if Rails.env.development?
+    is_impressionable :column_name => :views, :unique => :session_hash, :counter_cache => true
+    
+  if Rails.env.development?
     has_attached_file :image, :styles => { :large=> "1214x450#",:medium => "288x150#", :thumb => "100x100>", :avatar =>"64x64#", :square =>"578x214>" }, :default_url => "default_:style.png"
   else
     has_attached_file :image, :styles => { :large=> "1214x450#",:medium => "288x150#", :thumb => "100x100>", :avatar =>"64x64>", :square =>"578x214>" }, :default_url => "default_:style.png",

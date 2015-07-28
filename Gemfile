@@ -23,5 +23,6 @@ gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem "chartkick"
 gem 'groupdate'
+gem 'impressionist'
 gem 'quiet_assets', group: :development
 

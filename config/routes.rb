@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-
+   
+  namespace :api do
+    resources :videos 
+  end
+  
     
   get 'admin'      => "pages#admin"
   get 'about'      => "pages#about"
