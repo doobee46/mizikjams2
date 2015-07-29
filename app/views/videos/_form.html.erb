@@ -24,6 +24,12 @@
   </div>
 
   <div class="field">
+    <div class="ui input upload">
+       <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "ui dropdown"}%>
+    </div>   
+  </div>
+  
+  <div class="field">
       <%= f.file_field :image , :class =>"btn-upload" %>   
   </div>
 

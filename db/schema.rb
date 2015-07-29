@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729004914) do
+ActiveRecord::Schema.define(version: 20150729012653) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -98,6 +104,7 @@ ActiveRecord::Schema.define(version: 20150729004914) do
     t.datetime "album_updated_at"
     t.integer  "views",              default: 0
     t.string   "slug"
+    t.integer  "category_id"
   end
 
   add_index "videos", ["slug"], name: "index_videos_on_slug", unique: true
