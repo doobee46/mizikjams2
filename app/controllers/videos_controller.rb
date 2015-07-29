@@ -42,10 +42,11 @@ class VideosController < ApplicationController
 
   private
     def set_video
-      @video = Video.find(params[:id])
+      @video = Video.friendly.find(params[:id])
+      #@video = Video.find(params[:id])
     end
 
     def video_params
-        params.require(:video).permit(:title, :description, :image ,:key ,:blurb, :band, :album)
+        params.require(:video).permit(:title, :description, :image ,:key ,:blurb, :band, :album,:slug)
     end
 end
