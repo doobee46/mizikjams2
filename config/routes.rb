@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
    
+  get 'hearts/create'
+
   namespace :api do
     resources :videos 
   end
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   get 'contact'    => "pages#contact" 
 
   resources :videos
+  resources :hearts, only: :create  
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords", omniauth_callbacks: "users/omniauth_callbacks"}, skip: [:sessions, :registrations]
   

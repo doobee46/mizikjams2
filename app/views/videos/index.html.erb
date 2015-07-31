@@ -1,14 +1,14 @@
 <% provide(:title, "home") %>
 <%=render :partial =>'shared/hero'%>
 <div class="ui grid container">
-    <h3 class="ui dividing large center aligned featured header ">
-        Hot This Week on Mizikjams
+    <h3 class="ui large left aligned red featured header ">
+        <span class="hot_title">Hot</span> This Week 
     </h3>
 </div>
 <div class="ui grid container">
     <div class="two column row">       
-        <div class="eight wide column ">
-            <%@videos.shuffle.take(1).each do |video|%>
+        <div class="eight wide column">
+            <%@vids.each do |video|%>
               <%= image_tag video.image.url(:square)%>
                 <div class="index_info">
                     <div class="index_play">
@@ -22,11 +22,60 @@
                 </div>
             <%end%>
         </div>
-        <div class="four wide column  ">
-           
-        </div> 
-        <div class="four wide column  ">
-           
+       
+        <div class="four wide column tile_col tile_col ">
+          <%@tile_first.each do |video|%>
+            <div class="tile_left">
+                 <%=form_for(Heart.new,:remote => true) do |f| %>
+                     <%= f.hidden_field :video_id, value: video.id %>
+                     <div class="ui fluid image ">
+                       <%= f.button " ", class: 'ui red right corner label' do %>  
+                         <i class="heart icon"></i>
+                       <%end%>
+                  <%= image_tag video.image.url(:medium)%>
+                </div>
+                <%end%>
+                <div class="tile_info">
+                    <div class="tile_play">
+                       <%=link_to image_tag('play_btn_off.png',size: "40x40" ), video_path(video),method: :get%>
+                    </div>
+                    <div class="tile_details">
+                        <h4><%=video.views%> views</h4>
+                        <h2><%=video.band%> </h2>
+                        <p>Official video <span><%= video.title%></span> </p>  
+                    </div>   
+                </div>
+            </div>  
+          <%end%>
+        </div>  
+        <div class="four wide column tile_col   ">
+           <%@tile_second.each do |tile|%>
+                <div class="tile_right">
+                     <%=form_for(Heart.new,:remote => true) do |f| %>
+                     <%= f.hidden_field :video_id, value: tile.id %>
+                     <div class="ui fluid image ">
+                       <%= f.button " ", class: 'ui red right corner label' do %>  
+                         <i class="heart icon"></i>
+                       <%end%>
+                       <%= image_tag tile.image.url(:medium)%>
+                    </div>   
+                   <%end%>
+                <div class="tile_info">
+                    <div class="tile_play">
+                       <%=link_to image_tag('play_btn_off.png',size: "40x40"), video_path(tile),method: :get%>
+                    </div>
+                    <div class="tile_details">
+                        <h4><%=tile.views%> views</h4>
+                        <h2><%=tile.band%> </h2>
+                        <p>Official video <span><%= tile.title%></span> </p>  
+                    </div>   
+                </div>
+            </div>
+          <%end%>        
         </div>
-    </div>
+ <div class="ui grid container">
+    <h3 class="ui large left aligned red featured header ">
+        <span class="hot_title">Top</span> 20 This Week 
+    </h3>
 </div>
+

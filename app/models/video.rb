@@ -3,6 +3,8 @@ class Video < ActiveRecord::Base
     friendly_id :title, use: :slugged
     
     belongs_to :category
+    belongs_to :album
+    has_many   :hearts
     
     is_impressionable :column_name => :views, :unique => :session_hash, :counter_cache => true
     

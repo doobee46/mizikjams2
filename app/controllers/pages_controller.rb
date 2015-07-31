@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-    before_filter :authenticate_user!, except: [:about, :contact]
+    
+      before_filter :authenticate_user!, except: [:about, :contact]
+    
       def admin
         @video = Video.new
       end

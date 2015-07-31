@@ -1,9 +1,10 @@
 <%= form_for video do |f| %>
   <% if @video.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
-
-      <ul>
+    <div class="ui message">
+      <div class="header">
+          <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
+      </div> 
+       <ul class="list">
       <% @video.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -28,6 +29,19 @@
        <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "ui dropdown"}%>
     </div>   
   </div>
+
+  <h4 class="ui horizontal divider header">
+     Album info
+  </h4>
+  
+   <div class="field">
+        <div class="ui input upload">
+        <input type="text", placeholder=" ALBUM TITLE">
+       </div>
+  </div>
+
+  <h4 class="ui horizontal divider header">
+  </h4>
   
   <div class="field">
       <%= f.file_field :image , :class =>"btn-upload" %>   

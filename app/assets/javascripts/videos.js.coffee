@@ -16,6 +16,24 @@ $ ->
     return
   return
 
+$ ->
+  $('.index_play img').hover (->
+    @src = @src.replace('_off', '_on')
+    return
+  ), ->
+    @src = @src.replace('_on', '_off')
+    return
+  return
+
+$ ->
+  $('.tile_play img').hover (->
+    @src = @src.replace('_off', '_on')
+    return
+  ), ->
+    @src = @src.replace('_on', '_off')
+    return
+  return
+
 
 $(document).ready ->
   $('.bxslider').bxSlider()
