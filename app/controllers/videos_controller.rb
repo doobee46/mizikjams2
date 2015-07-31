@@ -7,9 +7,9 @@ class VideosController < ApplicationController
   def index
       @videos = Video.all
       @main   = @videos.take(10)
-      @vids   = @videos.take(1)
-      @tile_first   = @videos.shuffle.take(2)
-      @tile_second   = @videos.shuffle.take(2)
+      @vids   = @main.sample(1)
+      @tile_first   = @main.shuffle.take(2)
+      @tile_second   = @main.shuffle.take(2)
       respond_with(@videos)
   end
 
