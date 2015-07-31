@@ -1,9 +1,9 @@
 <div class="ui grid container">
     <div class="column">
        <ul class="bxslider">
-           <%@main.each do |video|%>
+           <% @main.each do |video|%>
           <li>
-           <%= image_tag("hero.png")%>
+           <%= image_tag(video.image.url(:large), class:'slider_img')%>
             <div class="song_info">
                 <div class="play">
                     <%=link_to (image_tag('play_btn_off.png')), video_path(video),method: :get%>
