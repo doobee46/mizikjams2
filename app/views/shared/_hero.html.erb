@@ -1,12 +1,12 @@
 <div class="ui grid container">
     <div class="column">
        <ul class="bxslider">
-         <%@main.each do |video|%>
+           <%@main.each do |video|%>
           <li>
-          <%= image_tag video.image.url(:large), class:"slider_img"%>
+           <%= image_tag("hero.png")%>
             <div class="song_info">
                 <div class="play">
-                    <%=link_to image_tag('play_btn_off.png'), video_path(video),method: :get%>
+                    <%=link_to (image_tag('play_btn_off.png')), video_path(video),method: :get%>
                 </div>
                 <%=image_tag('hotlogo.png', class:'ticker')%>
                 <h2><%=video.band%> </h2>
@@ -14,7 +14,7 @@
                 <p class="blurb"><%=video.blurb%></p>
             </div>
           </li>
-          <%end%>
+           <%end%>
         </ul> 
     </div>
 </div>
