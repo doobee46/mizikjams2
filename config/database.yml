@@ -19,7 +19,11 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
-
-production:
-  <<: *default
-  database: db/production.sqlite3
+  
+production: 
+  Host: 127.0.0.1
+  Port: 32768
+  adapter: postgresql
+  database: mizikjams
+  encoding: unicode
+  pool: 5

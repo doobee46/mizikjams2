@@ -26,4 +26,5 @@ gem 'groupdate'
 gem 'impressionist'
 gem 'friendly_id', '~> 5.1.0'
 gem 'quiet_assets', group: :development
+gem 'pg', group: :production
 
