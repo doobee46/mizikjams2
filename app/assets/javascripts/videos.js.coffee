@@ -35,8 +35,8 @@ $ ->
   return
 
 
-$(document).ready ->
+$ ->
   $('.bxslider').bxSlider()
   auto: true,
-  autoControls: true
+  Controls: true
  return
