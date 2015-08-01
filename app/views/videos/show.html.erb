@@ -8,7 +8,9 @@
             </div>
             <div class=" right floated left aligned four wide column right_col ">
                 <div class ="ads-wrapper">
-                   <div class="ui medium rectangle test ad" data-text="Ad Unit 1"></div>   
+                   <div class="ui medium rectangle ad">
+                       <%= content_for :banner_header %>
+                    </div>   
                 </div>
                 <div class ="video_info">
                    <h3 class="ui header">Title: <%=@video.title%></h3>
