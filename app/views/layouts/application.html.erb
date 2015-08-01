@@ -9,6 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% advert_selector_initialize(:all) %>   
 <%=render :partial =>'shared/header'%>
  <div class="ui grid container">
      <div class="column">
@@ -24,5 +25,6 @@
  </div>  
 <%= yield %>
 <%-#render :partial =>'shared/footer'%>
+   <%= advert_selector_force_test_infos %> 
 </body>
 </html>

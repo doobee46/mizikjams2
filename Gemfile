@@ -11,7 +11,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'less-rails-semantic_ui'
+gem 'autoprefixer-rails'
+#gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "font-awesome-rails"
@@ -27,4 +29,6 @@ gem 'impressionist'
 gem 'friendly_id', '~> 5.1.0'
 gem 'quiet_assets', group: :development
 gem 'pg', group: :production
+gem 'advert_selector'
+gem 'therubyracer'
 
