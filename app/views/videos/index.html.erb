@@ -42,8 +42,11 @@
                     <div class="tile_details">
                         <h4><%=video.views%> views</h4>
                         <h2><%=video.band%> </h2>
-                        <p>Official video <span><%= video.title%></span> </p>  
-                    </div>   
+                        <p>Official video <span><%= video.title%></span> </p> 
+                         <div class="popup">
+                            <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                        </div>
+                    </div>
                 </div>
             </div>  
           <%end%>
@@ -67,7 +70,10 @@
                     <div class="tile_details">
                         <h4><%=tile.views%> views</h4>
                         <h2><%=tile.band%> </h2>
-                        <p>Official video <span><%= tile.title%></span> </p>  
+                        <p>Official video <span><%= tile.title%></span> </p>
+                        <div class="popup">
+                            <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                        </div>
                     </div>   
                 </div>
             </div>
