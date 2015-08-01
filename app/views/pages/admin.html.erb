@@ -5,11 +5,10 @@
     <div class="column">
          <div class="ui huge header">
             <a class="ui right floated blue image admin_info label">
-              <%-#image_tag current_user.avatar.url, class: "img-circle",size: "18x18" %>
-              <img src="/images/avatar/small/veronika.jpg">
+              <%= image_tag current_user.gravatar_url(:rating => 'R', :secure => true), class: "img-circle",size: "18x18" %> 
               <%= current_user.username %>
               <div class="detail">Admin</div>
-            </a>
+             </a>
             Admin Dashboard
         </div>
         <div class="ui top attached tabular menu">

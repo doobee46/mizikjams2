@@ -12,7 +12,7 @@
               <%= image_tag video.image.url(:square)%>
                 <div class="index_info">
                     <div class="index_play">
-                       <%=link_to image_tag('play_btn_off.png'), video_path(video),method: :get%>
+                       <%=link_to (image_tag('play_btn_off.png')), video_path(video),method: :get%>
                     </div>
                     <div class="index_details">
                         <h4><%=video.views%> views</h4>
