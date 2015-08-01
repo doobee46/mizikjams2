@@ -21,9 +21,9 @@ test:
   database: db/test.sqlite3
   
 production: 
-  Host: 127.0.0.1
-  Port: 32768
+  Host: 172.17.42.1                                                                                                                                               
+  Port: 32770                                                                                                                                                     
   adapter: postgresql
-  database: mizikjams
+  database: mizikjams-db
   encoding: unicode
   pool: 5
