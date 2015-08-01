@@ -11,7 +11,8 @@ class Video < ActiveRecord::Base
     if Rails.env.production?
     has_attached_file :image, :styles => { :large=> "1214x450#",:medium => "288x150#", :thumb => "100x100>", :avatar =>"64x64>", :square =>"578x315#" }, :default_url => "default_:style.png",
                       :storage => :dropbox,
-                      :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+                      :dropbox_credentials => {app_key: "0hwis6qhiwfulw4", app_secret: "ucwft0zabupis2t"}
+                       #Rails.root.join("config/dropbox.yml")
     else
     has_attached_file :image, :styles => { :large=> "1214x450#",:medium => "288x150#", :thumb => "100x100>", :avatar =>"64x64#", :square =>"578x315#" }, :default_url => "default_:style.png"    
     
