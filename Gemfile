@@ -31,4 +31,5 @@ gem 'pg', group: :production
 gem 'advert_selector'
 gem 'therubyracer'
 gem 'rails_12factor', group: :production
+gem "figaro"
 

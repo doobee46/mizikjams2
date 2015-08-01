@@ -21,7 +21,7 @@ test:
   database: db/test.sqlite3
   
 production: 
-  Host: 127.0.0.1
+  Host: localhost
   Port: 32768
   adapter: postgresql
   database: mizikjams
