@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801054611) do
+ActiveRecord::Schema.define(version: 20150802002520) do
 
   create_table "advert_selector_banners", force: true do |t|
     t.string   "name",                               null: false
@@ -114,6 +114,12 @@ ActiveRecord::Schema.define(version: 20150801054611) do
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
 
+  create_table "types", force: true do |t|
+    t.string   "vid_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -162,6 +168,7 @@ ActiveRecord::Schema.define(version: 20150801054611) do
     t.integer  "views",              default: 0
     t.string   "slug"
     t.integer  "category_id"
+    t.integer  "vid_type_id"
   end
 
   add_index "videos", ["slug"], name: "index_videos_on_slug", unique: true

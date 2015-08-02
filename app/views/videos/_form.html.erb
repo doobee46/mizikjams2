@@ -26,7 +26,13 @@
 
   <div class="field">
     <div class="ui input upload">
-       <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "ui dropdown"}%>
+       <%= f.collection_select :vid_type_id, Type.all, :id, :vid_type, {prompt: "choose a video type"},class: "ui dropdown"%>
+    </div>   
+  </div>
+
+  <div class="field">
+    <div class="ui input upload">
+       <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, class: "ui dropdown"%>
     </div>   
   </div>
   

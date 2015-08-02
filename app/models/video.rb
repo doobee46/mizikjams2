@@ -5,6 +5,7 @@ class Video < ActiveRecord::Base
     belongs_to :category
     belongs_to :album
     has_many   :hearts
+    has_one    :type
     
     is_impressionable :column_name => :views, :unique => :session_hash, :counter_cache => true
     

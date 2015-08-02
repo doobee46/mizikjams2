@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'hearts/create'
 
   namespace :api do
-    resources :videos 
+      resources :videos ,only: [:index, :show]
   end
   
     

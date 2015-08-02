@@ -1,11 +1,18 @@
 module VideosHelper
     
-    def video_type(type)
+    def type_for(type)
       case type 
-      when "success" then "ui green message"
-      when "error" then "ui red message"
-      when "notice" then "ui blue message"
+          when 1
+            render :partial => "videos/newvideo"
+          when 2 
+             render :partial => "videos/certified" 
+          when 3
+             render :partial => "videos/hot"
+          when 4
+             render :partial => "videos/premiere"
       end
+        
     end
+          
     
 end
