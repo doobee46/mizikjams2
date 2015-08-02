@@ -28,9 +28,9 @@ gem 'impressionist'
 gem 'friendly_id', '~> 5.1.0'
 gem 'quiet_assets', group: :development
 gem 'pg', group: :production
-gem 'advert_selector'
 gem 'therubyracer'
 gem 'rails_12factor', group: :production
 gem "figaro"
 gem 'gravtastic'
+gem 'puma'
 

@@ -5,9 +5,7 @@
            <%= link_to (image_tag"mjlogo.png"),root_path,method: :get%>
           </div>
       </div>
-      <%= link_to videos_path , data: { no_turbolink: true }, class:'item nav' do %>
-       <i class="grid layout icon"></i> Videos
-     <%end%>
+      <%= link_to "Browse", videos_path , data: { no_turbolink: true }, class:'item nav' %>
        <% if user_signed_in?%>
         <div class="ui simple dropdown item">
             Account

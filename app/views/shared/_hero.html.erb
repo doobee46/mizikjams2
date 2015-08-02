@@ -6,7 +6,7 @@
            <%= image_tag(video.image.url(:large), class:'slider_img')%>
             <div class="song_info">
                 <div class="play">
-                    <%=link_to (image_tag('play_btn_off.png')), video_path(video),method: :get%>
+                    <%=link_to (image_tag('play_btn_on.png')), video_path(video),method: :get%>
                 </div>
                 <%= type_for(video.vid_type_id)%>
                 <h2><%=video.band%> </h2>

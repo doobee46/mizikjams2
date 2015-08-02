@@ -5,10 +5,14 @@
 .ui.menu .item{
      text-transform:uppercase !important;
      font-family: 'Lato', sans-serif;
-     font-weight:bold !important;
+     font-weight:900!important;
      color:#666 !important;
      font-size:12px;
  }
+
+.ui.menu .item:hover{
+   color:#45F9A5 !important;
+}
 
 .ui.small.modal {
     width: 380px !important;
