@@ -10,6 +10,7 @@ class VideosController < ApplicationController
       @vids   = @main.sample(1)
       @tile_first   = @main.shuffle.take(2)
       @tile_second   = @main.shuffle.take(2)
+      @featured = Video.featured
       respond_with(@videos)
   end
 

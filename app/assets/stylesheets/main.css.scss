@@ -25,7 +25,13 @@ h1.ui.header.title{
 .featured{
     position: relative;
     text-transform:uppercase !important;
-    left:15px;
+    top:-100px;
+}
+
+.tile_feature{
+    position: relative;
+    text-transform:uppercase !important;
+    top:-25px;
 }
 
 p.sub{
@@ -228,6 +234,7 @@ img.slider_img{
     font-family:"lato",sans-serif;
     margin:0px;
     padding:0px;
+    text-transform: uppercase;
 }
 
 .index_details h4{
@@ -275,6 +282,7 @@ img.slider_img{
     font-family: "lato",sans-serif;
     margin: 0px;
     padding: 0px;
+    text-transform: uppercase;
 }
 
 .tile_details h4{
@@ -356,5 +364,37 @@ p.gravatar_text span{
     top:3px;
 }
 
+.top{
+    position:relative;
+    top:-100px;
+}
 
+.top ul {
+	list-style-type: none;
+	margin: 0; padding: 0;
+	float: right;
+}
+.top ul li {
+	float: left;
+    display: table;
+	padding: 0 12px;
+}
 
+.top ul li:nth-child(1){
+    padding-left:0px;
+}
+
+.top ul li:last-child{
+    padding:0px 0px 0px 10px;
+    float:right;
+}
+
+.main-wrapper{
+    position:relative;
+    top:-20px;
+}
+
+.move_up{
+    position:relative;
+    top:-35px;
+}
