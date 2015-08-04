@@ -1,0 +1,29 @@
+<ul class="left floated">
+    <% @related.each do |related|%> 
+    <li>
+        
+         <%=form_for(Heart.new,:remote => true) do |f| %>
+             <%= f.hidden_field :video_id, value: related.id %>
+             <div class="ui fluid image ">
+               <%= f.button " ", class: 'ui red right corner label' do %>  
+                 <i class="heart icon"></i>
+               <%end%>
+               <%= image_tag related.image.url(:featured)%>
+            </div>   
+         <%end%>
+        <div class="tile_info">
+            <div class="tile_play">
+               <%=link_to image_tag('play_btn_off.png',size: "40x40"), video_path(related),method: :get, remote: true%>
+            </div>
+            <div class="tile_details">
+                <h4><%=related.views%> views</h4>
+                <h2><%=related.band%> </h2>
+                <p>Official video <span><%=related.title%></span> </p>
+                <div class="popup">
+                    <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                </div>
+            </div>   
+        </div>
+    </li>
+  <%end%>
+</ul>

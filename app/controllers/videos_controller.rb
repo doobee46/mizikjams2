@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html , :js
 
   def index
       @videos = Video.all
@@ -11,10 +11,13 @@ class VideosController < ApplicationController
       @tile_first   = @main.shuffle.take(2)
       @tile_second   = @main.shuffle.take(2)
       @featured = Video.featured
+     
       respond_with(@videos)
+      
   end
 
   def show
+      @related = @video.related(@video.category_id)
       impressionist @video 
       respond_with(@video)  
   end

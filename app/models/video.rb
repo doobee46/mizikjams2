@@ -25,4 +25,16 @@ class Video < ActiveRecord::Base
     end
     validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+    
+    def related(category_id)
+        videos  = Video.all
+        related = []
+        videos.each do |video|
+            if video.category_id == category_id
+                related.push(video)
+            end
+        end
+        related
+    end
+    
 end
