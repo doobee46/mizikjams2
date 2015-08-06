@@ -11,7 +11,12 @@
         <div class="field">
             <%= image_tag current_user.gravatar_url(:rating => 'R', :secure => true,:size =>150 ), class: "ui rounded image" %> 
         </div>
-        <p class="gravatar_text">Change your photo at <span><a href="http://www.gravatar.com">Gravatar.com</a></span></p>
+        <p>Profile pictures are automatically provided by
+          <a href="https://en.gravatar.com/" target="blank">Gravatar</a>. To change this,
+          <a href="https://en.gravatar.com/" target="blank">sign up</a> for free.</p>
+          <%=image_tag ("gravatar.jpg")%>
+        <p>
+
     </div>
     <div class="ten wide column">
        <div class="form_wrapper">

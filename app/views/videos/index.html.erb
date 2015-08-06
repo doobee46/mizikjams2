@@ -14,7 +14,7 @@
                       <%= image_tag video.image.url(:square)%>
                         <div class="index_info">
                             <div class="index_play">
-                               <%=link_to (image_tag('play_btn_off.png')), video_path(video),method: :get%>
+                               <%=link_to (image_tag('btn_play_off.png')), video_path(video),method: :get%>
                             </div>
                             <div class="index_details">
                                 <h4><%=video.views%> views</h4>
@@ -39,7 +39,7 @@
                         <%end%>
                         <div class="tile_info">
                             <div class="tile_play">
-                               <%=link_to image_tag('play_btn_off.png',size: "40x40" ), video_path(video),method: :get%>
+                               <%=link_to image_tag('btn_play_off.png',size: "40x40" ), video_path(video),method: :get%>
                             </div>
                             <div class="tile_details">
                                 <h4><%=video.views%> views</h4>
@@ -67,7 +67,7 @@
                            <%end%>
                         <div class="tile_info">
                             <div class="tile_play">
-                               <%=link_to image_tag('play_btn_off.png',size: "40x40"), video_path(tile),method: :get%>
+                               <%=link_to image_tag('btn_play_off.png',size: "40x40"), video_path(tile),method: :get%>
                             </div>
                             <div class="tile_details">
                                 <h4><%=tile.views%> views</h4>

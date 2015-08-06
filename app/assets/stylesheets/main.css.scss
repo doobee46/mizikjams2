@@ -3,7 +3,7 @@ body.modal-open {
     padding-right:inherit !important; 
 }
 
-.ui.test.hero.ad {
+.ui.test.main.ad {
     top: -30px !important;
 }
 
@@ -414,16 +414,22 @@ p.gravatar_text span{
 }
 .show_top ul li {
 	float: left;
-    display: table;
-	padding: 0 12px;
+    display: inline-block;
+	padding: 0 8px;
+    height:150px;
+    margin-bottom:20px;
 }
 
 .show_top ul li:nth-child(1){
-    padding-left:0px;
+ 
 }
 
 .show_top ul li:last-child{
-    padding:0px 0px 0px 10px;
-    float:right;
+  
+}
+
+.ad_main{
+    position:relative;
+    top:-40px;
 }
 
