@@ -1,0 +1,11 @@
+<div class="ui compact menu right floated top_up">
+  <div class="ui simple dropdown item">
+   Music Genres
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <% @category.each do |category|%>
+      <div class="item"><%= category.name%></div>
+      <%end%>
+    </div>
+  </div>
+</div>

@@ -3,15 +3,14 @@
  }
 
 .ui.menu .item{
-     text-transform:uppercase !important;
-     font-family: 'Lato', sans-serif;
-     font-weight:900!important;
-     color:#666 !important;
-     font-size:12px;
+     text-transform: uppercase !important;
+    font-family: inherit;
+    font-weight: 400 !important;
+    font-size: 12px;
  }
 
 .ui.menu .item:hover{
-   color:#45F9A5 !important;
+   color: #F90094!important;
 }
 
 .ui.small.modal {

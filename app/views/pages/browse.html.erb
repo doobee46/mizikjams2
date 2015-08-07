@@ -1,0 +1,38 @@
+<% provide(:title, "Browse all Videos")%>
+<div class="ui grid container">
+      <div class="browse_top ">
+           <h3 class="ui dividing large header">
+            All Videos
+            <%= render :partial => "pages/category"%>
+            </h3>
+          <ul class="left floated">
+            <% @videos.each do |video|%> 
+            <li>
+                 <%=form_for(Heart.new,:remote => true) do |f| %>
+                     <%= f.hidden_field :video_id, value: video.id %>
+                     <div class="ui fluid image ">
+                       <%= f.button " ", class: 'ui red right corner label' do %>  
+                         <i class="heart icon"></i>
+                       <%end%>
+                       <%= image_tag video.image.url(:featured)%>
+                    </div>   
+                 <%end%>
+                <div class="tile_info">
+                    <div class="tile_play">
+                       <%=link_to image_tag('btn_play_off.png',size: "40x40"), video_path(video),method: :get%>
+                    </div>
+                    <div class="tile_details">
+                        <h4><%=video.views%> views</h4>
+                        <h2><%=video.band%> </h2>
+                        <p>Official video <span><%=video.title%></span> </p>
+                        <div class="popup">
+                            <i class=" red circular plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                        </div>
+                    </div>   
+                </div>
+            </li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+</div>
