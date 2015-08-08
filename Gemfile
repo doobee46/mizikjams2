@@ -32,5 +32,7 @@ gem 'therubyracer'
 gem 'rails_12factor', group: :production
 gem "figaro"
 gem 'gravtastic'
+gem "searchkick"
+gem 'will_paginate', '~> 3.0.6'
 gem 'puma'
 

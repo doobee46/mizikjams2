@@ -1,5 +1,6 @@
 class Video < ActiveRecord::Base
-        
+    searchkick
+    
     extend FriendlyId
     friendly_id :title, use: :slugged
     

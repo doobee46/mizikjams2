@@ -52,13 +52,16 @@
           <%end%>
         
         <div class="right item">
-            <div class="ui fluid category search">
-              <div class="ui icon input">
-                <input class="prompt" placeholder="Search animals..." type="text">
-                <i class="search icon"></i>
-              </div>
+              <%= form_tag videos_path, :method => 'get', class: 'ui search' do %>
+              <%= text_field_tag :query, params[:query], class:"prompt", placeholder:"Search videos..." %>
+              <%= image_submit_tag ("search.png")  %>
               <div class="results"></div>
-            </div>
+              <%end%>
         </div>
     </div>
   </div>
+
+
+
+
+

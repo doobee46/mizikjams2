@@ -5,13 +5,16 @@ class VideosController < ApplicationController
   respond_to :html , :js , :json
 
   def index
-      @videos = Video.all
-      @main   = @videos.shuffle.take(10)
-      @vids   = @main.sample(1)
-      @tile_first   = @main.shuffle.take(4).uniq
-      @featured = Video.featured.limit(4)
-      respond_with(@videos)
-      
+       if params[:query].present?
+          @videos = Video.search(params[:query], page: params[:page])
+      else
+          @videos = Video.all.page params[:page]
+          @main   = @videos.shuffle.take(10)
+          @vids   = @main.sample(1)
+          @tile_first = @main.shuffle.take(4).uniq
+          @featured = Video.featured.limit(4)
+      end 
+      respond_with(@videos)    
   end
 
   def show
