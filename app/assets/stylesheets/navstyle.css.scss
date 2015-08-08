@@ -3,7 +3,7 @@
  }
 
 .ui.menu .item{
-     text-transform: uppercase !important;
+    text-transform: uppercase !important;
     font-family: inherit;
     font-weight: 400 !important;
     font-size: 12px;
@@ -59,4 +59,12 @@ textarea#video_description{
     right:10px !important;
     width:340px !important;
     height:45px;
+}
+
+.ui.menu .ui.dropdown .menu .genres{
+    text-transform:uppercase !important;
+    font-weight:400 !important;
+    font-family:inherit;
+    letter-spacing:1px;
+    
 }

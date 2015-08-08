@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get 'admin'      => "pages#admin"
   get 'about'      => "pages#about"
   get 'contact'    => "pages#contact"
-  get 'browse'     => "pages#browse"   
+  get 'browse'     => "pages#browse"
+    
 
   resources :videos
   resources :hearts, only: :create  
