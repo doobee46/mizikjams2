@@ -6,12 +6,10 @@ class VideosController < ApplicationController
 
   def index
       @videos = Video.all
-      @main   = @videos.take(10)
+      @main   = @videos.shuffle.take(10)
       @vids   = @main.sample(1)
-      @tile_first   = @main.shuffle.take(2)
-      @tile_second   = @main.shuffle.take(2)
+      @tile_first   = @main.shuffle.take(4).uniq
       @featured = Video.featured.limit(4)
-     
       respond_with(@videos)
       
   end

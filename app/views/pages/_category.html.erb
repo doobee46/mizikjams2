@@ -4,7 +4,7 @@
     <i class="dropdown icon"></i>
     <div class="menu">
       <% @category.each do |category|%>
-      <div class="item genres"><%= link_to category.name , remote: true%></div>
+      <div class="item genres"><%=  category.name %></div>
       <%end%>
     </div>
   </div>

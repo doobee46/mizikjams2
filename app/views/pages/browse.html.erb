@@ -3,7 +3,7 @@
 <div class="ui grid container">
       <div class="browse_top ">
            <h3 class="ui dividing large header">
-            All Videos
+            Video Library
             <%= render :partial => "pages/category"%>
             </h3>
           <ul class="left floated">
@@ -25,7 +25,7 @@
                     <div class="tile_details">
                         <h4><%=video.views%> views</h4>
                         <h2><%=video.band%> </h2>
-                        <p>Official video <span><%=video.title%></span> </p>
+                        <p>"<span><%=video.title%></span>"</p>
                         <div class="popup">
                             <i class=" red circular plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
                         </div>

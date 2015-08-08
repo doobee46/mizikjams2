@@ -433,3 +433,15 @@ p.gravatar_text span{
     top:-40px;
 }
 
+.ui.fluid.image img{
+    opacity:0.9 !important;
+}
+
+.ui.fluid.image img:hover{
+    -webkit-filter: blur(1px);
+     filter: blur(1px);
+}
+
+
+
+

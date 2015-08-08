@@ -17,3 +17,30 @@
     top: -10px;
     left: -15px;
 }
+
+.tile{
+    margin: 0px;
+    width: 577px;
+}
+
+.tile_main .ui.fluid.image img.tile_img{
+    width:264px !important;
+    height:150px !important;
+}
+
+.tile ul {
+	list-style-type: none;
+	margin: 0; padding: 0;
+}
+.tile ul li {
+	float: left;
+    display: inline !important;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 0px 8px;
+}
+
+.tile ul li .tile_box{
+    width:264px;
+}
+
