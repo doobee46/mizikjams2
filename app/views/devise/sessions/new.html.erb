@@ -1,47 +1,46 @@
-<div class="ui grid container">
-    <div class="ui three column centered grid">
-        <div class="column">
-            <h1 class="ui header title">Sign In</h1>
-            <p class="sub">Create playlists with your favorite music videos &amp; share them with friends!</p>
-        </div>
-    </div>
-</div>
-<div class="ui grid container">
-    <div class="ui three column centered grid">
-        <div class="column">
-            <div class="ui form">
-             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="field">
-                <%= f.label :login %>
-                <div class="ui left icon input">
-                  <%= f.text_field :login, :placeholder => "Email address" %>
-                  <i class="user icon"></i>
-                <span style="opacity: 1; left: 275px; top: 12.5px; width: 19px; min-width: 19px; height: 13px; position: absolute; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAANCAYAAABLjFUnAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarZG9SsNQGIaf04qCQxAJbsLBQVzEn61j0pYiONQokmRrkkMVbXI4Of508ia8CAcXR0HvoOIgOHkJboI4ODgECU4i+EzP9w4vL3zQWPE6frcxB6PcmqDnyzCK5cwj0zQBYJCW2uv3twHyIlf8RMD7MwLgadXr+F3+xmyqjQU+gc1MlSmIdSA7s9qCuATc5EhbEFeAa/aCNog7wBlWPgGcpPIXwDFhFIN4BdxhGMXQAHCTyl3AtercArQLPTaHwwMrN1qtlvSyIlFyd1xaNSrlVp4WRhdmYFUGVPuq3Z7Wx0oGPZ//JYxiWdnbDgIQC5M6q0lPzOn3D8TD73fdMb4HL4Cp2zrb/4DrNVhs1tnyEsxfwI3+AvOlUD7FY+VVAAAAIGNIUk0AAHolAACAgwAA9CUAAITRAABtXwAA6GwAADyLAAAbWIPnB3gAAAECSURBVHjapNK9K8UBFIfxD12im8LEYLgZjcpgUFgUCUlZTJRkMpqUxR+hDFIGhWwGwy0MFiUxSCbZ5DXiYjnqdvvpvnim0+mcZ/ieU9U6tySBNEbQjBpMoANZnGIdl4VLKcm8YCPqbgzhAT1ox1mSrFpxjtCHLdygH5tJgymlMYhhtKH+r6FishYsYBpN0dvFHu5wi9okWToC/0AmcpqM+pd7PKMRDajDNb5xlS97Qyem0BsL8IT9uOAhXpGLvL/wGXO5fFkOO7FwHvJtLOOilGALM8vE1d6xiFVlkP8aXTjAI8bKFeXLBuJ3shjFiQpIYR6zWMFaXFOlsnHM4Ng/+RkAdVE2mEeC7WYAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-position: 0px 0px; border: medium none; display: inline; visibility: visible; z-index: auto;"></span></div>
+ <div class="ui middle aligned center aligned grid">
+      <div class="column specs">
+        <h2 class="ui red image header">
+          <%=image_tag ("form_logo.png"),class:'image'%>
+          <div class="content">
+            Log-in to your account
+          </div>
+        </h2>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: { class: "ui large form" }) do  |f| %>  
+          <div class="ui stacked segment move_up">
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <%= f.text_field :login, :placeholder => "Email address" %> 
               </div>
-              <div class="field">
-                <%= f.label :password %>
-                <div class="ui left icon input">
-                  <%= f.password_field :password, autocomplete: "off",:placeholder => "Password" %>
-                  <i class="lock icon"></i>
-                <span style="opacity: 1; left: 275px; top: 12.5px; width: 19px; min-width: 19px; height: 13px; position: absolute; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAANCAYAAABLjFUnAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarZG9SsNQGIaf04qCQxAJbsLBQVzEn61j0pYiONQokmRrkkMVbXI4Of508ia8CAcXR0HvoOIgOHkJboI4ODgECU4i+EzP9w4vL3zQWPE6frcxB6PcmqDnyzCK5cwj0zQBYJCW2uv3twHyIlf8RMD7MwLgadXr+F3+xmyqjQU+gc1MlSmIdSA7s9qCuATc5EhbEFeAa/aCNog7wBlWPgGcpPIXwDFhFIN4BdxhGMXQAHCTyl3AtercArQLPTaHwwMrN1qtlvSyIlFyd1xaNSrlVp4WRhdmYFUGVPuq3Z7Wx0oGPZ//JYxiWdnbDgIQC5M6q0lPzOn3D8TD73fdMb4HL4Cp2zrb/4DrNVhs1tnyEsxfwI3+AvOlUD7FY+VVAAAAIGNIUk0AAHolAACAgwAA9CUAAITRAABtXwAA6GwAADyLAAAbWIPnB3gAAAEBSURBVHjapNK9K4UBFMfxD12im8JkMdyMRmUwKCyKhKQsJspgcjerxR+hDFIGhWwGwy0MFiUxSCbZ5DXiYjnqSY/ui+90Op3zHX7n1OTzeSlkMYpW1GESnSjgBGu4+L2Ukc4z1qPuwTDu0YsOnKbJapXmEP3YxDUGsJE2mFEeQxhBOxr/Giola8MCZtASvR3s4hY3qE+TZSPwd+Qip6mof7jDE5rRhAZc4QuXSdkrujCNvliAR+zFBQ/wgmLk/YmPmCsmZUVsx8JZyLewhPNygv2dWS6u9oZFrKiA5Gt0Yx8PGK9UlJQNxu8UMIZjVZDBPOawjNW4pmplE5jFkX/yPQDFYTbukzAYUgAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-position: 0px 0px; border: medium none; display: inline; visibility: visible; z-index: auto;"></span></div>
-              </div>
-                <%= f.button "Sign In" , class: 'ui teal button', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sign in..."} %>
             </div>
-            <div class="action">
-                <%= render "devise/shared/links"%>
-            </div> 
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                 <%= f.password_field :password, autocomplete: "off",:placeholder => "Password" %> 
+              </div>
+            </div>
+            <%= f.button "Sign In" , class: 'ui fluid large teal submit button', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sign in..."} %>
+              <div class="ui horizontal divider">
+                Or Log in with
+              </div>
+              <%= link_to user_omniauth_authorize_path(:facebook),class:'ui fluid large facebook button' do%>
+                <i class="facebook icon"></i>Facebook
+             <%end%>
+
           </div>
-          <%end%>        
-          <div class="ui vertical divider">
-            Or
+          <div class="ui error message">
+              <%= devise_error_messages! %>
           </div>
-          <div class="center aligned column">
-             <%= link_to user_omniauth_authorize_path(:facebook),class:'ui facebook button' do%>
-              <i class="facebook icon"></i>Facebook
-            <%end%>
-          </div>
-        </div>      
-</div>
+         <%end%> 
+          <div class="ui message">
+          New to us?
+          <%= render "devise/shared/links"%>   
+        </div>
+      </div>
+       
+    </div> 
+
 
 
 
