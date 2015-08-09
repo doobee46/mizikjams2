@@ -2,12 +2,21 @@ Rails.application.routes.draw do
    
   get 'hearts/create'
     
-  
-  namespace :api do
+
+  api_constraints = if Rails.env.production? 
+                      {subdomain: 'api'}
+                    else
+                      {}
+                    end
+  #api_constraints = {subdomain: 'api'}
+  #namespace :api, path: '', constraints: {subdomain: 'api'} do 
+
+  namespace :api, constraints: api_constraints, defaults: {format: :json} do
     namespace :v1 do
-        resources :videos ,only: [:index, :show]
+        resources :videos
     end
   end
+
    
   get 'admin'      => "pages#admin"
   get 'about'      => "pages#about"
