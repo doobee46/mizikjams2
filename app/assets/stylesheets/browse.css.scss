@@ -56,6 +56,8 @@ input[type = image]{
 
 ul.left.floated{
     position:relative;
+    height:150px;
+    margin-bottom:-45px;
 }
 
 ul.related.floated{
@@ -65,4 +67,9 @@ ul.related.floated{
 
 .category_btn{
     float:right;
+}
+
+.move_left{
+    position: relative;
+    left: -6px;
 }

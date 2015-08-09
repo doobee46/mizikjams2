@@ -2,7 +2,7 @@
     <div class="ui container">
       <div href="#" class="header item">
         <div class=" brand">
-           <%= link_to (image_tag"mjlogo.png"),root_path,method: :get%>
+           <%= link_to (image_tag"big_red_logo.png"),root_path,method: :get%>
           </div>
       </div>
       <%= link_to "Browse", browse_path , data: { no_turbolink: true }, class:'item nav' %>
@@ -12,7 +12,7 @@
           <i class="dropdown icon"></i>
           <div class="menu">
             <%=link_to edit_user_registration_path, data: { no_turbolink: true }, class:'item' do %>
-              <i class="edit icon"></i> My playlists
+              <i class="toggle right icon"></i> My playlists
             <%end%>
             <%=link_to edit_user_registration_path, data: { no_turbolink: true }, class:'item' do %>
               <i class="edit icon"></i> Edit Account

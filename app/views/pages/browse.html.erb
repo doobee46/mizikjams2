@@ -7,7 +7,7 @@
             </h3>
          
           <div class ="results">
-               <ul class="left floated">
+               <ul class="right floated">
                     <% @videos.each do |video|%> 
                     <li>
                          <%=form_for(Heart.new,:remote => true) do |f| %>
@@ -37,8 +37,8 @@
                 </ul>
           </div>
       </div>
-     <div class="ui grid container">
-        <%= will_paginate @videos, class:'ui pagination menu' %>
+     <div class="ui grid container move_left ">
+        <%= will_paginate @videos, class:'ui pagination menu ' %>
     </div>
     <div class="push"></div>
     </div>
