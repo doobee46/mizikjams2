@@ -51,13 +51,14 @@
               <%end%>
           <%end%>
         
+       <% unless :title == "browse" %>
         <div class="right item">
-              <%= form_tag videos_path, :method => 'get', class: 'ui search' do %>
+              <%= form_tag browse_path, :method => 'get', class: 'ui search' do %>
               <%= text_field_tag :query, params[:query], class:"prompt", placeholder:"Search videos..." %>
               <%= image_submit_tag ("search.png")  %>
-              <div class="results"></div>
               <%end%>
         </div>
+      <%end%>
     </div>
   </div>
 

@@ -13,9 +13,12 @@ class PagesController < ApplicationController
   end
 
   def browse
-      @videos   = Video.all
+      if params[:query].present?
+          @videos = Video.search.paginate(params[:query], :page => params[:page], :per_page => 12)
+      else
+          @videos = Video.paginate(:page => params[:page], :per_page => 12)
+      end
       @category = Category.all
-     
   end
     
     
