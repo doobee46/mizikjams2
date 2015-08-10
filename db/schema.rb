@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809230131) do
+ActiveRecord::Schema.define(version: 20150810014513) do
 
   create_table "advert_selector_banners", force: true do |t|
     t.string   "name",                               null: false
@@ -118,6 +118,8 @@ ActiveRecord::Schema.define(version: 20150809230131) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "video_id"
   end
 
   create_table "types", force: true do |t|

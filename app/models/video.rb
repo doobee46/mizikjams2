@@ -6,6 +6,7 @@ class Video < ActiveRecord::Base
     
     belongs_to :category
     belongs_to :album
+    belongs_to :playlists 
     has_many   :hearts
     has_one    :type
     

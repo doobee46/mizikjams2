@@ -1,9 +1,10 @@
-<%= form_for(@playlist) do |f| %>
+<%= form_for @playlist do |f| %>
   <% if @playlist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@playlist.errors.count, "error") %> prohibited this playlist from being saved:</h2>
-
-      <ul>
+    <div class="ui message">
+      <div class="header">
+          <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
+      </div> 
+       <ul class="list">
       <% @playlist.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -11,11 +12,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+   <div class="field">
+    <div class="ui input upload">
+      <%= f.text_field :title ,:placeholder => "PLAYLIST TITLE" %>   
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+   <div class="actions">
+    <%= f.button "Create", class: 'positive ui button right', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> creating..."} %>
   </div>
 <% end %>
+
+

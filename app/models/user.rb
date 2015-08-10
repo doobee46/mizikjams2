@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
     
   include Gravtastic
-  gravtastic 
+  gravtastic
+    
+  has_many :playlists
     
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -1,26 +1,36 @@
 <% provide(:title, "playlists") %>
-<h1>Listing playlists</h1>
+<div class="playlist_bar">
+    <div class="ui grid container">
+        <div class="column">
+            <h3 class="ui header play_bar_head">My playlists</h3>
+            <div class="item">
+                <button class="ui primary labeled icon button right floated move_up">
+                  <i class="add icon"></i>
+                   New Playlist
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui grid container">
+    <div class="column">
+        <%if current_user.playlists.empty? %>         
+            <div class="playlist-mock">
+               <h1 class="ui grey  horizontal divider header">Create Your First Playlist</h1>
+                <div class="ui card">
+                  <div class="content">
+                    
+                  </div>
+                  <div class="image">
+                  <%=image_tag("default_square.png")%>
+                  </div>
+                </div>
+            </div>
+        <%else%>
+        <%end%>
+    </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render :partial =>"playlists/modal"%> 
 
-  <tbody>
-    <% @playlists.each do |playlist| %>
-      <tr>
-        <td><%= playlist.title %></td>
-        <td><%= link_to 'Show', playlist %></td>
-        <td><%= link_to 'Edit', edit_playlist_path(playlist) %></td>
-        <td><%= link_to 'Destroy', playlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Playlist', new_playlist_path %>
