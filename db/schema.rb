@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802002520) do
+ActiveRecord::Schema.define(version: 20150810014513) do
 
   create_table "advert_selector_banners", force: true do |t|
     t.string   "name",                               null: false
@@ -113,6 +113,14 @@ ActiveRecord::Schema.define(version: 20150802002520) do
   add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
+
+  create_table "playlists", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "video_id"
+  end
 
   create_table "types", force: true do |t|
     t.string   "vid_type"

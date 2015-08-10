@@ -73,3 +73,19 @@ ul.related.floated{
     position: relative;
     left: -6px;
 }
+
+.tile_play a img{
+    display:none;
+}
+
+.browse_top ul li:hover  .tile_info .tile_play a img{
+    display:block;
+}
+
+.top ul li:hover  .tile_info .tile_play a img{
+    display:block;
+}
+
+.tile ul li:hover  .tile_info .tile_play a img{
+    display:block;
+}

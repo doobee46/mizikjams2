@@ -87,11 +87,6 @@ img.slider_img{
     height:450px;
 }
 
- img.slider_img:hover{
-     opacity:0.9;
-     transition: all 0.5s ease;
- }
-
 .song_info h2{
     font-family: 'Roboto', sans-serif;
     font-size: 48px;
@@ -272,8 +267,9 @@ img.slider_img{
 
 .tile_details{
     position: relative;
-    top: 40px;
+    bottom: -85px;
     left: -15px;
+    width: 240px;
 }
 
 .tile_details h2{
@@ -300,11 +296,11 @@ img.slider_img{
     margin: 0px;
 }
 .tile_play{
-    position: relative;
-    left: 90px;
-    /*height: 53px;
-    width: 53px;*/
+    position: absolute;
+    left: 85px;
     top: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 .tile_col{
@@ -433,14 +429,6 @@ p.gravatar_text span{
     top:-40px;
 }
 
-.ui.fluid.image img{
-    opacity:0.9 !important;
-}
-
-.ui.fluid.image img:hover{
-    -webkit-filter: blur(1px);
-     filter: blur(1px);
-}
 
 .specs{
   max-width: 450px;

@@ -1,0 +1,36 @@
+<% provide(:title, "playlists") %>
+<div class="playlist_bar">
+    <div class="ui grid container">
+        <div class="column">
+            <h3 class="ui header play_bar_head">My playlists</h3>
+            <div class="item">
+                <button class="ui primary labeled icon button right floated move_up">
+                  <i class="add icon"></i>
+                   New Playlist
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui grid container">
+    <div class="column">
+        <%if current_user.playlists.empty? %>         
+            <div class="playlist-mock">
+               <h1 class="ui grey  horizontal divider header">Create Your First Playlist</h1>
+                <div class="ui card">
+                  <div class="content">
+                    
+                  </div>
+                  <div class="image">
+                  <%=image_tag("default_square.png")%>
+                  </div>
+                </div>
+            </div>
+        <%else%>
+        <%end%>
+    </div>
+</div>
+
+<%= render :partial =>"playlists/modal"%> 
+
+

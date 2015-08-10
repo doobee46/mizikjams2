@@ -1,0 +1,18 @@
+// Place all the styles related to the playlists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.playlist_bar{
+    width:100%;
+    display:block;
+    background-color:#fff;
+    height: 60px;
+    position: relative;
+    top: -25px;
+    
+}
+
+.play_bar_head{
+    position:relative;
+    top:10px;
+}
