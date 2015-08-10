@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
    
+  resources :playlists
+
   get 'hearts/create'
     
 

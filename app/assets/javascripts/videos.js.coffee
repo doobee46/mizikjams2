@@ -8,7 +8,7 @@ $ ->
     false
     
 $ ->
-  $('.play img').hover (->
+  $('.play a img').hover (->
     @src = @src.replace('_off', '_on')
     return
   ), ->
@@ -17,7 +17,7 @@ $ ->
   return
 
 $ ->
-  $('.index_play img').hover (->
+  $('.index_play a img').hover (->
     @src = @src.replace('_off', '_on')
     return
   ), ->
@@ -26,7 +26,7 @@ $ ->
   return
 
 $ ->
-  $('.tile_play img').hover (->
+  $('.tile_play a img').hover (->
     @src = @src.replace('_off', '_on')
     return
   ), ->
