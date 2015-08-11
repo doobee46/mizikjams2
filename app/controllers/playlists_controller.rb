@@ -1,7 +1,7 @@
 class PlaylistsController < ApplicationController
   before_action :set_playlist, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html , :js , :json
 
   def index
     @playlists = Playlist.all
@@ -20,13 +20,13 @@ class PlaylistsController < ApplicationController
 
   def edit
   end
-
+   
   def create
     @playlist = Playlist.new(playlist_params)
     @playlist.save
     respond_with(@playlist)
   end
-
+    
   def update
     @playlist.update(playlist_params)
     respond_with(@playlist)

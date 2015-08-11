@@ -78,6 +78,10 @@ ul.related.floated{
     display:none;
 }
 
+.show_top ul li:hover  .tile_info .tile_play a img{
+    display:block;
+}
+
 .browse_top ul li:hover  .tile_info .tile_play a img{
     display:block;
 }
