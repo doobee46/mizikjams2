@@ -1,0 +1,30 @@
+.admin_left{
+    display:block;
+    width:259px;
+    height:358px;
+    background-color:#fff;
+    border:1px solid #DDDDDD;
+    margin-right:17px;
+}
+
+.admin_center{
+    display:block;
+    width:568px;
+    height:358px;
+    background-color:#fff;
+    border:1px solid #DDDDDD;
+    position:relative;
+    left:55px;
+}
+
+.admin_right{
+    display:block;
+    width:259px;
+    height:358px;
+    background-color:#fff;
+    border:1px solid #DDDDDD;
+    margin-right:17px;
+    float:right;
+    position: relative;
+    left: 290px;
+}

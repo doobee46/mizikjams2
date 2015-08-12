@@ -1,41 +1,36 @@
-<body class ="open-modal">
-   
+<body class ="open-modal">  
 <% provide(:title, "admin") %>
-<div class="ui grid container">
-    <div class="column">
-         <div class="ui huge header">
-            <a class="ui right floated blue image admin_info label">
-              <%= image_tag current_user.gravatar_url(:rating => 'R', :secure => true), class: "img-circle",size: "18x18" %> 
-              <%= current_user.username %>
-              <div class="detail">Admin</div>
-             </a>
-            Admin Dashboard
+ <div class="ui grid container">
+     
+    <div class="three wide column">
+        <div class="admin_left">
+            <div class="admin_left_head">
+                <h2 class="ui header">
+                  <img class="ui image" src="/images/icons/school.png">
+                  <div class="content">
+                    <h1 class="ui header">500</h1>
+                  </div>
+                </h2>
+            </div>
+            
         </div>
-        <div class="ui top attached tabular menu">
-          <a class="active item" data-tab="first">statistics</a>
-          <a class="item" data-tab="second">Manage users</a>
-          <a class="item" data-tab="third">Manage Videos</a>
-        </div>
-        <div class="ui bottom attached active tab segment" data-tab="first">
-             <h2 class="ui horizontal divider header">
-                <i class="users icon"></i>
-                 Active Users
-             </h2>
-              <%= line_chart User.group(:created_at).count %>
-               <div class="ui statistics ">
-                   <h2 class="ui horizontal divider header">
-                    <i class="unhide icon"></i>
-                     Views Summary
-                   </h2>
-                 <%= render :partial =>"pages/statistics"%> 
-              </div>
-        </div>
-        <div class="ui bottom attached tab segment" data-tab="second">
-          Second
-        </div>
-        <div class="ui bottom attached tab segment" data-tab="third">
-          Third
-        </div>
+    
     </div>
-</div>
- <%= render :partial =>"pages/modal"%>         
+      
+    <div class="six wide column">
+         <div class="admin_center">
+            
+        </div>
+   
+    </div> 
+    
+    <div class="three wide column">
+         <div class="admin_right ">
+            
+        </div>
+    
+    </div>
+ 
+</div>   
+
+<%= render :partial =>"pages/modal"%>         
