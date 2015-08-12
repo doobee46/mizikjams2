@@ -1,5 +1,6 @@
 .browse_top{
-   
+  
+         
 }
 
 .browse_top ul {
@@ -92,4 +93,9 @@ ul.related.floated{
 
 .tile ul li:hover  .tile_info .tile_play a img{
     display:block;
+}
+
+.results{
+    position:relative;
+    top:-25px;
 }

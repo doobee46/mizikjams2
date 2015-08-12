@@ -7,7 +7,7 @@ namespace :category do
                {name: 'Zouk'},
                {name: 'Kizomba'},
                {name: 'HipHop Kreyol'},
-               {name: 'roots'}
+               {name: 'Roots'}
                ])
                
       
