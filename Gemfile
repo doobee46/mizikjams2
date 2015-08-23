@@ -15,7 +15,6 @@ gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
-gem "font-awesome-rails"
 gem 'bundler'
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
