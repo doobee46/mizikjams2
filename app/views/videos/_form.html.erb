@@ -25,7 +25,7 @@
   </div>
 
   <div class="field">
-    <div class="ui input upload">
+    <div class="ui input upload" id="video_type">
        <%= f.collection_select :vid_type_id, Type.all, :id, :vid_type, {prompt: "choose a video type"},class: "ui dropdown"%>
     </div>   
   </div>
