@@ -32,7 +32,7 @@ gem 'rails_12factor', group: :production
 gem "figaro"
 gem 'gravtastic'
 gem "searchkick"
-gem 'rack-cors', :require => 'rack/cors'
+gem 'font_assets'
 gem 'will_paginate', '~> 3.0.6'
 gem 'puma'
 
