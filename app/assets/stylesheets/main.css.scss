@@ -202,7 +202,9 @@ img.slider_img{
 
 .show_header{
     position:relative;
-    top:30px
+    top:30px;
+    text-transform: uppercase !important;
+    font-size: 18px !important;   
 }
 
 .admin_info{
@@ -446,4 +448,28 @@ p.gravatar_text span{
     color: #FFF;
     position: relative;
     font-size: 12px;
+}
+
+.sharebox{
+   position:relative;
+   top: 75px;
+   left: -40px;
+}
+
+.stMainServices.st-facebook-counter{
+   height:32px !important;
+}
+
+.stMainServices.st-twitter-counter{
+  height:32px !important;  
+}
+
+
+.stButton_gradient.stHBubble{
+   height:22px !important;
+}
+
+.space{
+    display:block;
+    height:90px;
 }

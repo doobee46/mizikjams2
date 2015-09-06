@@ -23,28 +23,39 @@
                       </div>
                     </h3>
                      
-                    <h3 class="ui header"><%=@video.views%><span> views</span></h3>
-                    
-                    <div class ="social_share">
-                        <span class='st_facebook_hcount' displayText='Facebook' st_url="#{request.base_url}/videos/#{@video.title}"></span>
-                        <span class='st_twitter_hcount' displayText='Tweet'     st_url="#{request.base_url}/videos/#{@video.title}"></span>   
-                    </div>
-                    
+                    <h3 class="ui header"><%=@video.views%><span> views</span></h3>                                 
+                </div>
+                <div class="sharebox">
+                    <span class='st_facebook_hcount' displayText='Facebook' st_url="#{request.base_url}/videos/#{@video.title}"></span>
+                    <span class='st_twitter_hcount' displayText='Tweet'     st_url="#{request.base_url}/videos/#{@video.title}"></span>   
                 </div>
             </div> 
         </div>
     </div>
 </div>
 <div class="ui grid container">
-    <div class="sixteen wide column">
+   <div class="sixteen wide column">
+        <h3 class="ui dividing large header show_header ">
+         Hot This week . <%=Time.now.strftime("%v")%>
+        </h3>  
+   </div>
+  <div class="show_top ">
+      <%= render :partial => "videos/featured" %>
+  </div>
+</div>
+<div class="space">
+    
+</div>
+<div class="ui grid container">
+   <div class="sixteen wide column">
         <h3 class="ui dividing large header show_header ">
          Related videos
         </h3>  
-    </div>
-      <div class="show_top ">
-          <%= render :partial => "videos/related" %>
-      </div>
-    </div>
+   </div>
+  <div class="show_top ">
+      <%= render :partial => "videos/related" %>
+  </div>
+</div>
   
 
 

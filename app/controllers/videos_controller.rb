@@ -15,6 +15,7 @@ class VideosController < ApplicationController
 
   def show
       @related = @video.related(@video.category_id).shuffle.sample(12)
+      @featured = Video.featured.limit(4)
       impressionist @video 
       respond_with(@video)  
   end
