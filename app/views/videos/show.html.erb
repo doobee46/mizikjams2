@@ -3,7 +3,7 @@
     <div class="ui grid container">
         <div class="two column row">
             <div class="twelve wide column ">
-                <div class ="video-wrapper">
+                <div class ="video-wrapper" id="video_player">
                     <%=render :partial => 'videos/video'%> 
                 </div>
             </div>
@@ -22,7 +22,14 @@
                         Album: I Got this 
                       </div>
                     </h3>
+                     
                     <h3 class="ui header"><%=@video.views%><span> views</span></h3>
+                    
+                    <div class ="social_share">
+                        <span class='st_facebook_hcount' displayText='Facebook' st_url="#{request.base_url}/videos/#{@video.title}"></span>
+                        <span class='st_twitter_hcount' displayText='Tweet'     st_url="#{request.base_url}/videos/#{@video.title}"></span>   
+                    </div>
+                    
                 </div>
             </div> 
         </div>
@@ -38,7 +45,7 @@
           <%= render :partial => "videos/related" %>
       </div>
     </div>
- 
+  
 
 
 
