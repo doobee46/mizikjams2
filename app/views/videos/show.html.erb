@@ -14,8 +14,8 @@
                     </div>   
                 </div>
                 <div class ="video_info">
-                   <h3 class="ui header">Title: <%=@video.title%></h3>
-                   <h3 class="ui header">Band: <%=@video.band%></h3>
+                   <h3 class="ui header"><%=@video.title%></h3>
+                   <h3 class="ui header"><%=@video.band%></h3>
                    <h3 class="ui header">
                       <%= image_tag @video.image.url(:avatar),:class =>"ui image"%>
                       <div class="content">

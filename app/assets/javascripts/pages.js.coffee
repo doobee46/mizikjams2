@@ -8,9 +8,3 @@ $(document).ready ->
     return
  return
 
-$(document).on 'page:fetch', ->
-  $('.spinner').show()
-  return
-$(document).on 'page:receive', ->
-  $('.spinner').hide()
-  return
