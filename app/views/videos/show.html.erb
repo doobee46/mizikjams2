@@ -17,17 +17,17 @@
                    <h3 class="ui header"><%=@video.title%></h3>
                    <h3 class="ui header"><%=@video.band%></h3>
                    <h3 class="ui header">
-                      <%= image_tag @video.image.url(:avatar),:class =>"ui image"%>
-                      <div class="content">
+                      <%#-= image_tag @video.image.url(:avatar),:class =>"ui image"%>
+                      <!--<div class="content">
                         Album: I Got this 
-                      </div>
+                      </div>-->
                     </h3>
                      
                     <h3 class="ui header"><%=@video.views%><span> views</span></h3>                                 
                 </div>
                 <div class="sharebox">
-                    <span class='st_facebook_hcount' displayText='Facebook' st_url="<%=request.base_url%>/videos/<%=@video.id%>" st_image="<%=@video.image.url(:avatar)%>" st_title="<%=@video.title%>" st_summary="<%=@video.blurb%>"</span> 
-                    <span class='st_twitter_hcount' displayText='Tweet'     st_url="<%=request.base_url%>/videos/<%=@video.id%>" st_image="<%=@video.image.url(:avatar)%>" st_title="<%=@video.title%>" st_summary="<%=@video.blurb%>"></span>   
+                    <span class='st_facebook_hcount' displayText='Tweet'     st_url="<%=request.base_url%>/videos/<%=@video.id%>"  st_title="<%=@video.title%>" st_summary="<%=@video.blurb%>"></span> 
+                    <span class='st_twitter_hcount' displayText='Tweet'     st_url="<%=request.base_url%>/videos/<%=@video.id%>"  st_title="<%=@video.title%>" st_summary="<%=@video.blurb%>"></span>   
                 </div>
             </div> 
         </div>

@@ -33,6 +33,7 @@ gem "figaro"
 gem 'gravtastic'
 gem "searchkick"
 gem 'font_assets'
+gem 'google-analytics-rails'
 gem 'will_paginate', '~> 3.0.6'
 gem 'puma'
 
