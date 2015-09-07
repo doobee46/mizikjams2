@@ -26,8 +26,8 @@
                     <h3 class="ui header"><%=@video.views%><span> views</span></h3>                                 
                 </div>
                 <div class="sharebox">
-                    <span class='st_facebook_hcount' displayText='Facebook' st_url="#{request.base_url}/videos/#{@video.title}"></span>
-                    <span class='st_twitter_hcount' displayText='Tweet'     st_url="#{request.base_url}/videos/#{@video.title}"></span>   
+                    <span class='st_facebook_hcount' displayText='Facebook' st_url="<%=request.base_url%>/videos/<%=@video.id%>" st_image="<%=@video.image.url(:avatar)%>" st_title="<%=@video.title%>" st_summary="<%=@video.blurb%>"</span> 
+                    <span class='st_twitter_hcount' displayText='Tweet'     st_url="<%=request.base_url%>/videos/<%=@video.id%>" st_image="<%=@video.image.url(:avatar)%>" st_title="<%=@video.title%>" st_summary="<%=@video.blurb%>"></span>   
                 </div>
             </div> 
         </div>
@@ -36,7 +36,7 @@
 <div class="ui grid container">
    <div class="sixteen wide column">
         <h3 class="ui dividing large header show_header ">
-         Hot This week . <%=Time.now.strftime("%v")%>
+         Hot This week - <%=Time.now.strftime("%m.%d.%Y")%>
         </h3>  
    </div>
   <div class="show_top ">
