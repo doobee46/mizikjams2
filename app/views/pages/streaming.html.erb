@@ -1,0 +1,22 @@
+<% provide(:title, "streaming tv") %>
+<div class="show-bg">
+    <div class="ui grid container">
+        <div class="two column row">
+            <div class="twelve wide column ">
+                <div class ="video-wrapper" id="video_player">
+                   <iframe src="http://iframe.dacast.com/b/57132/c/75493" width="800" height="450" frameborder="0" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+                   <div class="tv_logo">
+                     <%=image_tag('brand_logo.png')%>  
+                   </div>
+                </div>
+            </div>
+            <div class=" right floated left aligned four wide column right_col ">
+                <div class ="ads-wrapper">
+                   <div class="ui medium rectangle ad">
+                       <%=image_tag("test_ad.jpg")%>
+                    </div>   
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

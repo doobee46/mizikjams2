@@ -1,29 +1,22 @@
 Rails.application.routes.draw do
-   
+  require 'api_constraints'
   resources :playlists
 
   get 'hearts/create'
     
-
-  api_constraints = if Rails.env.production? 
-                      {subdomain: 'api'}
-                    else
-                      {}
-                    end
-  #api_constraints = {subdomain: 'api'}
-  #namespace :api, path: '', constraints: {subdomain: 'api'} do 
-
-  namespace :api, constraints: api_constraints, defaults: {format: :json} do
-    namespace :v1 do
+  namespace :api, defaults: { format: :json},constraints: {subdomain: 'api'}, path: '/' do
+    scope module: :v1, constraints: ApiConstraints.new(version:1, default:true) do
+    #we are going to list our resources here
         resources :videos
     end
   end
-
+ 
    
   get 'admin'      => "pages#admin"
   get 'about'      => "pages#about"
   get 'contact'    => "pages#contact"
   get 'browse'     => "pages#browse"
+  get 'streaming'  => "pages#streaming"
     
 
   resources :videos
