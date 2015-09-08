@@ -1,0 +1,4 @@
+vzaar:
+  username: 'obedlorisson'
+  token: "LKyOdDdfZ56OBSAmUVL6cLi9XucnblMC4GDHJeDgRNk" # Create one in https://app.vzaar.com/settings/api
+  #sync_model: 'Video' # OPTIONAL: Class to sync videos against another source

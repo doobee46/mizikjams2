@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     end
   end
  
+  Rails.application.routes.draw do
+      mount BatchVideosUploader::Engine => "/batch_videos_uploader"
+  end
+    
    
   get 'admin'      => "pages#admin"
   get 'about'      => "pages#about"
