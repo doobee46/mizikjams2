@@ -69,12 +69,33 @@ p.sub{
     font-size:13px;
 }
 
-.song_info{
-    position: relative;
-    top: -285px;
-    left: 50px;
-    width: 780px;
-}
+#container2  
+    {  
+     padding:20px;  
+     width:100%;  
+     color:#FFFFFF;  
+     position:relative;  
+     overflow:hidden;
+     bottom: 210px;   
+    }  
+      
+#container2 .song_info  
+    {  
+        opacity: 0.3;
+        background-color: #000;
+        width: 100%;
+        height: 150px;
+        position: absolute;
+        top: 40px;
+        left: 0px; 
+    }  
+      
+.song_info_box{
+         position: relative;
+         top:28px;   
+    }
+
+
 
 .song_info img.ticker{
     margin-bottom:0px;
@@ -86,8 +107,8 @@ img.slider_img{
     height:450px;
 }
 
-.song_info h2{
-    font-family: 'Roboto', sans-serif;
+.song_info_box h2{
+    font-family: 'Oswald', sans-serif;
     font-size: 48px;
     font-weight:900;
     color:#fff;
@@ -96,39 +117,40 @@ img.slider_img{
     text-transform:capitalize;
 }
 
-.song_info p{
-    font-family: 'Open Sans Condensed', sans-serif;
+.song_info_box p{
+    font-family: 'Oswald', sans-serif;
     font-size:26px;
     font-weight:700;
     color:#fff; 
     position:relative;
-    top:-23px;
+    top:-20px;
     letter-spacing:1px;
 }
 
-.song_info p span{
-    font-family: 'Lato', sans-serif;
+.song_info_box p span{
+    font-family: 'Oswald', sans-serif;
     font-size:22px;
     font-weight:400;
     color:#fff; 
     text-transform:uppercase;
 }
 
-.song_info p.blurb{
-    font-family: "Lato",sans-serif;
+.song_info_box p.blurb{
+    font-family: 'Oswald', sans-serif;
     font-size: 18px;
     font-weight: 400;
     position: relative;
-    top: -50px;
+    top: -48px;
     color: #FFF;
     letter-spacing:1px;
 }
 
 .play{
-   width: 53px;
-   height: 53px;
-   position: relative;
-   left: 500px; 
+    width: 53px;
+    height: 53px;
+    position: relative;
+    left: 530px;
+    bottom: 480px;
 }
 
 .play img{
