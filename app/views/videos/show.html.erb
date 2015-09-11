@@ -4,7 +4,7 @@
         <div class="two column row">
             <div class="twelve wide column ">
                 <div class ="video-wrapper" id="video_player">
-                    <%=render :partial => 'videos/video'%> 
+                    <iframe src="//content.jwplatform.com/players/<%=@video.key%>-r7mhaEGG.html" width="816" height="450" frameborder="0" scrolling="auto" allowfullscreen></iframe> 
                 </div>
             </div>
             <div class=" right floated left aligned four wide column right_col ">
@@ -26,8 +26,7 @@
                     <h3 class="ui header"><%=@video.views%><span> views</span></h3>                                 
                 </div>
                 <div class="sharebox">
-                    <span class='st_facebook_hcount' displayText='Tweet'     st_url="<%=request.base_url%>/videos/<%=@video.id%>"  st_title="<%=@video.title%>" st_summary="<%=@video.blurb%>"></span> 
-                    <span class='st_twitter_hcount' displayText='Tweet'     st_url="<%=request.base_url%>/videos/<%=@video.id%>"  st_title="<%=@video.title%>" st_summary="<%=@video.blurb%>"></span>   
+                    <div class="fb-like" data-href="<%=request.base_url%>/videos/<%=@video.id%>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>  
                 </div>
             </div> 
         </div>
@@ -40,7 +39,34 @@
         </h3>  
    </div>
   <div class="show_top ">
-      <%= render :partial => "videos/featured" %>
+   <ul class="left floated">
+    <% @featured.each do |featured|%> 
+    <li>
+         <%=form_for(Heart.new,:remote => true) do |f| %>
+             <%= f.hidden_field :video_id, value: featured.id %>
+             <div class="ui fluid image ">
+               <%= f.button " ", class: 'ui red right corner label' do %>  
+                 <i class="heart icon"></i>
+               <%end%>
+               <%= image_tag featured.image.url(:featured)%>
+            </div>   
+           <%end%>
+        <div class="tile_info">
+            <div class="tile_play">
+               <%=link_to image_tag('btn_play_off.png',size: "35x35"), video_path(featured),method: :get,remote: true,format: :json%>
+            </div>
+            <div class="tile_details">
+                <h4><%=featured.views%> views</h4>
+                <h2><%=featured.band%> </h2>
+                <p>"<span><%=featured.title%></span>"</p>
+                <div class="popup">
+                    <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                </div>
+            </div>   
+        </div>
+    </li>
+   <%end%>
+</ul>
   </div>
 </div>
 <div class="space">
@@ -53,7 +79,34 @@
         </h3>  
    </div>
   <div class="show_top ">
-      <%= render :partial => "videos/related" %>
+      <ul class="related floated">
+    <% @related.each do |related|%> 
+    <li>        
+         <%=form_for(Heart.new,:remote => true) do |f| %>
+             <%= f.hidden_field :video_id, value: related.id %>
+             <div class="ui fluid image ">
+               <%= f.button " ", class: 'ui red right corner label' do %>  
+                 <i class="heart icon"></i>
+               <%end%>
+               <%= image_tag related.image.url(:featured)%>
+            </div>   
+         <%end%>
+        <div class="tile_info">
+            <div class="tile_play">
+               <%=link_to image_tag('btn_play_off.png',size: "40x40"), video_path(related),method: :get, remote: true,format: :json%>
+            </div>
+            <div class="tile_details">
+                <h4><%=related.views%> views</h4>
+                <h2><%=related.band%> </h2>
+                <p>"<span><%=related.title%></span>"</p>
+                <div class="popup">
+                    <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                </div>
+            </div>   
+        </div>
+    </li>
+  <%end%>
+</ul>
   </div>
 </div>
   

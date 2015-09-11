@@ -2,19 +2,35 @@
 <html>
     <head>
       <title>Mizikjams | <%= yield(:title) %></title> 
-      <meta name="google-site-verification" content="sDqHi2sBUZr1BSKu87dDBJjT06HEaV7ned2G98bVCcE" /> 
+      <meta name="google-site-verification" content="sDqHi2sBUZr1BSKu87dDBJjT06HEaV7ned2G98bVCcE"/>
+      <% unless @video.nil?%>
+      <meta property="og:url"           content="<%=request.base_url%>/videos/<%=@video.title%>"/>
+      <meta property="og:type"          content="Mizikjams" />
+      <meta property="og:title"         content="<%=@video.title%> by <%@video.band%>" />
+      <meta property="og:description"   content="<%=@video.blurb%>" /> 
+      <%end%>
       <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= favicon_link_tag '/favicon.ico' %>  
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
-      <%=render :partial =>'layouts/sumome'%>
-      <%=render :partial =>'layouts/addthis'%>
-      <%=render :partial =>'layouts/sharethis'%> 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <!--<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="/assets/iPhone.css" />
+      <link type="text/css" rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="https://www.dropbox.com/s/vmooims3zyghut9/ipad.jpg?dl=0" />--> 
+      <script src="//load.sumome.com/" data-sumo-site-id="15e2781db05c0210443fca08f6b6e09d503feb988ddccaf9cf51334e4e637aee" async="async"></script>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54abece4646da6f0" async="async"></script>  
       <%= analytics_init if Rails.env.production? %> 
       <%= csrf_meta_tags %>
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=231676553635475";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
         <%=render :partial =>'shared/header'%>
          <div class="ui grid container">
              <div class="column">
