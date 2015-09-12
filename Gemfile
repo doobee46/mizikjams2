@@ -34,6 +34,7 @@ gem 'gravtastic'
 gem "searchkick"
 gem 'font_assets'
 gem 'google-analytics-rails'
+gem 'turnout'
 gem 'will_paginate', '~> 3.0.6'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
