@@ -4,9 +4,10 @@
 
 .ui.menu .item{
     text-transform: uppercase !important;
-    font-family: inherit;
-    font-weight: 400 !important;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: 700 !important;
     font-size: 12px;
+    letter-spacing: 1px;
  }
 
 .ui.menu .item:hover{
@@ -67,4 +68,8 @@ textarea#video_description{
     font-family:inherit;
     letter-spacing:1px;
     
+}
+
+.ui.menu .item > i.dropdown.icon {
+    margin: 0px 0px 0px 1px !important;
 }

@@ -14,6 +14,9 @@ class PagesController < ApplicationController
     
   def streaming
   end
+    
+  def intro
+  end
 
   def browse
       if params[:query].present?

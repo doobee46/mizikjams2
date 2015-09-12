@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'contact'    => "pages#contact"
   get 'browse'     => "pages#browse"
   get 'streaming'  => "pages#streaming"
+  get 'intro'      => "pages#intro"
     
 
   resources :videos

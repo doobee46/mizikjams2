@@ -1,0 +1,17 @@
+<% provide(:title, " Live streaming tv") %>
+<div class="stream_intro">
+    <div class="ui grid container">
+       <%=image_tag("stream_bg.png")%>
+        <div class="stream_box">
+            <div class="mizikjams_tv_logo">
+                <%=image_tag "mizikjams_tv.png"%>
+            </div>
+            <div class="stream_text">
+               ENJOY 24/7 THE BEST<br>
+               KOMPA, ZOUK AND MORE...<br>
+               VIDEO CLIPS.<br>  
+            </div>
+            <%=link_to "WATCH NOW", streaming_path, class:'large ui teal button stream_btn'%>
+        </div>
+    </div>
+</div>

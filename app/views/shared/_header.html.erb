@@ -6,7 +6,7 @@
           </div>
       </div>
       <%= link_to "Browse", browse_path , data: { no_turbolink: true }, class:'item nav' %>
-      <%= link_to "Mizikjams Tv", streaming_path , data: { no_turbolink: true }, class:'item nav' %> 
+      <%= link_to "Mizikjams Tv", intro_path , data: { no_turbolink: true }, class:'item nav' %> 
        <% if user_signed_in?%>
         <div class="ui simple dropdown item">
             Account
@@ -40,7 +40,7 @@
          
           <% unless :title == "admin" %>
           <div class="item">
-              <div class="ui primary button">Upload videos</div>
+              <div class="ui primary button">Quick publish</div>
           </div>
           <%end%>
         
