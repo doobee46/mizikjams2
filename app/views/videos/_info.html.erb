@@ -1,0 +1,13 @@
+ <div class ="video_info">
+   <h3 class="ui header video_title"><%=video.title%></h3>
+   <h3 class="ui header video_band"><%=video.band%></h3>
+   <h3 class="ui header">
+      <%#-= image_tag @video.image.url(:avatar),:class =>"ui image"%>
+      <!--<div class="content">
+        Album: I Got this 
+      </div>-->
+    </h3>
+
+    <h3 class="ui header video_view"><%=video.views%><span> views</span></h3>
+    <h3 class="ui header video_view"><%=video.hearts.count%><span> Likes</span></h3>
+</div>

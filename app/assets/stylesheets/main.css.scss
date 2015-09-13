@@ -214,14 +214,36 @@ img.slider_img{
 
 .video_info h3.ui.header{
     position: relative;
-    left: -39px;
-    font-family: "lato",sans-serif;
+    left: -39px;  
+}
+
+.video_info h3.ui.header.video_title{
+    font-family: "Arial Black",sans-serif;
     color: #FFF;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 700;
     text-transform: capitalize;
     letter-spacing: 1px;
-    margin-bottom: -25px;
+    margin-bottom: -25px; 
+}
+.video_info h3.ui.header.video_band {
+    font-family: "Arial Black",sans-serif;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: -25px; 
+}
+
+.video_info h3.ui.header.video_view {
+    font-family: "Arial",sans-serif;
+    color: #FFF;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: -25px; 
 }
 
 .show_header{

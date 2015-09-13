@@ -1,1 +1,4 @@
-$(".video-wrapper").html("<%= escape_javascript(render :partial => 'videos/video' ) %>");
+$(".video-wrapper").html("<%= escape_javascript(render :partial => 'videos/video') %>");
+$(".video_info").replaceWith("<%= escape_javascript(render :partial => 'videos/info',:locals => { :video => @video }) %>");
+$(".sharebox").html("<%= escape_javascript(render :partial => 'videos/share',:locals => { :video => @video }) %>");
+

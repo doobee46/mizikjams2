@@ -14,8 +14,8 @@
                     </div>   
                 </div>
                 <div class ="video_info">
-                   <h3 class="ui header"><%=@video.title%></h3>
-                   <h3 class="ui header"><%=@video.band%></h3>
+                   <h3 class="ui header video_title"><%=@video.title%></h3>
+                   <h3 class="ui header video_band"><%=@video.band%></h3>
                    <h3 class="ui header">
                       <%#-= image_tag @video.image.url(:avatar),:class =>"ui image"%>
                       <!--<div class="content">
@@ -23,10 +23,11 @@
                       </div>-->
                     </h3>
                      
-                    <h3 class="ui header"><%=@video.views%><span> views</span></h3>                                 
+                    <h3 class="ui header video_view"><%=@video.views%><span> views</span></h3>
+                    <h3 class="ui header video_view"><%=@video.hearts.count%><span> Likes</span></h3>           
                 </div>
-                <div class="sharebox">
-                    <div class="fb-like" data-href="<%=request.base_url%>/videos/<%=@video.id%>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>  
+                 <div class="sharebox">
+                    <div class="fb-like" data-href="<%=request.base_url%>/videos/<%=@video.id%>" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>  
                 </div>
             </div> 
         </div>
@@ -93,7 +94,7 @@
          <%end%>
         <div class="tile_info">
             <div class="tile_play">
-               <%=link_to image_tag('btn_play_off.png',size: "40x40"), video_path(related),method: :get, remote: true,format: :json%>
+               <%=link_to image_tag('btn_play_off.png',size: "40x40"), video_path(related),class:"next_video",method: :get, remote: true,format: :json%>
             </div>
             <div class="tile_details">
                 <h4><%=related.views%> views</h4>
