@@ -7,7 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
            WelcomeMailer.welcome(@user).deliver
       else
       # Sends email to user when user is created.
-           WelcomeMailer.delay.welcome(@user)
+           WelcomeMailer.welcome(@user).deliver
       end
   end
 
