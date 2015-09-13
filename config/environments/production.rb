@@ -87,7 +87,7 @@ Rails.application.configure do
       :port           => '587',
       :authentication => :plain,
       :user_name      => ENV['MANDRILL_USERNAME'],
-      :password       => ENV['MANDRILL_PASSWORD'],
+      :password       => ENV['MANDRILL_APIKEY'],
       :domain         => 'mizikjams.com',
       :enable_starttls_auto => true
     }
