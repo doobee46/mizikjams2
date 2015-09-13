@@ -30,6 +30,7 @@ gem 'pg', group: :production
 gem 'therubyracer'
 gem 'rails_12factor', group: :production
 gem "figaro"
+gem "awesome_print"
 gem 'gravtastic'
 gem "searchkick"
 gem 'font_assets'
