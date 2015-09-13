@@ -80,6 +80,20 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  GA.tracker = "UA-67259096-1"  
+  GA.tracker = "UA-67259096-1" 
+    
+    config.action_mailer.smtp_settings = {
+      :address        => 'smtp.mandrillapp.com',
+      :port           => '587',
+      :authentication => :plain,
+      :user_name      => ENV['MANDRILL_USERNAME'],
+      :password       => ENV['MANDRILL_PASSWORD'],
+      :domain         => 'mizikjams.com',
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options={ host:"mizikjams.com"}
+    config.action_controller.asset_host = 'mizikjams.com' #Or your domain
+    config.action_mailer.asset_host = config.action_controller.asset_host
     
 end
