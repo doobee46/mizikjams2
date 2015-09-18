@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby 2.1.1
+ruby 'RUBY_VERSION', :engine => 'ENGINE', :engine_version => 'ENGINE_VERSION'
 
 gem 'rails', '4.1.4'
 gem 'sqlite3',group: :development
