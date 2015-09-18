@@ -1,4 +1,4 @@
-SitemapGenerator::Sitemap.default_host = "https://mizikjams.com"
+SitemapGenerator::Sitemap.default_host = "http://mizikjams.com"
 SitemapGenerator::Sitemap.create_index = true
 SitemapGenerator::Sitemap.public_path = 'public/sitemaps/'
 SitemapGenerator::Sitemap.create do
