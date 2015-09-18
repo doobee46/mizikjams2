@@ -35,6 +35,7 @@ gem 'gravtastic'
 gem "searchkick"
 gem 'font_assets'
 gem 'google-analytics-rails'
+gem 'aws-sdk', '< 2.0'
 gem 'turnout'
 gem 'will_paginate', '~> 3.0.6'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'

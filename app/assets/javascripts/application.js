@@ -18,4 +18,14 @@
 //= require_tree .
 
 
+//$(window).load(function() {
+//if ($.cookie(‘pop’) == null) {
+//        $('.ui.modal').modal('show');
+//         $.cookie(‘pop’, ’7′);
+//     } 
+//});
+
+
+
+
 

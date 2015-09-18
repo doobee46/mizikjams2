@@ -41,12 +41,8 @@ $ ->
   Controls: true
  return
 
-$ ->
-  $("input#video_blurb").hide()
-  type = $('select#video_vid_type_id option').val() 
-  if type
-    $("input#video_blurb").fadeIn 'slow'
-  return
- return
+
+
+
 
     

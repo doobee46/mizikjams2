@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       mount BatchVideosUploader::Engine => "/batch_videos_uploader"
   end
     
-   
+  get "sitemap.xml.gz" => "sitemaps#sitemap", format: :xml, as: :sitemap 
   get 'admin'      => "pages#admin"
   get 'about'      => "pages#about"
   get 'contact'    => "pages#contact"
