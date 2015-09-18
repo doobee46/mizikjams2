@@ -35,6 +35,7 @@ gem 'gravtastic'
 gem "searchkick"
 gem 'font_assets'
 gem 'google-analytics-rails'
+gem 'sitemap_generator'
 gem 'aws-sdk', '< 2.0'
 gem 'turnout'
 gem 'will_paginate', '~> 3.0.6'
