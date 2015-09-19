@@ -79,21 +79,48 @@ ul.related.floated{
     display:none;
 }
 
+.show_top ul li:hover  .tile_info:hover .tile_play:hover a:hover img:hover{
+    display:block;
+    opacity:1;
+}
 .show_top ul li:hover  .tile_info .tile_play a img{
     display:block;
+    opacity:0.5;
 }
 
 .browse_top ul li:hover  .tile_info .tile_play a img{
     display:block;
+    opacity:0.5;
+    
+}
+.browse_top ul li:hover  .tile_info:hover .tile_play:hover a:hover img:hover{
+    display:block;
+    opacity:1;
+    transition: opacity .25s ease-in-out;
 }
 
 .top ul li:hover  .tile_info .tile_play a img{
     display:block;
+    opacity:0.5;
+}
+
+.top ul li:hover  .tile_info:hover .tile_play:hover a:hover img:hover{
+    display:block;
+    opacity:1;
+    transition: opacity .25s ease-in-out;
 }
 
 .tile ul li:hover  .tile_info .tile_play a img{
     display:block;
+    opacity:0.5;
 }
+
+.tile ul li:hover  .tile_info:hover .tile_play:hover a:hover img:hover{
+    display:block;
+    opacity:1;
+    transition: opacity .25s ease-in-out;    
+}
+
 
 .results{
     position:relative;
