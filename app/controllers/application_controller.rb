@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   
  
   protect_from_forgery with: :exception
-
+    
+  before_action :prepare_meta_tags, if: "request.get?"
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -22,6 +23,38 @@ class ApplicationController < ActionController::Base
           #admin_path
       #end
   #end 
+  
+  def prepare_meta_tags(options={})
+
+    site_name   = "Mizikjams"
+    title       = "<%= yield(:title)%>"
+    description = "Your personalized music video clips and music streaming entertainment platform"
+    image       = image
+    current_url = request.url
+
+    # Let's prepare a nice set of defaults
+
+    defaults = {
+      site:        site_name,
+      title:       title,
+      image:       image,
+      description: description,
+      keywords:    %w[kompa compa kompa_direk zouk kizomba hiphop_kreyol haitian_roots kompa_love tvice carimi ],
+      twitter:     {site_name: site_name,
+                    site: '@mizikjams',
+                    card: 'summary',
+                    description: description,
+                    image: image}
+      
+    }
+
+
+    options.reverse_merge!(defaults)
+
+
+    set_meta_tags options
+
+  end  
 
   private
   

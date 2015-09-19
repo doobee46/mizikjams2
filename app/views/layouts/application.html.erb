@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Mizikjams | <%= yield(:title) %></title> 
-      <meta name="google-site-verification" content="sDqHi2sBUZr1BSKu87dDBJjT06HEaV7ned2G98bVCcE"/>
-      <% unless @video.nil?%>
+    <head>  
+      <%= display_meta_tags %>
+      <% unless @video.nil?%> 
       <meta property="og:site_name"     content="Mizikjams"/>
       <meta property="og:url"           content="<%=request.base_url%>/videos/<%=@video.title%>"/>
       <meta property="og:type"          content="website" />
@@ -11,6 +10,7 @@
       <meta property="og:image"         content="<%= asset_path @video.image.url(:share)%>"/> 
       <meta property="og:description"   content="<%=@video.blurb%>"/> 
       <%end%>
+      <meta name="google-site-verification" content="sDqHi2sBUZr1BSKu87dDBJjT06HEaV7ned2G98bVCcE"/> 
       <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -54,6 +54,5 @@
         <div class="footer">    
         <%=render :partial =>'shared/footer'%>
         </div>
-        <%=render :partial =>'layouts/modal'%>
     </body>
 </html>

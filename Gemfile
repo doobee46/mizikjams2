@@ -34,6 +34,7 @@ gem "awesome_print"
 gem 'gravtastic'
 gem "searchkick"
 gem 'font_assets'
+gem 'meta-tags'
 gem 'google-analytics-rails'
 gem 'sitemap_generator'
 gem 'aws-sdk', '< 2.0'

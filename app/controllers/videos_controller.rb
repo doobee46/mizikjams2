@@ -10,6 +10,7 @@ class VideosController < ApplicationController
       @vids   = @videos.sample(1)
       @tile_first = @videos.shuffle.take(4).uniq
       @featured = Video.featured.limit(4)
+      prepare_meta_tags title: "Video Library", description: "All the new releases under one roof "
       respond_with(@videos)    
   end
 
@@ -17,6 +18,10 @@ class VideosController < ApplicationController
       @related = @video.related(@video.category_id).shuffle.sample(12)
       @featured = Video.featured.limit(4)
       impressionist @video 
+      prepare_meta_tags(title: @video.title,
+                      description: @video.blurb,
+                      image: @video.image.url(:share),
+                      twitter: {card: "summary_large_image"})
       respond_with(@video)  
   end
 
