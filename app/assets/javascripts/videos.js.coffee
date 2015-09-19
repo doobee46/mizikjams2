@@ -7,32 +7,7 @@ $ ->
     $('.message.closable').fadeOut("slow")
     false
     
-$ ->
-  $('.play a img').hover (->
-    @src = @src.replace('_off', '_on')
-    return
-  ), ->
-    @src = @src.replace('_on', '_off')
-    return
-  return
 
-$ ->
-  $('.index_play a img').hover (->
-    @src = @src.replace('_off', '_on')
-    return
-  ), ->
-    @src = @src.replace('_on', '_off')
-    return
-  return
-
-$ ->
-  $('.tile_play a img').hover (->
-    @src = @src.replace('_off', '_on')
-    return
-  ), ->
-    @src = @src.replace('_on', '_off')
-    return
-  return
 
 
 $ ->
