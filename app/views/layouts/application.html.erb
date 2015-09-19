@@ -19,7 +19,9 @@
       <link rel="stylesheet" href="http://css-spinners.com/css/spinners.css" type="text/css"> 
       <!--<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="/assets/iPhone.css" />
       <link type="text/css" rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="https://www.dropbox.com/s/vmooims3zyghut9/ipad.jpg?dl=0" />--> 
+      <%if Rails.env.production?%>
       <script src="//load.sumome.com/" data-sumo-site-id="15e2781db05c0210443fca08f6b6e09d503feb988ddccaf9cf51334e4e637aee" async="async"></script>
+      <%end%>
       <!-- Go to www.addthis.com/dashboard to customize your tools -->
       <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54abece4646da6f0" async="async"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js"></script>

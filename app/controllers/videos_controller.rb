@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html , :js , :json
+  respond_to :html , :json
 
   def index
       @videos =Video.all
@@ -10,7 +10,7 @@ class VideosController < ApplicationController
       @vids   = @videos.sample(1)
       @tile_first = @videos.shuffle.take(4).uniq
       @featured = Video.featured.limit(4)
-      prepare_meta_tags title: "Video Library", description: "All the new releases under one roof "
+      prepare_meta_tags title: "Video Library", description: "All the new releases from the best caribbean artist and group "
       respond_with(@videos)    
   end
 

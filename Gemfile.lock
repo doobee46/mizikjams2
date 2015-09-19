@@ -89,6 +89,8 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     commonjs (0.2.7)
+    contact_us (0.5.4)
+      rails (>= 4.0.0)
     dropbox-sdk (1.6.4)
       json
     elasticsearch (1.0.12)
@@ -288,6 +290,7 @@ DEPENDENCIES
   bundler
   chartkick
   coffee-rails (~> 4.0.0)
+  contact_us
   devise!
   figaro
   font_assets

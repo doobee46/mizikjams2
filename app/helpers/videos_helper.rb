@@ -1,9 +1,9 @@
 module VideosHelper
     
-    def type_for(type)
+    def flag_for(type)
       case type 
           when 1
-            render :partial => "videos/newvideo"
+            render  :partial => "videos/newvideo"
           when 2 
              render :partial => "videos/certified" 
           when 3

@@ -1,0 +1,58 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column specs ">
+          <h2 class="ui red image header">
+              <%=image_tag ("form_logo.png"),class:'image'%>
+              <!--<img src="assets/images/logo.png" class="image">-->
+              <div class="content">
+                 <%= t('.contact_us') %>
+              </div>
+            </h2>          
+        <%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
+       <div class="ui stacked segment move_up">
+          <% if ContactUs.require_name %>
+           <div class="field">  
+              <div class="ui left icon input">
+                <i class="user icon"></i>   
+                  <%= f.text_field :name,:placeholder => "name" %>
+                  <% if f.object.errors[:name].present? %>
+                    <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
+                  <% end %>
+              </div>
+            </div>
+          <% end %>
+         <div class="field">  
+              <div class="ui left icon input">
+                <i class="mail icon"></i>
+                  <%= f.text_field :email,:placeholder => "email" %>
+                  <% if f.object.errors[:email].present? %>
+                    <p class='inline-error'><%= f.object.errors[:email].join(' and ') %></p>
+                  <% end %> 
+              </div>
+            </div>
+           <% if ContactUs.require_name %>
+           <div class="field">  
+              <div class="ui left icon input">
+                <i class="user icon"></i>               
+                  <%= f.text_field :subject,:placeholder => "Subject" %>
+                  <% if f.object.errors[:subject].present? %>
+                    <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
+                  <% end %>              
+              </div>
+            </div>
+          <% end %>
+          <div class="field">  
+              <div class="ui left icon input">
+                <i class="user icon"></i>  
+                  <%= f.text_area :message ,:placeholder => "Message" %>
+                  <% if f.object.errors[:subject].present? %>
+                    <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
+                  <% end %>
+              </div>
+            </div> 
+          <%= f.button "Submit" , class: 'ui fluid large teal submit button', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."} %>
+          
+        <% end %>
+          
+      </div>      
+   </div>
+</div>

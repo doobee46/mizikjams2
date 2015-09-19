@@ -9,7 +9,6 @@
                 <div class="song_info">
                 </div>  
                 <div class="song_info_box">   
-                    <%-#= type_for(video.vid_type_id)%>
                     <h2><%=video.band%> </h2>
                     <p>Official video "<span><%= video.title%></span>" </p>
                     <p class="blurb"><%=video.blurb%></p>
@@ -18,6 +17,7 @@
               <div class="play">
                 <%=link_to (image_tag('big_play.png')), video_path(video),method: :get%>
               </div>
+              <%= flag_for(video.vid_type_id)%>
           </li>
          <%end%>
         </ul> 
@@ -38,10 +38,10 @@
     <div class="two column row move_up">
         <div class="column"> 
            <%@vids.each do |video|%>
-              <%= image_tag video.image.url(:square)%>
+               <%= image_tag video.image.url(:square)%>                      
                 <div class="index_info">
                     <div class="index_play">
-                       <%=link_to (image_tag('big_play.png')), video_path(video),method: :get%>
+                       <%=link_to (image_tag('big_play.png', size:"40x40")), video_path(video),method: :get%>
                     </div>
                     <div class="index_details">
                         <h4><%=video.views%> views</h4>
@@ -49,7 +49,7 @@
                         <p>Official video <span><%= video.title%></span> </p>  
                     </div>   
                 </div>
-              <span class="flag premiere">PREMIERE</span>
+              <%= flag_for(video.vid_type_id)%>
             <%end%>
         </div>
         <div class="column">

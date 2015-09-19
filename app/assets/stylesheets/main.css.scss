@@ -345,7 +345,7 @@ img.slider_img{
 .tile_play{
     position: absolute;
     left: 85px;
-    top: 30px;
+    top: 45px;
     width: 40px;
     height: 40px;
 }
@@ -488,8 +488,49 @@ p.gravatar_text span{
     background: #FF0000 none repeat scroll 0% 0%;
     color: #FFF;
     font-size: 16pt;
-    padding: 8px 15px 5px;
+    padding: 8px 15px 10px 16px;
     width: auto;
+    font-family: "oswald";
+    font-weight:400;
+ }
+
+ .flag.premiere.slider_flag {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    background: #FF0000 none repeat scroll 0% 0%;
+    color: #FFF;
+    font-size: 16pt;
+    padding: 8px 15px 10px 16px;
+    width: auto;
+    font-family: "oswald";
+    font-weight:400;
+ }
+
+ .flag.certified{
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    background: #962BF6 none repeat scroll 0% 0%;
+    color: #1C1A21;
+    font-size: 16pt;
+    padding: 8px 15px 10px 16px;
+    width: auto;
+    font-family: "oswald";
+    font-weight: 400;
+ }
+
+.flag.release{
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    background: #962BF6 none repeat scroll 0% 0%;
+    color: #1C1A21;
+    font-size: 16pt;
+    padding: 8px 15px 10px 16px;
+    width: auto;
+    font-family: "oswald";
+    font-weight: 400;
  }
 
 .small.flag.premiere {
@@ -557,6 +598,8 @@ p.gravatar_text span{
 .ui.fluid.image:hover:after {
     opacity: 1;
 }
+ 
+
 
 
 
