@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html , :json
+  respond_to :html ,:js, :json
 
   def index
       @videos =Video.all
