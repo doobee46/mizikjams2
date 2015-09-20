@@ -7,4 +7,3 @@ $(document).ready ->
     $('.ui.modal').modal 'show'
     return
  return
-

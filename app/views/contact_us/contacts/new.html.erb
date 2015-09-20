@@ -8,12 +8,12 @@
               </div>
             </h2>          
         <%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
-       <div class="ui stacked segment move_up">
+       <div class="ui stacked segment move_down">
           <% if ContactUs.require_name %>
            <div class="field">  
-              <div class="ui left icon input">
+              <div class="ui left icon input upload">
                 <i class="user icon"></i>   
-                  <%= f.text_field :name,:placeholder => "name" %>
+                  <%= f.text_field :name,:placeholder => "NAME" %>
                   <% if f.object.errors[:name].present? %>
                     <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
                   <% end %>
@@ -21,9 +21,9 @@
             </div>
           <% end %>
          <div class="field">  
-              <div class="ui left icon input">
+              <div class="ui left icon input upload">
                 <i class="mail icon"></i>
-                  <%= f.text_field :email,:placeholder => "email" %>
+                  <%= f.text_field :email,:placeholder => "EMAIL" %>
                   <% if f.object.errors[:email].present? %>
                     <p class='inline-error'><%= f.object.errors[:email].join(' and ') %></p>
                   <% end %> 
@@ -31,9 +31,9 @@
             </div>
            <% if ContactUs.require_name %>
            <div class="field">  
-              <div class="ui left icon input">
-                <i class="user icon"></i>               
-                  <%= f.text_field :subject,:placeholder => "Subject" %>
+              <div class="ui left icon input upload">
+                <i class="comment icon"></i>               
+                  <%= f.text_field :subject,:placeholder => "SUBJECT" %>
                   <% if f.object.errors[:subject].present? %>
                     <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
                   <% end %>              
@@ -41,9 +41,8 @@
             </div>
           <% end %>
           <div class="field">  
-              <div class="ui left icon input">
-                <i class="user icon"></i>  
-                  <%= f.text_area :message ,:placeholder => "Message" %>
+              <div class="ui left icon input upload"> 
+                  <%= f.text_area :message ,:placeholder => "MESSAGE",size: "45x5" %>
                   <% if f.object.errors[:subject].present? %>
                     <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
                   <% end %>

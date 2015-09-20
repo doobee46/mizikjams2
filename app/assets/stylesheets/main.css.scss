@@ -31,6 +31,7 @@ h1.ui.header.title{
     position: relative;
     text-transform:uppercase !important;
     top:-20px;
+    left: 6px;
 }
 
 .tile_feature{
@@ -176,7 +177,7 @@ img.slider_img{
     height:450px;
     display:block;
     background:#1A1A1A;
-    margin-top:-35px;
+    margin-top:-40px;
 }
 
 .video-wrapper{
@@ -483,8 +484,8 @@ p.gravatar_text span{
 
  .flag.premiere {
     position: absolute;
-    top: 0px;
-    left: 14px;
+    top: 80px;
+    left: 0px;
     background: #FF0000 none repeat scroll 0% 0%;
     color: #FFF;
     font-size: 16pt;
@@ -494,12 +495,12 @@ p.gravatar_text span{
     font-weight:400;
  }
 
- .flag.premiere.slider_flag {
+ .flag.hot.slider_flag {
     position: absolute;
     top: 80px;
     left: 0px;
-    background: #FF0000 none repeat scroll 0% 0%;
-    color: #FFF;
+    background:#FC0094 none repeat scroll 0% 0%;
+    color:#7B004F;
     font-size: 16pt;
     padding: 8px 15px 10px 16px;
     width: auto;
@@ -524,8 +525,8 @@ p.gravatar_text span{
     position: absolute;
     top: 80px;
     left: 0px;
-    background: #962BF6 none repeat scroll 0% 0%;
-    color: #1C1A21;
+    background: #1EFFA0 none repeat scroll 0% 0%;
+    color: #0D4F6A;
     font-size: 16pt;
     padding: 8px 15px 10px 16px;
     width: auto;
@@ -599,7 +600,10 @@ p.gravatar_text span{
     opacity: 1;
 }
  
-
+.ui.red.label {
+    border-color: #396A8F !important;
+    color: #FFF !important;
+}
 
 
 
