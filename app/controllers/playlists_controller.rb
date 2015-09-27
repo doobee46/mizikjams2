@@ -14,7 +14,7 @@ class PlaylistsController < ApplicationController
   end
 
   def new
-    @playlist = Playlist.new
+    @playlist = current_user.Playlist.new
     respond_with(@playlist)
   end
 
@@ -36,6 +36,8 @@ class PlaylistsController < ApplicationController
     @playlist.destroy
     respond_with(@playlist)
   end
+    
+    
 
   private
     def set_playlist

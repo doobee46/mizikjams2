@@ -16,12 +16,12 @@ Rails.application.routes.draw do
   end
     
   get "sitemap.xml.gz" => "sitemaps#sitemap", format: :xml, as: :sitemap 
-  get 'admin'      => "pages#admin"
-  get 'about'      => "pages#about"
-  get 'contact'    => "pages#contact"
-  get 'browse'     => "pages#browse"
-  get 'streaming'  => "pages#streaming"
-  get 'intro'      => "pages#intro"
+  get 'admin'          => "pages#admin"
+  get 'about'          => "pages#about"
+  get 'contact'        => "pages#contact"
+  get 'browse'         => "pages#browse"
+  get 'streaming'      => "pages#streaming"
+  get 'intro'          => "pages#intro"
     
 
   resources :videos
