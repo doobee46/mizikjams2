@@ -10,7 +10,9 @@ class VideosController < ApplicationController
       @vids   = @videos.sample(1)
       @tile_first = @videos.shuffle.take(4).uniq
       @featured = Video.featured.limit(4)
-      prepare_meta_tags title: "Video Library", description: "All the new releases from the best caribbean artist and group "
+      prepare_meta_tags title: "Video Library", 
+                        description: "All the new releases from the best caribbean artist and group ",
+                        keywords:  "konpa carimi tvice  haiti zouk t-vice radio show rock jazz mizik kreyol tabou compas rara music festival paris"
       respond_with(@videos)
       
   end
