@@ -11,7 +11,8 @@ class VideosController < ApplicationController
       @tile_first = @videos.shuffle.take(4).uniq
       @featured = Video.featured.limit(4)
       prepare_meta_tags title: "Video Library", description: "All the new releases from the best caribbean artist and group "
-      respond_with(@videos)    
+      respond_with(@videos)
+      
   end
 
   def show

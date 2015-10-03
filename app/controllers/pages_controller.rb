@@ -17,6 +17,13 @@ class PagesController < ApplicationController
     
   def intro
   end
+    
+  def news
+  end
+    
+  def manage_videos
+      @videos = Video.all
+  end
 
   def browse
       if params[:query].present?

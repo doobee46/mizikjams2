@@ -7,3 +7,20 @@ $(document).ready ->
     $('.ui.modal').modal 'show'
     return
  return
+
+$(document).ready ->
+  $('.fa.fa-pencil-square-o').click ->
+    $('.ui.modal').modal 'show'
+    return
+ return
+
+$(document).ready ->
+  $('a.ui.blue.button.manage').click ->
+    $('#dash_box').hide()
+    return
+  return
+
+$(document).ready ->
+  $('table#cur_listing').DataTable()
+  return
+    

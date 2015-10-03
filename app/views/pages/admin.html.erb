@@ -1,9 +1,20 @@
 <body class ="open-modal">  
 <% provide(:title, "admin") %>
- <div class="ui grid container">
+  <div class="ui grid container">
+      <div class="three wide column">
+          <div class="manage_box">
+            <%=link_to manage_path, data: { no_turbolink: true }, class: 'ui blue button manage' do %>
+             <i class="configure icon"></i> Manage Videos
+            <%end%>  
+          </div> 
+      </div>
+  </div>
+ 
+ <div id="dash_box">
      
-    <div class="three wide column">
-        <div class="admin_left">
+  <div class="ui grid container">
+    <div class="three wide column"> 
+        <div class="admin_left">    
             <div class="admin_left_head">
                 <h2 class="ui header">
                   <img class="ui image" src="/images/icons/school.png">
@@ -11,10 +22,8 @@
                     <h1 class="ui header">500</h1>
                   </div>
                 </h2>
-            </div>
-            
-        </div>
-    
+            </div>  
+        </div>    
     </div>
       
     <div class="six wide column">
@@ -30,6 +39,9 @@
         </div>
     
     </div>
+         
+ </div>
+ 
  
 </div>   
 

@@ -77,6 +77,9 @@ GEM
     bcrypt (3.1.10)
     builder (3.2.2)
     chartkick (1.3.2)
+    ckeditor (4.0.11)
+      mime-types
+      orm_adapter (~> 0.5.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -125,6 +128,11 @@ GEM
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-datatables-rails (3.3.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
     jquery-rails (3.1.3)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -149,6 +157,15 @@ GEM
     mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    monologue (0.4.1)
+      bcrypt (~> 3.1.7)
+      ckeditor (~> 4.0.11)
+      coffee-rails (~> 4.0.0)
+      jquery-rails
+      rails (>= 4.0.4)
+      sass-rails (~> 4.0.0)
+      select2-rails (~> 3.2)
+      truncate_html
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -228,6 +245,8 @@ GEM
       activemodel
       elasticsearch (>= 1)
       hashie
+    select2-rails (3.5.9.3)
+      thor (~> 0.14)
     sitemap_generator (5.1.0)
       builder
     spring (1.3.6)
@@ -250,6 +269,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    truncate_html (0.9.3)
     turbolinks (2.5.3)
       coffee-rails
     turnout (2.1.0)
@@ -300,10 +320,12 @@ DEPENDENCIES
   groupdate
   impressionist
   jbuilder (~> 2.0)
+  jquery-datatables-rails (~> 3.3.0)
   jquery-fileupload-rails!
   jquery-rails
   less-rails-semantic_ui
   meta-tags
+  monologue
   omniauth
   omniauth-facebook
   paperclip (~> 4.2)

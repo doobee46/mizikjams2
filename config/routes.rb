@@ -11,9 +11,10 @@ Rails.application.routes.draw do
     end
   end
  
-  Rails.application.routes.draw do
-      mount BatchVideosUploader::Engine => "/batch_videos_uploader"
-  end
+
+  mount BatchVideosUploader::Engine => "/batch_videos_uploader"
+    mount Monologue::Engine, at: '/news'
+    
     
   get "sitemap.xml.gz" => "sitemaps#sitemap", format: :xml, as: :sitemap 
   get 'admin'          => "pages#admin"
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
   get 'browse'         => "pages#browse"
   get 'streaming'      => "pages#streaming"
   get 'intro'          => "pages#intro"
+  get 'news'           => "pages#news"
+  get 'manage'         => "pages#manage_videos"
     
 
   resources :videos

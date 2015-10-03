@@ -1,0 +1,44 @@
+<div class="ui grid container">
+    <div class="column">
+        <h2 class="ui header move_up">
+          <i class="settings icon"></i>
+          <div class="content">
+            Video Lists
+            <div class="sub header">Manage video preferences</div>
+          </div>
+        </h2>
+        <table id="cur_listing" class="ui red table move_up">
+            <thead>
+                <tr>
+                    <th> Video Title</th>
+                    <th>Status</th>
+                    <th>Band </th>
+                    <th>Total Views</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              <%@videos.each do |video| %>
+                <tr>                    
+                    <td><%= link_to video.title, videos_path(video) %> </td>
+                    <td><span class="ui green label pub_id">Published</span></td>
+                    <td><%=video.band%></td>
+                    <td><%=video.views%> views</td>
+                    <td>
+                        <div class="dash_actions">
+                            <ul>
+                              <li>
+                                <%= link_to content_tag(:i, "", class: "fa fa-pencil-square-o"),
+                                   edit_video_path(video: video.id)%>
+                                </li>
+                              <li><a href="#"><i class="fa fa-reply " data-toggle="tooltip" title="Publish listing"></i></a></li>
+                              <li><a href="#"><i class="fa fa-trash "data-toggle="tooltip" title="delete listing"></i></a></li>
+                            </ul>
+                          </div>
+                    </td>
+                </tr>
+              <%end%>
+            </tbody>
+        </table>
+    </div>
+</div>
