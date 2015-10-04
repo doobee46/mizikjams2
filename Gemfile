@@ -34,6 +34,7 @@ gem "awesome_print"
 gem 'gravtastic'
 gem "searchkick"
 gem 'font_assets'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'meta-tags'
 gem 'google-analytics-rails'
 gem 'sitemap_generator'
