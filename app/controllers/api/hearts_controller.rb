@@ -1,5 +1,5 @@
 module Api  
-    class heartsController < Api::BaseController
+    class HeartsController < Api::BaseController
 
     private
 
