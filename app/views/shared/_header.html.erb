@@ -52,7 +52,9 @@
               <%end%>
           <%end%>
         
-       <% unless :title == "browse" %>
+        <%if @title == "browse" %>
+        
+        <%else%>
         <div class="right item">
               <%= form_tag browse_path, :method => 'get', class: 'ui search' do %>
               <%= text_field_tag :query, params[:query], class:"prompt", placeholder:"Search videos..." %>
