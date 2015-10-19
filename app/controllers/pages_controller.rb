@@ -26,6 +26,9 @@ class PagesController < ApplicationController
   end
 
   def browse
+      @videos = Video.all
+      @main   = @videos.limit(10).shuffle
+      
       if params[:query].present?
           @videos = Video.search(params[:query], page: params[:page],:per_page => 20)
       else

@@ -1,39 +1,27 @@
 <% provide(:title, "home") %>
 <div class="ui grid container">
     <div class="column">
-       <ul class="bxslider">
-           <% @main.each do |video|%>
-          <li>
-           <%= image_tag(video.image.url(:large), class:'slider_img')%>
-            <div id="container2">  
-                <div class="song_info">
-                </div>  
-                <div class="song_info_box">   
-                    <h2><%=video.band%> </h2>
-                    <p>Official video "<span><%= video.title%></span>" </p>
-                    <p class="blurb"><%=video.blurb%></p>
-                </div>  
-            </div>    
-              <div class="play">
-                <%=link_to (image_tag('big_play.png')), video_path(video),method: :get%>
-              </div>
-              <%= flag_for(video.vid_type_id)%>
-          </li>
-         <%end%>
-        </ul> 
-    </div>
-</div>
-<div class="ui centered leaderboard  test main ad">
-    <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=mizikjams-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=TZCC4Y6CXJTZC5XU"
-            width="728" height="90" scrolling="no"
-            border="0" marginwidth="0" style="border:none;"
-            frameborder="0">
-    </iframe>
+      <div class="browse_hero move_up">    
+        <div class="frontHero__content">
+            <div class= browse_animate>
+                <span>MIZIKJAMS is a world of  </span><br>
+                <span id="change">caribbean musics. </span>
+            </div>
+            <h2 class="frontHero__intro">Watch the videos you love. Discover new releases.<br>Connect directly with your favorite artists.</h2>
+             <div class=browsesearch>
+                  <%= form_tag browse_path, :method => 'get' do %>
+                  <%= text_field_tag :query, params[:query], class:"browse_search", placeholder:"Search videos..." %>
+                  <%= image_submit_tag ("search.png")  %>
+                  <%end%>
+            </div>
+          </div>
+       </div>    
+   </div>
 </div>
 
 <div class="ui grid container">
     <div class="sixteen wide column">
-        <h3 class="ui large left aligned red tile_feature header ">
+        <h3 class="ui large left aligned tile_feature header ">
             <span class="hot_title">Hot</span> This Week 
         </h3>
     </div>
@@ -95,7 +83,7 @@
 </div>
 <div class="ui grid container">
     <div class="sixteen wide column">
-         <h3 class="ui large left floated red featured header ">
+         <h3 class="ui large left floated featured header ">
            <span class="hot_title">Featured</span> Artists This Week 
         </h3>
     </div>
@@ -143,6 +131,13 @@
     
     </div> 
 </div>-->
+<div class="ui centered leaderboard  test main ad">
+    <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=mizikjams-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=TZCC4Y6CXJTZC5XU"
+            width="728" height="90" scrolling="no"
+            border="0" marginwidth="0" style="border:none;"
+            frameborder="0">
+    </iframe>
+</div>
 
 
   

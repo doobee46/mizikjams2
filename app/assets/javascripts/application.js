@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require semantic_ui/semantic_ui
 //= require jquery.bxslider.js
+//= require change_word.js
 //= require_tree .
 
 
@@ -26,7 +27,6 @@
 //     } 
 //});
 
-
-
+ 
 
 
