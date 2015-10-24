@@ -1,6 +1,6 @@
 <% provide(:title, "search")%>
 <div class="ui grid container">          
-   <div class="right floated move_up">
+   <div class="right floated move_up search-list">
         <% @videos.each do |video|%> 
         <div class="search-grid">
              <%=form_for(Heart.new,:remote => true) do |f| %>

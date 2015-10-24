@@ -617,7 +617,11 @@ p.gravatar_text span{
 
 .search-grid{
    display: inline-table;
-   margin-right:18px;
+   padding-right:20px;
+}
+
+.search-grid:nth-child(4){
+    padding-right:0px;
 }
 
 .tile_play a img.search-res {
