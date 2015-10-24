@@ -303,11 +303,10 @@ img.slider_img{
 }
 
 
-
 .tile_info{
-    position:relative;
-    top:-145px;
-    left:25px;
+    position: relative;
+    top: -150px;
+    left: 25px;
 }
 
 .tile_details{
@@ -616,8 +615,14 @@ p.gravatar_text span{
     right: 50px;
 }
 
+.search-grid{
+   display: inline-table;
+   margin-right:18px;
+}
 
-
+.tile_play a img.search-res {
+    display: block;
+}
 
 
 
