@@ -5,16 +5,21 @@ class VideosController < ApplicationController
   respond_to :html ,:js, :json
 
   def index
-      @videos =Video.all
-      @main   = @videos.limit(10).shuffle
-      @vids   = @videos.sample(1)
-      @tile_first = @videos.shuffle.take(4).uniq
-      @featured = Video.featured.limit(4)
-      prepare_meta_tags title: "Video Library", 
-                        description: "All the new releases from the best caribbean artist and group ",
-                        keywords:  "konpa carimi tvice  haiti zouk t-vice radio show rock jazz mizik kreyol tabou compas rara music festival paris"
-      respond_with(@videos)
-      
+      if params[:q].present?
+          @videos = @q.result.paginate(page: params[:page],:per_page => 20).order(created_at: :desc)
+      else
+          @videos =Video.all
+          @main   = @videos.limit(10).shuffle
+          @vids   = @videos.sample(1)
+          @tile_first = @videos.shuffle.take(4).uniq
+          @featured = Video.featured.limit(4)
+          prepare_meta_tags title: "Video Library", 
+                            description: "All the new releases from the best caribbean artist and group ",
+                            keywords:  "konpa carimi tvice  haiti zouk t-vice radio show rock jazz mizik kreyol tabou compas rara music festival paris"
+          respond_with(@videos)
+
+      end
+        
   end
 
   def show

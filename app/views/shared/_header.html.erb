@@ -56,10 +56,12 @@
         
         <%else%>
         <div class="right item">
-              <%= form_tag browse_path, :method => 'get', class: 'ui search' do %>
-              <%= text_field_tag :query, params[:query], class:"prompt", placeholder:"Search videos..." %>
-              <%= image_submit_tag ("search.png")  %>
-              <%end%>
+              <%= search_form_for @q, class: 'ui search' do |f| %>
+              <%= f.search_field :band_or_title_cont, class:"prompt", placeholder:"Search videos..." %>
+              <%= f.button "Submit", class:"button-clear search-btn"  do %>
+                   <i class="search icon"></i>
+                  <%end%>
+             <%end%>
         </div>
       <%end%>
     </div>

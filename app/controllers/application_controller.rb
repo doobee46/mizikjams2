@@ -7,23 +7,15 @@ class ApplicationController < ActionController::Base
     
   before_action :prepare_meta_tags, if: "request.get?"
   before_filter :configure_permitted_parameters, if: :devise_controller?
-
-  protected
-
-  #->Prelang (user_login:devise)
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up)        { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
-    devise_parameter_sanitizer.for(:sign_in)        { |u| u.permit(:login, :username, :email, :password, :remember_me) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password,:avatar) }
-  end
   
+  before_filter :set_search
     
-  #def after_sign_in_path_for(resource)
-      #if current_user.admin?
-          #admin_path
-      #end
-  #end 
-  
+    
+    
+  def set_search
+      @q=Video.ransack(params[:q])
+  end
+    
   def prepare_meta_tags(options={})
 
     site_name   = "Mizikjams"
@@ -55,6 +47,24 @@ class ApplicationController < ActionController::Base
     set_meta_tags options
 
   end  
+
+  protected
+
+  #->Prelang (user_login:devise)
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up)        { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_in)        { |u| u.permit(:login, :username, :email, :password, :remember_me) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password,:avatar) }
+  end
+  
+    
+  #def after_sign_in_path_for(resource)
+      #if current_user.admin?
+          #admin_path
+      #end
+  #end 
+  
+ 
 
   private
   

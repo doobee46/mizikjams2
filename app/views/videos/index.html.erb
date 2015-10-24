@@ -9,135 +9,148 @@
             </div>
             <h2 class="frontHero__intro">Watch the videos you love. Discover new releases.<br>Connect directly with your favorite artists.</h2>
              <div class=browsesearch>
-                  <%= form_tag browse_path, :method => 'get' do %>
-                  <%= text_field_tag :query, params[:query], class:"browse_search", placeholder:"Search videos..." %>
-                  <%= image_submit_tag ("search.png")  %>
+                <%= search_form_for @q do |f|  %>
+                  <%= f.search_field :band_or_title_cont , class:"browse_search", placeholder:"Search videos, bands, artists..." %>
+                  <%= f.button "Submit", class:"button-clear search-btn"  do %>
+                   <i class="search icon"></i>
                   <%end%>
+                <%end%>
             </div>
           </div>
        </div>    
    </div>
 </div>
-
-<div class="ui grid container">
-    <div class="sixteen wide column">
-        <h3 class="ui large left aligned tile_feature header ">
-            <span class="hot_title">Hot</span> This Week 
-        </h3>
-    </div>
-</div>
-<div class="ui grid container">
-    <div class="two column row move_up">
-        <div class="column"> 
-           <%@vids.each do |video|%>
-               <%= image_tag video.image.url(:square)%>                      
-                <div class="index_info">
-                    <div class="index_play">
-                       <%=link_to (image_tag('big_play.png', size:"40x40")), video_path(video),method: :get%>
-                    </div>
-                    <div class="index_details">
-                        <h4><%=video.views%> views</h4>
-                        <h2><%=video.band%> </h2>
-                        <p>Official video <span><%= video.title%></span> </p>  
-                    </div>   
-                </div>
-              <%= flag_for(video.vid_type_id)%>
-            <%end%>
+<% if params[:q] %>
+  <div class="ui grid container">
+        <div class="sixteen wide column">
+            <h3 class="ui large left aligned tile_feature header ">
+                <span class="hot_title">search results</span> 
+            </h3>
         </div>
-        <div class="column">
-            <div class="tile">
-                <ul>
-                    <%@tile_first.each do |video|%>
-                    <li>
-                        <div class="tile_box">
-                                 <%=form_for(Heart.new,:remote => true) do |f| %>
-                                     <%= f.hidden_field :video_id, value: video.id %>
-                                <div class="ui fluid image ">
-                                       <%= f.button " ", class: 'ui red right corner label' do %>  
-                                         <i class="heart icon"></i>
-                                       <%end%>
-                                  <%= image_tag video.image.url(:medium), class: 'tile_img'%>
-                                </div>
-                                <%end%>
-                                <div class="tile_info">
-                                    <div class="tile_play">
-                                       <%=link_to image_tag('small_play.png'), video_path(video),method: :get%>
+    </div>
+    <%= render :partial =>'videos/search' %>
+  <% else %>
+   <div class="ui grid container">
+        <div class="sixteen wide column">
+            <h3 class="ui large left aligned tile_feature header ">
+                <span class="hot_title">Hot</span> This Week 
+            </h3>
+        </div>
+    </div>
+    <div class="ui grid container">
+        <div class="two column row move_up">
+            <div class="column"> 
+               <%@vids.each do |video|%>
+                   <%= image_tag video.image.url(:square)%>                      
+                    <div class="index_info">
+                        <div class="index_play">
+                           <%=link_to (image_tag('big_play.png', size:"40x40")), video_path(video),method: :get%>
+                        </div>
+                        <div class="index_details">
+                            <h4><%=video.views%> views</h4>
+                            <h2><%=video.band%> </h2>
+                            <p>Official video <span><%= video.title%></span> </p>  
+                        </div>   
+                    </div>
+                  <%= flag_for(video.vid_type_id)%>
+                <%end%>
+            </div>
+            <div class="column">
+                <div class="tile">
+                    <ul>
+                        <%@tile_first.each do |video|%>
+                        <li>
+                            <div class="tile_box">
+                                     <%=form_for(Heart.new,:remote => true) do |f| %>
+                                         <%= f.hidden_field :video_id, value: video.id %>
+                                    <div class="ui fluid image ">
+                                           <%= f.button " ", class: 'ui red right corner label' do %>  
+                                             <i class="heart icon"></i>
+                                           <%end%>
+                                      <%= image_tag video.image.url(:medium), class: 'tile_img'%>
                                     </div>
-                                    <div class="tile_details">
-                                        <h4><%=video.views%> views</h4>
-                                        <h2><%=video.band%> </h2>
-                                        <p>"<span><%= video.title%></span>"</p> 
-                                         <div class="popup">
-                                            <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                                    <%end%>
+                                    <div class="tile_info">
+                                        <div class="tile_play">
+                                           <%=link_to image_tag('small_play.png'), video_path(video),method: :get%>
+                                        </div>
+                                        <div class="tile_details">
+                                            <h4><%=video.views%> views</h4>
+                                            <h2><%=video.band%> </h2>
+                                            <p>"<span><%= video.title%></span>"</p> 
+                                             <div class="popup">
+                                                <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                              <span class="small flag premiere">PREMIERE</span>
-                            </div>                                               
-                        </li>
-                    <%end%> 
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="ui grid container">
-    <div class="sixteen wide column">
-         <h3 class="ui large left floated featured header ">
-           <span class="hot_title">Featured</span> Artists This Week 
-        </h3>
-    </div>
-    <div class="top">
-     <ul class="left floated">
-    <% @featured.each do |featured|%> 
-    <li>
-         <%=form_for(Heart.new,:remote => true) do |f| %>
-             <%= f.hidden_field :video_id, value: featured.id %>
-             <div class="ui fluid image ">
-               <%= f.button " ", class: 'ui red right corner label' do %>  
-                 <i class="heart icon"></i>
-               <%end%>
-               <%= image_tag featured.image.url(:featured)%>
-            </div>   
-           <%end%>
-        <div class="tile_info">
-            <div class="tile_play">
-               <%=link_to image_tag('small_play.png',size: "35x35"), video_path(featured),method: :get%>
-            </div>
-            <div class="tile_details">
-                <h4><%=featured.views%> views</h4>
-                <h2><%=featured.band%> </h2>
-                <p>"<span><%=featured.title%></span>"</p>
-                <div class="popup">
-                    <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                                  <span class="small flag premiere">PREMIERE</span>
+                                </div>                                               
+                            </li>
+                        <%end%> 
+                    </ul>
                 </div>
-            </div>   
+            </div>
         </div>
-    </li>
-   <%end%>
-</ul>
-    </div> 
-</div>
-<!--<div class="ui centered leaderboard test main ad">
-    <%#-image_tag("banner.png")%>
-</div>
-<div class="ui grid container">
-    <div class="sixteen wide column">
-         <h3 class="ui large left floated red play_head header ">
-           <span class="hot_title">Staff</span> Playlists
-        </h3>
     </div>
-    <div class="top">
-    
-    </div> 
-</div>-->
-<div class="ui centered leaderboard  test main ad">
-    <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=mizikjams-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=TZCC4Y6CXJTZC5XU"
-            width="728" height="90" scrolling="no"
-            border="0" marginwidth="0" style="border:none;"
-            frameborder="0">
-    </iframe>
-</div>
+    <div class="ui grid container">
+        <div class="sixteen wide column">
+             <h3 class="ui large left floated featured header ">
+               <span class="hot_title">Featured</span> Artists This Week 
+            </h3>
+        </div>
+        <div class="top">
+         <ul class="left floated">
+        <% @featured.each do |featured|%> 
+        <li>
+             <%=form_for(Heart.new,:remote => true) do |f| %>
+                 <%= f.hidden_field :video_id, value: featured.id %>
+                 <div class="ui fluid image ">
+                   <%= f.button " ", class: 'ui red right corner label' do %>  
+                     <i class="heart icon"></i>
+                   <%end%>
+                   <%= image_tag featured.image.url(:featured)%>
+                </div>   
+               <%end%>
+            <div class="tile_info">
+                <div class="tile_play">
+                   <%=link_to image_tag('small_play.png',size: "35x35"), video_path(featured),method: :get%>
+                </div>
+                <div class="tile_details">
+                    <h4><%=featured.views%> views</h4>
+                    <h2><%=featured.band%> </h2>
+                    <p>"<span><%=featured.title%></span>"</p>
+                    <div class="popup">
+                        <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
+                    </div>
+                </div>   
+            </div>
+        </li>
+       <%end%>
+    </ul>
+        </div> 
+    </div>
+    <!--<div class="ui centered leaderboard test main ad">
+        <%#-image_tag("banner.png")%>
+    </div>
+    <div class="ui grid container">
+        <div class="sixteen wide column">
+             <h3 class="ui large left floated red play_head header ">
+               <span class="hot_title">Staff</span> Playlists
+            </h3>
+        </div>
+        <div class="top">
+
+        </div> 
+    </div>-->
+    <div class="ui centered leaderboard  test main ad">
+        <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=mizikjams-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=TZCC4Y6CXJTZC5XU"
+                width="728" height="90" scrolling="no"
+                border="0" marginwidth="0" style="border:none;"
+                frameborder="0">
+        </iframe>
+    </div>
+<% end %>
+
 
 
   
