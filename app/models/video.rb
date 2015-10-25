@@ -27,6 +27,7 @@ class Video < ActiveRecord::Base
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
     
     def related(category_id)
+        #return all videos related based on their category
         videos  = Video.all
         related = []
         videos.each do |video|
@@ -35,6 +36,34 @@ class Video < ActiveRecord::Base
             end
         end
         related
+    end
+    
+    def self.group_by_impressions 
+        #return an hash with videos and an array for their impressions
+        @grouped={}
+        videos = Video.all
+        videos.each do |video|
+            video.impressions.map do |impression|
+                @grouped[video.title] ||= []
+                @grouped[video.title].push((impression.created_at).to_s)
+            end
+        end
+        @grouped
+    end
+    
+    def current_week_plays
+        week = (DateTime.now-6.days..DateTime.now).map {|date| date.strftime("%F %X"+"UTC")}
+        @grouped.map do |k,v|
+        @list = []
+         v.each do |value|
+            week.each do |day|
+            if value == day
+              @list.push(k)
+            end
+          end
+        end
+      end
+      @list.uniq
     end
     
 end
