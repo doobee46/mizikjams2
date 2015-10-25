@@ -53,18 +53,19 @@ class Video < ActiveRecord::Base
     
     def self.current_week_plays
         week = (DateTime.now-6.days..DateTime.now).map {|date| date.strftime("%F %X"+"UTC")}
-        @grouped = Video.group_by_impressions 
+        @grouped = self.group_by_impressions 
         @grouped.map do |k,v|
-        @list = []
+        @video_list = []
          v.each do |value|
             week.each do |day|
             if value == day
-              @list.push(k)
+            @video_list.push(k)
             end
           end
         end
-      end
-      @list.uniq
+         video = @video_list.uniq
+         video.flatten
+      end 
     end
     
 end
