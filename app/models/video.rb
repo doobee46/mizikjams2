@@ -51,7 +51,7 @@ class Video < ActiveRecord::Base
         @grouped
     end
     
-    def current_week_plays
+    def self.current_week_plays
         week = (DateTime.now-6.days..DateTime.now).map {|date| date.strftime("%F %X"+"UTC")}
         @grouped.map do |k,v|
         @list = []
