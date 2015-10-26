@@ -38,22 +38,20 @@ class Video < ActiveRecord::Base
         related
     end
     
-    def self.group_by_impressions 
-        #return an hash with videos and an array for their impressions
-        @grouped=[]
-        week = (DateTime.now-6.days..DateTime.now).map {|date| date.strftime("%F %X"+" "+"UTC")}
-        videos = Video.all
+    def self.weekly
+        current_week  = (DateTime.now).strftime("%W") 
+        grouped = []
+        videos  = Video.all
         videos.map do |video|
-            week.each do |day|
-                video.impressions.map do |impression|
-                    new_impression = (impression.created_at).to_s
-                    if new_impression == day
-                        @grouped.push(video)
-                    end
+            impressions = video.impressions
+            impressions.map do |impression|
+               weeks = impression.created_at.strftime("%W")
+                if weeks == (current_week)
+                grouped.push(video)
                 end
             end
         end
-        @grouped.uniq
+        grouped
     end
     
   
