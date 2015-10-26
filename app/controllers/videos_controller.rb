@@ -10,8 +10,8 @@ class VideosController < ApplicationController
       else
           @videos =Video.all
           @main   = @videos.limit(10).shuffle
-          @vids   = @videos.sample(1)
-          @tile_first = @videos.shuffle.take(4).uniq
+          @vids   = @videos.weekly.sample(1)
+          @tile_first = @videos.weekly.shuffle.take(4).uniq
           @featured = Video.featured.limit(4)
           prepare_meta_tags title: "Video Library", 
                             description: "All the new releases from the best caribbean artist and group ",
@@ -24,7 +24,7 @@ class VideosController < ApplicationController
 
   def show
       @related = @video.related(@video.category_id).shuffle.sample(12)
-      @featured = Video.featured.limit(4)
+      @featured = Video.weekly.uniq
       impressionist @video 
       prepare_meta_tags(title: @video.title,
                       description: @video.blurb,
