@@ -45,7 +45,7 @@ class Video < ActiveRecord::Base
         videos = Video.all
         videos.map do |video|
             week.each do |day|
-                video.impresssions.map do |impression|
+                video.impressions.map do |impression|
                     new_impression = (impression.created_at).to_s
                     if new_impression == day
                         @grouped.push(video)
