@@ -51,13 +51,13 @@ class Video < ActiveRecord::Base
                 end
             end
         end
-        grouped
+        grouped.uniq
     end
     
     def self.week
         current = (Date.today.beginning_of_week)
         end_date =(current + 6.days)
-        "#{current} - #{end_date}"
+        "#{current.strftime("%m.%d.%Y")} - #{end_date.strftime("%m.%d.%Y")}"
     end
     
   
