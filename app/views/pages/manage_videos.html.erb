@@ -22,14 +22,13 @@
                 <tr>                    
                     <td><%= link_to video.title, videos_path(video) %> </td>
                     <td><span class="ui green label pub_id">Published</span></td>
-                    <td><%=video.band%></td>
+                    <td><%=video.band.upcase%></td>
                     <td><%=video.views%> views</td>
                     <td>
                         <div class="dash_actions">
                             <ul>
                               <li>
-                                <%= link_to content_tag(:i, "", class: "fa fa-pencil-square-o"),
-                                   edit_video_path(video: video.id)%>
+                                <%-# link_to content_tag(:i, "", class: "fa fa-pencil-square-o"),edit_video_path(video: video.id)%>
                                 </li>
                               <li><a href="#"><i class="fa fa-reply " data-toggle="tooltip" title="Publish listing"></i></a></li>
                               <li><a href="#"><i class="fa fa-trash "data-toggle="tooltip" title="delete listing"></i></a></li>
