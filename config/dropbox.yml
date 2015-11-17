@@ -3,4 +3,4 @@ app_secret: ENV["APP_SECRET"]
 access_token: "3jbzum7yqwebiim2"
 access_token_secret: ENV["ACCESS_TOKEN_SECRET"]
 user_id: "367202652"
-access_type: "dropbox|app_folder"
+access_type: "app_folder"

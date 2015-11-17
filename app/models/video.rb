@@ -16,12 +16,10 @@ class Video < ActiveRecord::Base
     if Rails.env.production?
     has_attached_file :image, :styles => { :large=> "1214x450#",:medium => "288x150#", :thumb => "100x100>", :avatar =>"64x64>",:featured =>"264x150#", :square =>"578x315#", :share => "600x315>" }, :default_url => "default_:style.png",
                       :storage => :dropbox,
-                      :dropbox_credentials => {app_key: "q5tdxqhs3jgxg11", app_secret: "brrmzb5u64f78fg", access_token: "9qtad7oua57pqg45" ,access_token_secret: "9nsq9yulhvfzljv",user_id: "448830849", 
+                      :dropbox_credentials => {app_key: "0hwis6qhiwfulw4", app_secret: "ucwft0zabupis2t", access_token: "dl7rrf28j53wdu81" ,access_token_secret: "y0zp3nluekj54oh",user_id: "367202652", 
                       access_type: "app_folder"}#Rails.root.join("config/dropbox.yml")
     else
     has_attached_file :image, :styles => { :large=> "1214x450#",:medium => "288x150#", :thumb => "100x100>",:featured =>"264x150#", :avatar =>"64x64#", :square =>"578x315#",:share => "600x315>" }, :default_url => "default_:style.png"    
-    
-    
     end
     validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
