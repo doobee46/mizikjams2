@@ -1,5 +1,12 @@
-class Video < ActiveRecord::Base
-    
+  class Video < ActiveRecord::Base
+    include AlgoliaSearch
+
+      algoliasearch auto_index: true, auto_remove: true do
+        attribute :title, :band, :views, :image
+        attributesToIndex ['title', 'bands']
+        customRanking ['views']
+    end
+      
     extend FriendlyId
     friendly_id :title, use: :slugged
     

@@ -43,6 +43,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'turnout'
 gem 'contact_us'
 gem 'monologue'
+gem "algoliasearch-rails"
 gem 'kaminari'
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'will_paginate', '~> 3.0.6'
