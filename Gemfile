@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'less-rails-semantic_ui'
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails',"~>6.0"
 gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem 'bundler'
@@ -33,6 +33,7 @@ gem "figaro"
 gem "awesome_print"
 gem 'gravtastic'
 gem 'ransack'
+#gem "administrate", "~> 0.1.1"
 #gem "searchkick"
 gem 'font_assets'
 gem 'rack-cors', :require => 'rack/cors'

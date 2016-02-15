@@ -1,7 +1,7 @@
   class Video < ActiveRecord::Base
     include AlgoliaSearch
 
-      algoliasearch auto_index: true, auto_remove: true do
+    algoliasearch auto_index: true, auto_remove: true do
         attribute :title, :band, :views, :image
         attributesToIndex ['title', 'bands']
         customRanking ['views']
@@ -60,7 +60,7 @@
         grouped.uniq
     end
     
-    def self.week
+    def self.publish_week
         current  = Date.today.beginning_of_week
         end_date = current + 6.days
         "#{current.strftime("%m.%d.%Y")} - #{end_date.strftime("%m.%d.%Y")}"
