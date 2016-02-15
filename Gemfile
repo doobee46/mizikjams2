@@ -35,6 +35,7 @@ gem 'gravtastic'
 gem 'ransack'
 #gem "administrate", "~> 0.1.1"
 #gem "searchkick"
+gem "heroku-forward"
 gem 'font_assets'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'meta-tags'
