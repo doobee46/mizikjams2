@@ -43,9 +43,9 @@ gem "algoliasearch-rails"
 gem 'kaminari'
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'will_paginate', '~> 3.0.6'
-gem 'semantic-ui-sass'#github:'doabit/semantic-ui-sass'
-gem 'jquery-fileupload-rails'#github:'Springest/jquery-fileupload-rails'
-gem 'batch_videos_uploader'#github:'doobee46/batch-videos-uploader'
+gem 'semantic-ui-sass',:github => 'doabit/semantic-ui-sass'
+gem 'jquery-fileupload-rails',:github => 'Springest/jquery-fileupload-rails'
+gem 'batch_videos_uploader',:github => 'doobee46/batch-videos-uploader'
 
 group :production do
   gem 'puma'  
@@ -62,4 +62,6 @@ end
 group :doc do
    gem 'sdoc', '~> 0.4.0'
 end
+
+
 
