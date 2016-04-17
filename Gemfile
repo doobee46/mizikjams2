@@ -46,10 +46,10 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'semantic-ui-sass',:github => 'doabit/semantic-ui-sass'
 gem 'jquery-fileupload-rails',:github => 'Springest/jquery-fileupload-rails'
 gem 'batch_videos_uploader',:github => 'doobee46/batch-videos-uploader'
+gem 'rails_12factor'
 
 group :production do
   gem 'puma'  
-  gem 'rails_12factor'
   gem 'pg'  
 end
 
