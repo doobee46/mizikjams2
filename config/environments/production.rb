@@ -93,7 +93,7 @@ Rails.application.configure do
     }
 
     config.action_mailer.default_url_options={ host:"mizikjams.com"}
-    config.action_controller.asset_host = 'mizikjams.com' #Or your domain
+    #config.action_controller.asset_host = 'mizikjams.com' #Or your domain
     config.action_mailer.asset_host = config.action_controller.asset_host
     
 end
