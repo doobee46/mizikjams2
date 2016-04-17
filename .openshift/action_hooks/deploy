@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd $OPENSHIFT_REPO_DIR
 bundle exec rake assets:precompile RAILS_ENV=production
 
