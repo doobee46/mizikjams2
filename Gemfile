@@ -48,7 +48,7 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
 gem 'batch_videos_uploader', github: 'doobee46/batch-videos-uploader'
 group :production do
-  gem 'puma', '2.11.1'
+  gem 'puma'
   gem 'rails_12factor'
   gem 'pg'  
 end

@@ -300,7 +300,4 @@ WELCOME_CONTENTS
   end
   run welcome
 end
-<<<<<<< HEAD
->>>>>>> b33da6f19196c520ad55af29bf6d2d3c20d72f6c
-=======
->>>>>>> 88eca69fbe000518b1fd04940f054b464603674f
+
