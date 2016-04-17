@@ -8,7 +8,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails',"~>6.0"
 gem "paperclip", "~> 4.2"
@@ -47,14 +46,20 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
 gem 'batch_videos_uploader', github: 'doobee46/batch-videos-uploader'
+
 group :production do
   gem 'puma'
   gem 'rails_12factor'
   gem 'pg'  
 end
+
 group :development do
    gem 'sqlite3'
    gem 'quiet_assets'
    gem 'spring'
+end
+
+group :doc
+   gem 'sdoc', '~> 0.4.0',
 end
 
