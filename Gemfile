@@ -13,7 +13,7 @@ gem 'autoprefixer-rails',"~>6.0"
 gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem 'bundler'
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'validates_formatting_of'
@@ -48,7 +48,7 @@ gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
 gem 'batch_videos_uploader', github: 'doobee46/batch-videos-uploader'
 
 group :production do
-  gem 'puma'
+  gem 'puma', '2.11.3', require: false
   gem 'rails_12factor'
   gem 'pg'  
 end
