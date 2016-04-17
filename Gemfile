@@ -1,3 +1,4 @@
+#source 'http://mirror1.prod.rhcloud.com/mirror/ruby/'
 source 'https://rubygems.org'
 #ruby '2.1.5'
 
@@ -46,9 +47,9 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
 gem 'batch_videos_uploader', github: 'doobee46/batch-videos-uploader'
+gem 'puma'
 
 group :production do
-  gem 'puma', '2.11.3', require: false
   gem 'rails_12factor'
   gem 'pg'  
 end
