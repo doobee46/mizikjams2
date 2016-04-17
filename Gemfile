@@ -31,7 +31,7 @@ gem 'ransack'
 #gem "searchkick"
 #gem "heroku-forward"
 gem 'font_assets'
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors',:require => 'rack/cors'
 gem 'meta-tags'
 gem 'google-analytics-rails'
 gem 'sitemap_generator'
@@ -43,9 +43,9 @@ gem "algoliasearch-rails"
 gem 'kaminari'
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'will_paginate', '~> 3.0.6'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
-gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
-gem 'batch_videos_uploader', github: 'doobee46/batch-videos-uploader'
+gem 'semantic-ui-sass', github:'doabit/semantic-ui-sass'
+gem 'jquery-fileupload-rails', github:'Springest/jquery-fileupload-rails'
+gem 'batch_videos_uploader', github:'doobee46/batch-videos-uploader'
 
 group :production do
   gem 'puma'  
