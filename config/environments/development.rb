@@ -47,6 +47,6 @@ Rails.application.configure do
     }
     
     config.action_mailer.default_url_options={ host:"magnum-script.codio.io:3000"}
-    config.action_controller.asset_host = 'magnum-script.codio.io:3000' #Or your domain
+    #config.action_controller.asset_host = 'magnum-script.codio.io:3000' #Or your domain
     config.action_mailer.asset_host = config.action_controller.asset_host
 end
