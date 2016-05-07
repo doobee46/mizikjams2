@@ -157,19 +157,6 @@ ActiveRecord::Schema.define(version: 20150927030548) do
     t.integer  "video_id"
   end
 
-  create_table "seo_meta", force: true do |t|
-    t.integer  "seo_meta_id"
-    t.string   "seo_meta_type"
-    t.string   "browser_title"
-    t.text     "meta_description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "meta_keywords"
-  end
-
-  add_index "seo_meta", ["id"], name: "index_seo_meta_on_id"
-  add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], name: "id_type_index_on_seo_meta"
-
   create_table "types", force: true do |t|
     t.string   "vid_type"
     t.datetime "created_at"

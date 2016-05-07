@@ -1,155 +1,152 @@
-<% provide(:title, "home") %>
-<div class="ui grid container">
-    <div class="column">
-      <div class="browse_hero move_up">    
-        <div class="frontHero__content">
-            <div class= browse_animate>
-                <span>MIZIKJAMS is a world of  </span><br>
-                <span id="change">caribbean musics. </span>
-            </div>
-            <h2 class="frontHero__intro">Watch the videos you love. Discover new releases.<br>Connect directly with your favorite artists.</h2>
-             <div class=browsesearch>
-                <%= search_form_for @q do |f|  %>
-                  <%= f.search_field :band_or_title_cont , class:"browse_search", placeholder:"Search videos, bands, artists..." %>
-                  <%= f.button "Submit", class:"button-clear search-btn"  do %>
-                   <i class="search icon"></i>
-                  <%end%>
-                <%end%>
+<div class="w-section w-hidden-small w-hidden-tiny mid_section">
+    <div class="hero">
+      <div data-animation="outin" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider mainslider">
+        <div class="w-slider-mask mask">
+          <div class="w-slide slide">
+           <%= content_tag(:div, :data => {:'autoplay' => 'autoplay', :'loop'=>'loop', :'wf-ignore'=>'ignore' ,
+                           :'poster-url'=> 'https://daks2k3a4ib2z.cloudfront.net/572640c5639cfa231e78aa98/572d4c0cf586648f39f7a400_Mizikjams Intro-poster-00001.png',
+                           :'video-urls'=> 'https://daks2k3a4ib2z.cloudfront.net/572640c5639cfa231e78aa98/572d4c0cf586648f39f7a400_Mizikjams Intro-transcode.mp4'},
+                             class: 'w-background-video videobg stony') do %>
+              <%= (image_tag "play_mizikjams.png", class: "play")%> 
+            <% end %>           
+            <div class="sliderinfo_wrapper">
+              <div class="w-clearfix mainwrapper">
+                <div class="songinfo">rylax “san wont”</div>
+                <div class="songdescrition">New release from the upcoming kompa band ,Follow by their debut album for 2016</div>
+              </div>
             </div>
           </div>
-       </div>    
-   </div>
-</div>
-<% if params[:q] %>
-  <div class="ui grid container">
-        <div class="sixteen wide column">
-            <h3 class="ui large left aligned tile_feature header ">
-                <span class="hot_title">search results</span> 
-            </h3>
-        </div>
-    </div>
-    <%= render :partial =>'videos/search' %>
-  <% else %>
-   <div class="ui grid container">
-        <div class="sixteen wide column">
-            <h3 class="ui large left aligned tile_feature header ">
-                <span class="hot_title">Hot This Week <%=Video.publish_week%></span>
-            </h3>
-        </div>
-    </div>
-    <div class="ui grid container">
-        <div class="two column row move_up">
-            <div class="column"> 
-               <%@vids.each do |video|%>
-                   <%= image_tag video.image.url(:square)%>                      
-                    <div class="index_info">
-                        <div class="index_play">
-                           <%=link_to (image_tag('small_play.png')), video_path(video),method: :get%>
-                        </div>
-                        <div class="index_details">
-                            <h4><%=video.views%> views</h4>
-                            <h2><%=video.band%> </h2>
-                            <p>Official video <span><%= video.title%></span> </p>  
-                        </div>   
-                    </div>
-                  <%= flag_for(video.vid_type_id)%>
-                <%end%>
+           <div class="w-slide slide">
+           <%= content_tag(:div, :data => {:'autoplay' => 'data-autoplay', :'loop'=>'loop', :'wf-ignore'=>'ignore' ,
+                           :'poster-url'=> 'https://daks2k3a4ib2z.cloudfront.net/572640c5639cfa231e78aa98/572d4c0cf586648f39f7a400_Mizikjams Intro-poster-00001.png',
+                           :'video-urls'=> 'https://daks2k3a4ib2z.cloudfront.net/572640c5639cfa231e78aa98/57297cbf7e99926e771275c7_RYLAX - SAN WONT-transcode.mp4'},
+                             class: 'w-background-video videobg stony') do %>
+              <%= (image_tag "play_mizikjams.png", class: "play")%> 
+            <% end %>           
+            <div class="sliderinfo_wrapper">
+              <div class="w-clearfix mainwrapper">
+                <div class="songinfo">rylax “san wont”</div>
+                <div class="songdescrition">New release from the upcoming kompa band ,Follow by their debut album for 2016</div>
+              </div>
             </div>
-            <div class="column">
-                <div class="tile">
-                    <ul>
-                        <%@tile_first.each do |video|%>
-                        <li>
-                            <div class="tile_box">
-                                     <%=form_for(Heart.new,:remote => true) do |f| %>
-                                         <%= f.hidden_field :video_id, value: video.id %>
-                                    <div class="ui fluid image ">
-                                           <%= f.button " ", class: 'ui red right corner label' do %>  
-                                             <i class="heart icon"></i>
-                                           <%end%>
-                                      <%= image_tag video.image.url(:medium), class: 'tile_img'%>
-                                    </div>
-                                    <%end%>
-                                    <div class="tile_info">
-                                        <div class="tile_play">
-                                           <%=link_to image_tag('small_play.png'), video_path(video),method: :get%>
-                                        </div>
-                                        <div class="tile_details">
-                                            <h4><%=video.views%> views</h4>
-                                            <h2><%=video.band%> </h2>
-                                            <p>"<span><%= video.title%></span>"</p> 
-                                             <div class="popup">
-                                                <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                  <span class="small flag premiere">PREMIERE</span>
-                                </div>                                               
-                            </li>
-                        <%end%> 
-                    </ul>
-                </div>
-            </div>
+          </div>     
         </div>
-    </div>
-    <div class="ui grid container">
-        <div class="sixteen wide column">
-             <h3 class="ui large left floated featured header ">
-               <span class="hot_title">Featured</span> Artists This Week 
-            </h3>
+        <div class="w-slider-arrow-left">
+            <%= (image_tag "prev.png", class: "arrow")%>
+            <!--<img height="63" src="images/prev.png" class="arrow">-->
         </div>
-        <div class="top">
-         <ul class="left floated">
-        <% @featured.each do |featured|%> 
-        <li>
-             <%=form_for(Heart.new,:remote => true) do |f| %>
-                 <%= f.hidden_field :video_id, value: featured.id %>
-                 <div class="ui fluid image ">
-                   <%= f.button " ", class: 'ui red right corner label' do %>  
-                     <i class="heart icon"></i>
-                   <%end%>
-                   <%= image_tag featured.image.url(:featured)%>
-                </div>   
-               <%end%>
-            <div class="tile_info">
-                <div class="tile_play">
-                   <%=link_to image_tag('small_play.png',size: "35x35"), video_path(featured),method: :get%>
-                </div>
-                <div class="tile_details">
-                    <h4><%=featured.views%> views</h4>
-                    <h2><%=featured.band%> </h2>
-                    <p>"<span><%=featured.title%></span>"</p>
-                    <div class="popup">
-                        <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
-                    </div>
-                </div>   
-            </div>
-        </li>
-       <%end%>
-    </ul>
-        </div> 
-    </div>
-    <!--<div class="ui centered leaderboard test main ad">
-        <%#-image_tag("banner.png")%>
-    </div>
-    <div class="ui grid container">
-        <div class="sixteen wide column">
-             <h3 class="ui large left floated red play_head header ">
-               <span class="hot_title">Staff</span> Playlists
-            </h3>
+        <div class="w-slider-arrow-right">
+            <%= (image_tag "next.png", class: "arrow")%>
+            <!--<img height="63" src="images/next.png" class="arrow_next">-->
         </div>
-        <div class="top">
+      </div>
+    </div>
+  </div>
 
-        </div> 
-    </div>-->
-    <div class="ui centered leaderboard  test main ad">
-        <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=mizikjams-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=TZCC4Y6CXJTZC5XU"
-                width="728" height="90" scrolling="no"
-                border="0" marginwidth="0" style="border:none;"
-                frameborder="0">
-        </iframe>
+<div class="w-section w-hidden-small w-hidden-tiny newreleases">
+    <div class="sectiontitle">NEW RELEASES</div>
+    <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
+      <div class="w-slider-mask mask">
+        <%@featured.each do |video|%>
+        <div class="w-slide hotslide">
+          <div class="songwrapper">
+              <%= (image_tag "nu_look.jpg", class: "slideimage",:data => {:'ix' => 'fade'})%>
+              <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
+            <div class="views">16k views</div>
+            <div class="videoinfo">
+             <a href="#" class="textlink video_title">CARIMI</a>
+             <%= link_to (image_tag "plus.png"), root_path(), :class => "w-inline-block plussign"%>
+              <div class="videosong"><%= video.title%></div>
+             <%= link_to (image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block hearticonlink"%>
+            </div>
+          </div>
+        </div>
+      <%end%>
+      <div class="w-slider-arrow-left leftarrow">
+        <div class="w-icon-slider-left hotprev left"></div>
+      </div>
+      <div class="w-slider-arrow-right">
+        <div class="w-icon-slider-right hotprev right"></div>
+      </div>
     </div>
-<% end %>
+  </div>
+    <div class="sectiontitle">TOP VIDEOS</div>
+    <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
+      <div class="w-slider-mask mask">
+        <%@featured.each do |video|%>
+        <div class="w-slide hotslide">
+          <div class="songwrapper">
+              <%= (image_tag "nu_look.jpg", class: "slideimage",:data => {:'ix' => 'fade'})%>
+              <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
+            <div class="views">16k views</div>
+            <div class="videoinfo">
+             <a href="#" class="textlink video_title">CARIMI</a>
+             <%= link_to (image_tag "plus.png"), root_path(), :class => "w-inline-block plussign"%>
+              <div class="videosong"><%= video.title%></div>
+             <%= link_to (image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block hearticonlink"%>
+            </div>
+          </div>
+        </div>
+      <%end%>
+      <div class="w-slider-arrow-left leftarrow">
+        <div class="w-icon-slider-left hotprev left"></div>
+      </div>
+      <div class="w-slider-arrow-right">
+        <div class="w-icon-slider-right hotprev right"></div>
+      </div>
+    </div>
+  </div>
+    <div class="sectiontitle">HOT THIS WEEK</div>
+    <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
+      <div class="w-slider-mask mask">
+        <%#@featured.each do |video|%>
+        <div class="w-slide hotslide">
+          <div class="songwrapper">
+              <%= (image_tag "nu_look.jpg", class: "slideimage",:data => {:'ix' => 'fade'})%>
+              <%= link_to (image_tag "play_mizikjams.png", class: "playslide"),:class => "w-inline-block playlink"%>
+            <div class="views">16k views</div>
+            <div class="videoinfo">
+             <a href="#" class="textlink video_title">CARIMI</a>
+             <%= link_to (image_tag "plus.png"), root_path(), :class => "w-inline-block plussign"%>
+              <div class="videosong"><%#= video.title%></div>
+             <%= link_to (image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block hearticonlink"%>
+            </div>
+          </div>
+        </div>
+      <%#end%>
+      <div class="w-slider-arrow-left leftarrow">
+        <div class="w-icon-slider-left hotprev left"></div>
+      </div>
+      <div class="w-slider-arrow-right">
+        <div class="w-icon-slider-right hotprev right"></div>
+      </div>
+    </div>
+  </div>
+    <div class="sectiontitle">GENRES</div>
+    <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
+      <div class="w-slider-mask mask">
+       <% @categories.each do |category|%>
+        <div class="w-slide hotslide">  
+          <div class="songwrapper">
+              <%= link_to (image_tag ("overlay-"+"#{category.name}.png"), class: "genrezouk"),root_path%>
+            <div class="genreszouk">
+                <%=link_to category.name ,root_path%>
+              </div>
+          </div>
+        </div>
+       <%end%>
+      </div>
+      <div class="w-slider-arrow-left leftarrow">
+        <div class="w-icon-slider-left hotprev left"></div>
+      </div>  
+      <div class="w-slider-arrow-right">
+        <div class="w-icon-slider-right hotprev right"></div>
+      </div>
+    </div>    
+</div>
+
+
+
 
 
 

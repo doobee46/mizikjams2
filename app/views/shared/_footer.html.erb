@@ -1,20 +1,37 @@
-<div class="ui grid container">
-    <div class="footer_link">
-        <div class="ui horizontal inverted small divided link list right floated ">
-            <a class="item">© 2015 Mizikjams Media llc.</a>
-        </div>
+<div class="w-section w-hidden-small w-hidden-tiny main_footer">
+    <div class="w-container footer_wrapper">
+      <ul class="w-list-unstyled w-clearfix mainlist">
+        <li class="list">
+           <%= link_to (image_tag "twitter.png", class: "socialicon"), root_path(), :class => "w-inline-block"%>  
+          <!--<a href="#" class="w-inline-block"><img src="images/twitter.png" class="socialicon">
+          </a>-->
+        </li>
+        <li class="list">
+          <%= link_to (image_tag "facebookr.png", class: "socialicon"), root_path(), :class => "w-inline-block"%>  
+          <!--<a href="#" class="w-inline-block"><img src="images/facebookr.png" class="socialicon">
+          </a>-->
+        </li>
+        <li class="list">
+          <%= link_to (image_tag "instagram.png", class: "socialicon"), root_path(), :class => "w-inline-block"%>   
+          <!--<a href="#" class="w-inline-block"><img src="images/instagram.png" class="socialicon">
+          </a>-->
+        </li>
+        <li class="list">
+          <%= link_to (image_tag "tumbler.png", class: "socialicon"), root_path(), :class => "w-inline-block"%>   
+          <!--<a href="#" class="w-inline-block"><img src="images/tumbler.png" class="socialicon">
+          </a>-->
+        </li>
+      </ul>
+      <ul class="w-clearfix footlist">
+        <li class="footlistitem"><a href="#" target="_blank" class="footlistetext">Careers</a>
+        </li>
+        <li class="footlistitem"><a href="#" target="_blank" class="footlistetext">Advertise</a>
+        </li>
+        <li class="footlistitem"><a href="#" target="_blank" class="footlistetext">Terms</a>
+        </li>
+        <li class="footlistitem"><a href="#" target="_blank" class="footlistetext">Privacy and Policy</a>
+        </li>
+      </ul>
+      <div class="footbrand">Mizikjams media llc .Copyright &nbsp;2016</div>
     </div>
-    <div class="footer_info">
-          <div class="ui  horizontal inverted small divided link list">
-            <%= link_to 'About', about_path, class:'item' %>'
-            <%= link_to 'News', news_path, class:'item' %>'  
-            <%=link_to 'Contact Us', contact_us_path, class:'item'%>
-            <a class="item" href="#">Terms and Conditions</a>
-            <a class="item" href="#">Privacy Policy</a>
-          </div> 
-    </div>
-    
-     
-</div>
-
-   
+  </div>

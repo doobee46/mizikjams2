@@ -1,71 +1,42 @@
-  <div class="ui fixed menu">
-    <div class="ui container">
-      <div href="#" class="header item">
-        <div class=" brand">
-           <%= link_to (image_tag"big_red_logo.png"),root_path,method: :get%>
-          </div>
-      </div>
-      <%= link_to "Browse", browse_path , data: { no_turbolink: true }, class:'item nav lib' %>
-      <%= link_to "Mizikjams Tv", intro_path , data: { no_turbolink: true }, class:'item nav' %> 
-       <% if user_signed_in?%>
-        <div class="ui simple dropdown item">
-            Account
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <%=link_to playlists_path, data: { no_turbolink: true }, class:'item' do %>
-              <i class="toggle right icon"></i> My playlists
-            <%end%>
-            <%=link_to edit_user_registration_path, data: { no_turbolink: true }, class:'item' do %>
-              <i class="edit icon"></i> Edit Account
-            <%end%> 
-            <%=link_to destroy_user_session_path, method: :delete , data: { no_turbolink: true }, class:'item' do %>
-              <i class="sign out icon"></i> Sign Out
-            <%end%> 
-          </div>
-        </div> 
-        
-        <%if current_user.admin? %> 
-        <div class="ui simple dropdown item">
-          <a class="ui olive empty circular label"></a>Admin<i class="dropdown icon"></i>
-          <div class="menu">
-            <%=link_to admin_path, data: { no_turbolink: true }, class:'item' do %>
-              <i class="dashboard icon"></i> Dashboard
-            <%end%>
-             <%=link_to BatchVideosUploader::Engine.routes.url_helpers.remote_videos_path, data: { no_turbolink: true }, class:'item' do %>
-              <i class="upload icon"></i> Video uploader
-            <%end%>  
-          </div>
-         </div>
-        
-         
-          <% unless :title == "admin" %>
-          <div class="item">
-              <div class="ui primary button">Quick publish</div>
-          </div>
-          <%end%>
-        
-          <%end%>
-        
-          <%else%>
-              <%= link_to new_user_registration_path , data: { no_turbolink: true }, class:'item' do %>
-              <i class="sign in icon"></i> Sign Up / Sign In
-              <%end%>
-          <%end%>
-        
-        <%if @title == "browse" %>
-        
-        <%else%>
-        <div class="right item">
-              <%= search_form_for @q, class: 'ui search' do |f| %>
-              <%= f.search_field :band_or_title_cont, class:"prompt", placeholder:"Search videos..." %>
-              <%= f.button "Submit", class:"button-clear search-btn"  do %>
-                   <i class="search icon"></i>
-                  <%end%>
-             <%end%>
+<div class="w-section header">
+    <div class="navbar">
+      <div class="w-row">
+        <div class="w-col w-col-4">
+              <%= link_to (image_tag "white_logo.png", class: "brand", width: '110'), root_path(), :class => "w-inline-block brandname"%>              
         </div>
-      <%end%>
+        <div class="w-col w-col-4 w-hidden-small w-hidden-tiny">
+          <div class="w-form searchpanel">
+           <%= search_form_for @q do |f| %>
+                   <%= f.search_field :band_or_title_cont, class:"w-input searchfield", placeholder:"Search videos..." %>
+               <div class="searchicon">
+                   <%= f.submit " ", :type => :image, :src => image_path("search.png"), :class =>  "searchimage" %>  
+              </div>
+             <%end%>
+          </div>
+        </div>
+        <div class="w-col w-col-4 w-hidden-small w-hidden-tiny rightcol">
+          <div class="w-clearfix right_nav">
+            <ul class="w-list-unstyled w-clearfix navlist">
+              <li class="navitem">
+                  <%= link_to "browse", browse_path(), :class => "menu_tiltle"%>
+                  <!--<a href="browse.html" class="menu_tiltle">browse</a>-->
+              </li>
+              <li class="navitem">
+               <%= link_to (image_tag "bell.png", class: "notification_image", width: '41'), root_path(), :class => "w-inline-block notification"%>    
+                    <!--<img width="41" src="images/bell.png" class="notification_image">-->
+              </li>
+              <li class="navitem">
+                <%= link_to (image_tag "account.png", class: "notification_image account", width: '36'), root_path(), :class => "w-inline-block notification"%>  
+                    <!--<img width="36" src="images/account.png" class="notification_image account">-->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+
 
 
 

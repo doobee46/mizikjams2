@@ -13,6 +13,7 @@ class VideosController < ApplicationController
           @vids   = @videos.weekly.sample(1)
           @tile_first = @videos.weekly.shuffle.take(4).uniq
           @featured = Video.featured.limit(4)
+          @categories =Category.all
           prepare_meta_tags title: "Video Library", 
                             description: "All the new releases from the best caribbean artist and group ",
                             keywords:  "kompa carimi tvice  haiti zouk t-vice radio show rock jazz mizik kreyol tabou compas rara music festival paris"
