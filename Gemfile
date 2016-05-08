@@ -47,6 +47,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'jquery-fileupload-rails',:github => 'Springest/jquery-fileupload-rails'
 gem 'batch_videos_uploader',:github => 'doobee46/batch-videos-uploader'
 gem 'rails_12factor'
+gem 'spinner.rb'
 
 group :production do
   #gem 'puma'  
