@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require dataTables/jquery.dataTables
 //= require jquery_ujs
 //= require turbolinks
 //= require semantic_ui/semantic_ui

@@ -41,12 +41,13 @@ gem 'contact_us'
 gem 'monologue'
 gem "algoliasearch-rails"
 gem 'kaminari'
-gem 'jquery-datatables-rails', '~> 3.3.0'
+#gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'will_paginate', '~> 3.0.6'
 gem 'semantic-ui-sass',:github => 'doabit/semantic-ui-sass'
 gem 'jquery-fileupload-rails',:github => 'Springest/jquery-fileupload-rails'
 gem 'batch_videos_uploader',:github => 'doobee46/batch-videos-uploader'
 gem 'rails_12factor'
+gem 'vider'
 
 group :production do
   gem 'puma'  
