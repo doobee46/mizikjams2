@@ -51,6 +51,7 @@ gem 'spinner.rb'
 #gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'vider'
+gem 'sqlite3'
 
 
 group :production do
@@ -59,7 +60,6 @@ group :production do
 end
 
 group :development do
-   gem 'sqlite3'
    gem 'quiet_assets'
    gem 'spring'
    gem 'thin'
