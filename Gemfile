@@ -41,7 +41,7 @@ gem 'contact_us'
 gem 'monologue'
 gem "algoliasearch-rails"
 gem 'kaminari'
-gem 'jquery-datatables-rails', '~> 3.3.0'
+#gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'will_paginate', '~> 3.0.6'
 #gem 'semantic-ui-sass',:github => 'doabit/semantic-ui-sass'
 gem 'jquery-fileupload-rails',:github => 'Springest/jquery-fileupload-rails'
@@ -50,6 +50,8 @@ gem 'rails_12factor'
 gem 'spinner.rb'
 #gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'vider'
+
 
 group :production do
   gem 'puma'  
