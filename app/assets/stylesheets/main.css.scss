@@ -1,4 +1,4 @@
-.body {
+/*.body {
   padding-top: 0px;
   border-style: none;
   border-width: 1px;
@@ -12,7 +12,7 @@
 
 .body.login {
   padding-top: 71px;
-}
+}*/
 
 .header {
   position: fixed;
@@ -275,11 +275,16 @@
 }
 
 .videoinfo {
-  position: relative;
-  top: -68px;
-  right: 0px;
-  bottom: auto;
-  z-index: 0;
+    position: relative;
+    top: -68px;
+    right: 0px;
+    bottom: auto;
+    z-index: 0;
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float:left;
 }
 
 .video_title {
@@ -291,6 +296,7 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
+  text-transform:uppercase;
 }
 
 .videosong {
@@ -303,6 +309,18 @@
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 2px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+
+.widgets{
+    position: relative;
+    top: -50px;
+    left: 0px;
+    z-index: 6;
+    float: right;
+    width: 100px;
 }
 
 .heartiocn {
@@ -310,6 +328,7 @@
   top: -4px;
   right: 18px;
   opacity: 0.25;
+  margin-right: 15px;
 }
 
 .heartiocn:hover {
@@ -361,8 +380,8 @@
   width: 100%;
   height: 30px;
   padding: 7px 10px 0px 1px;
-  background-image: -webkit-linear-gradient(270deg, transparent, #000);
-  background-image: linear-gradient(180deg, transparent, #000);
+  /*background-image: -webkit-linear-gradient(270deg, transparent, #000);
+  background-image: linear-gradient(180deg, transparent, #000);*/
   font-family: 'Open Sans', sans-serif;
   color: #fff;
   font-size: 10px;
@@ -460,7 +479,7 @@
 .hearticonlink {
   position: relative;
   left: 0px;
-  top: -35px;
+  top: -20px;
   display: block;
   width: 100%;
   height: 100%;
@@ -560,13 +579,13 @@
   margin-left: auto;
 }
 
-.plussign {
-  position: relative;
-  left: 128px;
-  top: 7px;
-  right: auto;
-  float: none;
-  opacity: 0.32;
+ .plussign {
+    position: relative;
+    left: 0px;
+    top: -8px;
+    right: auto;
+    float: none;
+    opacity: 0.32;
 }
 
 .plussign:hover {
@@ -606,7 +625,7 @@
   padding-right: 22px;
   padding-left: 1px;
   border-bottom: 1px none #000;
-  background-color: transparent;
+  background-color: transparent !important;
   color: #fff;
 }
 
@@ -746,6 +765,13 @@
   margin-left: auto;
   padding-left: 0px;
   background-color: transparent;
+}
+
+.details{
+    display:block;
+}
+.details  h3{
+   color:#fff;  
 }
 
 .comment_icon {
@@ -973,7 +999,7 @@
   .sliderinfo_wrapper {
     position: relative;
     left: 0px;
-    top: -328px;
+    top: -150px;
   }
   .menutext {
     left: 68px;

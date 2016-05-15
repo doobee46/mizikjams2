@@ -1,31 +1,25 @@
 <% provide(:title, "search")%>
-<div class="ui grid container">          
-   <div class="right floated move_up search-list">
+<div class="">          
+   <div class="search-list">
         <% @videos.each do |video|%> 
-        <div class="search-grid">
-             <%=form_for(Heart.new,:remote => true) do |f| %>
-                 <%= f.hidden_field :video_id, value: video.id %>
-                 <div class="ui fluid image ">
-                   <%= f.button " ", class: 'ui red right corner label' do %>  
-                     <i class="heart icon"></i>
-                   <%end%>
-                   <%= image_tag video.image.url(:featured)%>
-                </div>   
-             <%end%>
-            <div class="tile_info">
-                <div class="tile_play">
-                   <%=link_to image_tag('small_play.png',:class => 'search-res'), video_path(video),method: :get%>
-                </div>
-                <div class="tile_details">
-                    <h4><%=video.views%> views</h4>
-                    <h2><%=video.band%> </h2>
-                    <p>"<span><%=video.title%></span>"</p>
-                    <div class="popup">
-                        <i class=" red circular plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
-                    </div>
-                </div>   
+            <div class="songwrapper">
+              <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
+              <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
+            <div class="views"><%=video.views%> views</div>
+            <div class="videoinfo">
+             <a href="#" class="textlink video_title"><%=video.title%></a>             
+             <div class="videosong"><%= video.band%></div>             
             </div>
-        </div>
+            <div class="widgets">
+             <%= link_to (image_tag "plus.png", class: "",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block plussign"%>
+              <%=form_for(Heart.new,:remote => true) do |f| %>
+                 <%= f.hidden_field :video_id, value: video.id %>
+                 <%= f.button " " do %>
+                  <%= image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}%>                                    
+                <%end%>   
+               <%end%>            
+            </div>
+          </div>
       <%end%>
     </div>
 </div>

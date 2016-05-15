@@ -4,8 +4,8 @@
         <div class="w-slider-mask mask">
           <div class="w-slide slide">
            <%= content_tag(:div, :data => {:'autoplay' => 'autoplay', :'loop'=>'loop', :'wf-ignore'=>'ignore' ,
-                           :'poster-url'=> 'https://daks2k3a4ib2z.cloudfront.net/572640c5639cfa231e78aa98/572d4c0cf586648f39f7a400_Mizikjams Intro-poster-00001.png',
-                           :'video-urls'=> 'https://daks2k3a4ib2z.cloudfront.net/572640c5639cfa231e78aa98/572d4c0cf586648f39f7a400_Mizikjams Intro-transcode.mp4'},
+                           :'poster-url'=> 'http://content.jwplatform.com/thumbs/UtSW3f4k-1280.jpg',
+                           :'video-urls'=> ''},
                              class: 'w-background-video videobg stony') do %>
               <%= (image_tag "play_mizikjams.png", class: "play")%> 
             <% end %>           
@@ -33,95 +33,135 @@
         </div>
         <div class="w-slider-arrow-left">
             <%= (image_tag "prev.png", class: "arrow")%>
-            <!--<img height="63" src="images/prev.png" class="arrow">-->
         </div>
         <div class="w-slider-arrow-right">
             <%= (image_tag "next.png", class: "arrow")%>
-            <!--<img height="63" src="images/next.png" class="arrow_next">-->
         </div>
       </div>
     </div>
   </div>
+<% if params[:q] %>
+  <div class="">
+        <div class="">
+            <h3 class=" ">
+                <span class="">search results</span> 
+            </h3>
+        </div>
+    </div>
+    <%= render :partial =>'videos/search' %>
+  <% else %>
 
 <div class="w-section w-hidden-small w-hidden-tiny newreleases">
     <div class="sectiontitle">NEW RELEASES</div>
     <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
       <div class="w-slider-mask mask">
-        <%@featured.each do |video|%>
+        <%@main.each do |video|%>  
         <div class="w-slide hotslide">
           <div class="songwrapper">
-              <%= (image_tag "nu_look.jpg", class: "slideimage",:data => {:'ix' => 'fade'})%>
+              <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
               <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
-            <div class="views">16k views</div>
+            <div class="views"><%=video.views%> views</div>
             <div class="videoinfo">
-             <a href="#" class="textlink video_title">CARIMI</a>
-             <%= link_to (image_tag "plus.png"), root_path(), :class => "w-inline-block plussign"%>
-              <div class="videosong"><%= video.title%></div>
-             <%= link_to (image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block hearticonlink"%>
+             <a href="#" class="textlink video_title"><%=video.title%></a>             
+             <div class="videosong"><%= video.band%></div>             
+            </div>
+            <div class="widgets">
+             <%= link_to (image_tag "plus.png", class: "",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block plussign"%>
+              <%=form_for(Heart.new,:remote => true) do |f| %>
+                 <%= f.hidden_field :video_id, value: video.id %>
+                 <%= f.button " " do %>
+                  <%= image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}%>                                    
+                <%end%>   
+               <%end%>            
             </div>
           </div>
         </div>
-      <%end%>
-      <div class="w-slider-arrow-left leftarrow">
-        <div class="w-icon-slider-left hotprev left"></div>
-      </div>
-      <div class="w-slider-arrow-right">
-        <div class="w-icon-slider-right hotprev right"></div>
-      </div>
+      <%end%> 
     </div>
+        <div class="w-slider-arrow-left leftarrow">
+          <div class="w-icon-slider-left hotprev left showpage"></div>
+        </div>
+        <div class="w-slider-arrow-right">
+          <div class="w-icon-slider-right hotprev right"></div>
+        </div>
+     </div> 
   </div>
-    <div class="sectiontitle">TOP VIDEOS</div>
+    <% if @featured == nil || @featured.count < 5 %>    
+    <div>
+    </div>
+    <%else%>
+    <div class="sectiontitle">TOP VIDEOS <%=Video.publish_week%></div>
     <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
       <div class="w-slider-mask mask">
-        <%@featured.each do |video|%>
+        <%@featured.each do |video|%>  
         <div class="w-slide hotslide">
           <div class="songwrapper">
-              <%= (image_tag "nu_look.jpg", class: "slideimage",:data => {:'ix' => 'fade'})%>
+              <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
               <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
-            <div class="views">16k views</div>
+            <div class="views"><%=video.views%> views</div>
             <div class="videoinfo">
-             <a href="#" class="textlink video_title">CARIMI</a>
-             <%= link_to (image_tag "plus.png"), root_path(), :class => "w-inline-block plussign"%>
-              <div class="videosong"><%= video.title%></div>
-             <%= link_to (image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block hearticonlink"%>
+             <a href="#" class="textlink video_title"><%=video.title%></a>             
+             <div class="videosong"><%= video.band%></div>             
+            </div>
+            <div class="widgets">
+             <%= link_to (image_tag "plus.png", class: "",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block plussign"%>
+              <%=form_for(Heart.new,:remote => true) do |f| %>
+                 <%= f.hidden_field :video_id, value: video.id %>
+                 <%= f.button " " do %>
+                  <%= image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}%>                                    
+                <%end%>   
+               <%end%>            
             </div>
           </div>
         </div>
-      <%end%>
-      <div class="w-slider-arrow-left leftarrow">
-        <div class="w-icon-slider-left hotprev left"></div>
-      </div>
-      <div class="w-slider-arrow-right">
-        <div class="w-icon-slider-right hotprev right"></div>
-      </div>
+      <%end%> 
     </div>
+        <div class="w-slider-arrow-left leftarrow">
+          <div class="w-icon-slider-left hotprev left showpage"></div>
+        </div>
+        <div class="w-slider-arrow-right">
+          <div class="w-icon-slider-right hotprev right"></div>
+        </div>
+     </div> 
   </div>
-    <div class="sectiontitle">HOT THIS WEEK</div>
-    <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
+  <%end%>
+    
+   <div class="sectiontitle">HOT THIS WEEK <%=Video.publish_week%></div>
+     <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
       <div class="w-slider-mask mask">
-        <%#@featured.each do |video|%>
+        <%@vids.each do |video|%>  
         <div class="w-slide hotslide">
           <div class="songwrapper">
-              <%= (image_tag "nu_look.jpg", class: "slideimage",:data => {:'ix' => 'fade'})%>
-              <%= link_to (image_tag "play_mizikjams.png", class: "playslide"),:class => "w-inline-block playlink"%>
-            <div class="views">16k views</div>
+              <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
+              <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
+            <div class="views"><%=video.views%> views</div>
             <div class="videoinfo">
-             <a href="#" class="textlink video_title">CARIMI</a>
-             <%= link_to (image_tag "plus.png"), root_path(), :class => "w-inline-block plussign"%>
-              <div class="videosong"><%#= video.title%></div>
-             <%= link_to (image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block hearticonlink"%>
+             <a href="#" class="textlink video_title"><%=video.title%></a>             
+             <div class="videosong"><%= video.band%></div>             
+            </div>
+            <div class="widgets">
+             <%= link_to (image_tag "plus.png", class: "",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block plussign"%>
+              <%=form_for(Heart.new,:remote => true) do |f| %>
+                 <%= f.hidden_field :video_id, value: video.id %>
+                 <%= f.button " " do %>
+                  <%= image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}%>                                    
+                <%end%>   
+               <%end%>            
             </div>
           </div>
         </div>
-      <%#end%>
-      <div class="w-slider-arrow-left leftarrow">
-        <div class="w-icon-slider-left hotprev left"></div>
-      </div>
-      <div class="w-slider-arrow-right">
-        <div class="w-icon-slider-right hotprev right"></div>
-      </div>
+      <%end%> 
     </div>
+        <div class="w-slider-arrow-left leftarrow">
+          <div class="w-icon-slider-left hotprev left showpage"></div>
+        </div>
+        <div class="w-slider-arrow-right">
+          <div class="w-icon-slider-right hotprev right"></div>
+        </div>
+     </div> 
   </div>
+<%end%>
+    
     <div class="sectiontitle">GENRES</div>
     <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
       <div class="w-slider-mask mask">

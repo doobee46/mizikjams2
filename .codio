@@ -5,7 +5,7 @@
   "preview": {
         "Project Index (static)": "https://{{domain}}/{{index}}",
         "Current File (static)": "https://{{domain}}/{{filepath}}",
-        "Box URL": "http://magnum-script.codio.io:3000/",
-        "Box URL SSL": "https://{{domain}}:9500/"
+        "Box URL": "http://karma-pony.codio.io:3000/",
+        "Box URL SSL": "https:/karma-pony.codio.io:9500/"
   }
 }

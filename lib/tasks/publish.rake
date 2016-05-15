@@ -31,18 +31,21 @@ namespace :site do
     
    # p videos
 
-    def return_band(str)
-        splitted = str.split('-')
-        band = splitted[0]
-        band.to_s
+   def songinfo(str, kind)
+         arry = str.split('-')
+        if kind == "title"
+           title = arry[0]
+           title.downcase.strip
+        else
+           song = arry[1] 
+           if song == nil
+              song = "missing"
+           else
+               song.downcase.strip
+           end
+        end
     end
-    
-    def return_song(str)
-        splitted = str.split('-')
-        song = splitted[1]
-        song.to_s
-    end 
-        
+            
     def return_category(str)
         Category.all.each do |category|
             if category == str
@@ -55,21 +58,29 @@ namespace :site do
                 
     def get_image(url)
        image = URI.parse(url)unless url.blank?
-    end
-         
+    end  
+            
    # Loop through each of the elements in the 'result' Array & print some of their attributes.
      videos.each do|video|
        #unless Video.where(:title => return_song(video['title']).present?
             Video.create!({
-                title: return_song(video['title']),
-                band:  return_band(video['title']),
+                title: songinfo(video['title'],"title"),
+                band:  songinfo(video['title'],"song"),
                 blurb: video['description'],
                 key:   video['key'],
                 image: get_image(video['custom']['poster']),
-                category_id:return_category(video['custom']['category']) 
+                category_id: return_category(video['custom']['category']),
+                poster: video['custom']['poster']
                })                    
     end
-        
+    sleep(2)
+    puts "Checking missing video information"
+            Video.where(title: "").update_all(title: "None")
+            Video.where(band: "").update_all(band: "None")
+            Video.where(blurb: "").update_all(blurb: "sometimes knowing the truth hurts and deal with it cause the biggest pain")
+    puts "Missing video information fixed"
+    sleep(2)
+                
     puts "Publishing Finished!\n\n"
 
     end

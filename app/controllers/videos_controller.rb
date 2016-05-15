@@ -7,12 +7,13 @@ class VideosController < ApplicationController
   def index
       if params[:q].present?
           @videos = @q.result.paginate(page: params[:page],:per_page => 20).order(created_at: :desc)
+          @categories =Category.all
       else
           @videos =Video.all
-          @main   = @videos.limit(10).shuffle
-          @vids   = @videos.weekly.sample(1)
-          @tile_first = @videos.weekly.shuffle.take(4).uniq
-          @featured = Video.featured.limit(4)
+          @main   = @videos.limit(10).order(created_at: :desc)
+          @vids   = @videos.weekly.shuffle.sample(10)
+          @hot_video = @videos.weekly.shuffle.take(10).uniq
+          @featured = Video.featured.limit(10)
           @categories =Category.all
           prepare_meta_tags title: "Video Library", 
                             description: "All the new releases from the best caribbean artist and group ",
@@ -24,7 +25,7 @@ class VideosController < ApplicationController
   end
 
   def show
-      @related = @video.related(@video.category_id).shuffle.sample(12)
+      @related = @video.related(@video.category_id).sample(12)
       @featured = Video.weekly.take(4)
       impressionist @video 
       prepare_meta_tags(title: @video.title,

@@ -1,123 +1,131 @@
-<% provide(:title, @video.band) %>
-<div class="show-bg">
-    <div class="ui grid container">
-        <div class="two column row">
-            <div class="twelve wide column ">
-                <div class ="video-wrapper" id="video_player">
-                    <iframe src="//content.jwplatform.com/players/<%=@video.key%>-r7mhaEGG.html" width="816" height="450" frameborder="0" scrolling="auto" allowfullscreen></iframe> 
-                </div>
-            </div>
-            <div class=" right floated left aligned four wide column right_col ">
-                <div class ="ads-wrapper">
-                   <div class="ui medium rectangle ad">
-                       <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=mizikjams-20&o=1&p=12&l=ur1&category=electronicsrot&f=ifr&linkID=LDDRDLQK3P2KFMRO" 
-                               width="300" height="250" scrolling="no"
-                               border="0" marginwidth="0" style="border:none;"
-                               frameborder="0">
-                       </iframe>
-                    </div>   
-                </div>
-                <div class ="video_info">
-                   <h3 class="ui header video_title"><%=@video.title%></h3>
-                   <h3 class="ui header video_band"><%=@video.band%></h3>
-                   <h3 class="ui header">
-                      <%#-= image_tag @video.image.url(:avatar),:class =>"ui image"%>
-                      <!--<div class="content">
-                        Album: I Got this 
-                      </div>-->
-                    </h3>
-                     
-                    <h3 class="ui header video_view"><%=@video.views%><span> views</span></h3>
-                    <h3 class="ui header video_view"><%=@video.hearts.count%><span> Likes</span></h3>           
-                </div>
-                 <div class="sharebox">
-                    <div class="fb-like" data-href="<%=request.base_url%>/videos/<%=@video.id%>" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>  
-                </div>
-            </div> 
-        </div>
+<%= content_for(:body_attributes) do %>data-no-turbolink<% end %>
+<div class="w-section videoplay">
+    <div class="videowrapper">
+      <div class="w-embed w-script">
+        <script src="//content.jwplatform.com/players/<%=@video.key%>-r7mhaEGG.js"></script>  
+      </div>
     </div>
-</div>
-<div class="ui grid container">
-   <div class="sixteen wide column">
-        <h3 class="ui dividing large header show_header ">
-         Hot This week - <%=Video.publish_week%>
-        </h3>  
-   </div>
-  <div class="show_top ">
-   <ul class="left floated">
-    <% @featured.each do |featured|%> 
-    <li>
-         <%=form_for(Heart.new,:remote => true) do |f| %>
-             <%= f.hidden_field :video_id, value: featured.id %>
-             <div class="ui fluid image ">
-               <%= f.button " ", class: 'ui red right corner label' do %>  
-                 <i class="heart icon"></i>
-               <%end%>
-               <%= image_tag featured.image.url(:featured)%>
-            </div>   
-           <%end%>
-        <div class="tile_info">
-            <div class="tile_play">
-               <%=link_to image_tag('small_play.png'), video_path(featured),method: :get,remote: true,format: :json%>
-            </div>
-            <div class="tile_details">
-                <h4><%=featured.views%> views</h4>
-                <h2><%=featured.band%> </h2>
-                <p>"<span><%=featured.title%></span>"</p>
-                <div class="popup">
-                    <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
-                </div>
-            </div>   
-        </div>
-    </li>
-   <%end%>
-</ul>
   </div>
-</div>
-<div class="space">
-    
-</div>
-<div class="ui grid container">
-   <div class="sixteen wide column">
-        <h3 class="ui dividing large header show_header ">
-         Related videos
-        </h3>  
-   </div>
-  <div class="show_top ">
-      <ul class="related floated">
-    <% @related.each do |related|%> 
-    <li>        
-         <%=form_for(Heart.new,:remote => true) do |f| %>
-             <%= f.hidden_field :video_id, value: related.id %>
-             <div class="ui fluid image ">
-               <%= f.button " ", class: 'ui red right corner label' do %>  
-                 <i class="heart icon"></i>
-               <%end%>
-               <%= image_tag related.image.url(:featured)%>
-            </div>   
-         <%end%>
-        <div class="tile_info">
-            <div class="tile_play">
-               <%=link_to image_tag('small_play.png'),video_path(related),class:"next_video",method: :get, remote: true,format: :json%>
-            </div>
-            <div class="tile_details">
-                <h4><%=related.views%> views</h4>
-                <h2><%=related.band%> </h2>
-                <p>"<span><%=related.title%></span>"</p>
-                <div class="popup">
-                    <i class="teal circular teal plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
-                </div>
-            </div>   
+  <div class="w-hidden-small w-hidden-tiny showvideoinfo">
+    <div class="w-row">
+      <div class="w-col w-col-6 leftcol">
+        <div class="showvideomain"><%=@video.band%></div>
+        <div class="showvideosub"><%=@video.title%></div>
+      </div>
+      <div class="w-col w-col-6 w-clearfix rightcol">
+        <div class="buttonwrapper">
+         <a href="#" class="w-inline-block w-clearfix heartlinkblock">
+            <%= image_tag "heart_1.png", class: "heartblock",:data => {:'ix' => 'scale'}%> 
+            <div class="liketext"><%=@video.hearts.count%> Likes</div>
+          </a>
+          <a href="#" class="w-inline-block w-clearfix pluslinkblock">
+            <%= image_tag "bigplust.png", class: "plusblock",:data => {:'ix' => 'scale'}%>   
+            <div class="addtext">Add</div>
+          </a>
         </div>
-    </li>
-  <%end%>
-</ul>
+      </div>
+    </div>
+  </div>  
+<div class="w-section w-hidden-small w-hidden-tiny tabs">
+    <div data-duration-in="300" data-duration-out="100" class="w-tabs tabs-list">
+      <div class="w-tab-menu tabsmenu">
+        <a data-w-tab="more videos" class="w-tab-link w--current w-inline-block w-clearfix tabslistitem">
+          <div class="tabstext">More Videos</div>
+        </a>
+        <a data-w-tab="related videos" class="w-tab-link w-inline-block w-clearfix tabslistitem">
+          <div class="tabstext">Related videos</div>
+        </a>
+        <a data-w-tab="details" class="w-tab-link w-inline-block w-clearfix tabslistitem">
+          <div class="tabstext">Details</div>
+        </a>
+      </div>
+      <div class="w-tab-content">
+        <div data-w-tab="more videos" class="w-tab-pane w--tab-active pane">
+          <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider showdetails">
+          <div class="w-slider-mask mask">
+            <%@related.each do |video|%>  
+            <div class="w-slide hotslide">
+              <div class="songwrapper">
+                  <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
+                  <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
+                <div class="views"><%=video.views%> views</div>
+                <div class="videoinfo">
+                 <a href="#" class="textlink video_title"><%=video.title%></a>             
+                 <div class="videosong"><%= video.band%></div>             
+                </div>
+                <div class="widgets">
+                 <%= link_to (image_tag "plus.png", class: "",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block plussign"%>
+                  <%=form_for(Heart.new,:remote => true) do |f| %>
+                     <%= f.hidden_field :video_id, value: video.id %>
+                     <%= f.button " " do %>
+                      <%= image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}%>                                    
+                    <%end%>   
+                   <%end%>            
+                </div>
+              </div>
+            </div>
+          <%end%> 
+        </div>
+        <div class="w-slider-arrow-left leftarrow">
+          <div class="w-icon-slider-left hotprev left showpage"></div>
+        </div>
+        <div class="w-slider-arrow-right">
+          <div class="w-icon-slider-right hotprev right"></div>
+        </div>
+     </div> 
+        </div>
+        <div data-w-tab="related videos" class="w-tab-pane pane">
+           <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider showdetails">
+          <div class="w-slider-mask mask">
+            <%@related.each do |video|%>  
+            <div class="w-slide hotslide">
+              <div class="songwrapper">
+                  <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
+                  <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
+                <div class="views"><%=video.views%> views</div>
+                <div class="videoinfo">
+                 <a href="#" class="textlink video_title"><%=video.title%></a>
+                 <%= link_to (image_tag "plus.png"), root_path(), :class => "w-inline-block plussign"%>
+                  <div class="videosong"><%= video.band%></div>
+                 <%= link_to (image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block hearticonlink"%>
+                </div>
+              </div>
+            </div>
+          <%end%> 
+        </div>
+        <div class="w-slider-arrow-left leftarrow">
+          <div class="w-icon-slider-left hotprev left showpage"></div>
+        </div>
+        <div class="w-slider-arrow-right">
+          <div class="w-icon-slider-right hotprev right"></div>
+        </div>
+     </div>        
+        <div data-w-tab="details" class="w-tab-pane pane">
+            <div class="details">
+              <h3>Video name : <%=@video.title%></h3>
+              <h3>Band name : <%=@video.band%></h3>
+              <h3>Release date : <%=@video.created_at%></h3> 
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+ </div>
+  <div class="w-section w-hidden-small w-hidden-tiny tabs">
+    <div data-duration-in="300" data-duration-out="100" class="w-tabs tabs-list">
+      <div class="w-tab-menu tabsmenu">
+        <a data-w-tab="more videos" class="w-tab-link w--current w-inline-block w-clearfix tabslistitem">
+          <div class="tabstext">Video comments</div>
+          <div class="comment_icon">
+              <%= image_tag("comments.png")%>
+          </div>
+        </a>
+      </div>
+      <div class="w-tab-content">
+        <div data-w-tab="more videos" class="w-tab-pane w--tab-active pane"></div>
+      </div>
+    </div>
   </div>
-</div>
-  
-
-
-
 
 
 
