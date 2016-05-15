@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end 
  
 
-  mount BatchVideosUploader::Engine => "/batch_videos_uploader"
+  #mount BatchVideosUploader::Engine => "/batch_videos_uploader"
   mount Monologue::Engine, at: '/news'
     
     
