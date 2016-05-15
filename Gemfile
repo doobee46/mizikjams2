@@ -8,7 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'less-rails-semantic_ui'
+#gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails',"~>6.0"
 gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
