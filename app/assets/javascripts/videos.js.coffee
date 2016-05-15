@@ -7,12 +7,6 @@ $ ->
     $('.message.closable').fadeOut("slow")
     false
     
-$ ->
-  $('.bxslider').bxSlider()
-  auto: true,
-  Controls: true
- return
-
 
 
 

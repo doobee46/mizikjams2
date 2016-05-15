@@ -15,6 +15,8 @@
     belongs_to :playlists 
     has_many   :hearts
     has_one    :type
+      
+    self.per_page = 20
     
     scope :featured, ->{where("views >= 2").order("views DESC").limit(5)}
     

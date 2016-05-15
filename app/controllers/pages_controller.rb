@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
     
   before_filter :authenticate_user!, except: [:about, :contact, :browse, :intro, :streaming]
+  respond_to :html ,:js, :json
     
   def admin
     @video = Video.new
@@ -27,13 +28,14 @@ class PagesController < ApplicationController
 
   def browse
       if params[:q].present?
-          @videos = @q.result.paginate(page: params[:page],:per_page => 20).order(created_at: :desc)
+          @videos = @q.result.paginate(page: params[:page],:per_page => 20).order(title: :asc)
+          
       else
-          @videos = Video.paginate(:page => params[:page], :per_page => 20)
+          @videos = Video.paginate(page: params[:page], per_page: 20).order('created_at DESC')
           @main   = @videos.limit(10).shuffle
           @category = Category.all
       end
-      
+          
   end
     
     

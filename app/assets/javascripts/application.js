@@ -13,18 +13,11 @@
 //= require jquery
 //= require dataTables/jquery.dataTables
 //= require jquery_ujs
-//= require webflow.js
 //= require turbolinks
+//= require webflow.js
 //= require change_word.js
 //= require_tree .
 
-
-//$(window).load(function() {
-//if ($.cookie(‘pop’) == null) {
-//        $('.ui.modal').modal('show');
-//         $.cookie(‘pop’, ’7′);
-//     } 
-//});
 
  
 

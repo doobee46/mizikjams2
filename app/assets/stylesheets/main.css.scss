@@ -14,6 +14,10 @@
   padding-top: 71px;
 }*/
 
+body.browse {
+  padding-top: 68px;
+}
+
 .header {
   position: fixed;
   top: -1px;
@@ -318,7 +322,6 @@
     position: relative;
     top: -50px;
     left: 0px;
-    z-index: 6;
     float: right;
     width: 100px;
 }
@@ -838,12 +841,12 @@
   color: #fff;
   font-size: 13px;
   letter-spacing: 1px;
-  text-decoration: none;
+  text-decoration: none !important;
   text-transform: uppercase;
 }
 
 .menu_tiltle:hover {
-  opacity: 0.92;
+  opacity: 0.92 !important;
 }
 
 .notification {

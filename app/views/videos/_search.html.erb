@@ -1,25 +1,22 @@
 <% provide(:title, "search")%>
-<div class="">          
-   <div class="search-list">
-        <% @videos.each do |video|%> 
-            <div class="songwrapper">
-              <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
-              <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
-            <div class="views"><%=video.views%> views</div>
-            <div class="videoinfo">
-             <a href="#" class="textlink video_title"><%=video.title%></a>             
-             <div class="videosong"><%= video.band%></div>             
-            </div>
-            <div class="widgets">
-             <%= link_to (image_tag "plus.png", class: "",:data => {:'ix' => 'scale'}), root_path(), :class => "w-inline-block plussign"%>
-              <%=form_for(Heart.new,:remote => true) do |f| %>
-                 <%= f.hidden_field :video_id, value: video.id %>
-                 <%= f.button " " do %>
-                  <%= image_tag "heart.png", class: "w-preserve-3d heartiocn",:data => {:'ix' => 'scale'}%>                                    
-                <%end%>   
-               <%end%>            
-            </div>
-          </div>
-      <%end%>
+
+<div class="w-section w-hidden-small w-hidden-tiny videoplay">
+    <div class="browse_top">
+       <span class="hot_title">Search Results </span> 
     </div>
+    <div class="browse_list">
+        <%= render @videos %>
+    </div>
+   
+   </div>
+    <div id="infinite-scrolling">
+      <%= will_paginate @videos %>
+    </div>
+  </div>
 </div>
+</div>
+</div>
+ 
+
+  
+

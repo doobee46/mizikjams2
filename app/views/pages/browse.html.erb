@@ -1,84 +1,19 @@
 <% provide(:title, "browse")%>
-<div class="ui grid container">
-      <div class="loading" id="spin">
-          <%=render :partial => 'pages/spinner'%>
-          <h3>Loading ....</h3>
-      </div>
-        <!--<div class="genre">
-            <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Genres</div>
-                  <div class="menu">
-                    <div class="item" data-value="male" data-text="Male">
-                      <i class="male icon"></i>
-                      Male
-                    </div>
-                  
-                  </div>
-                </div>
-              <%-#select_tag "Genres", options_from_collection_for_select(@category, "id", "name"),class: 'ui selection dropdown'%>
-         </div> -->
-        <ul class="bxslider">
-           <% @main.each do |video|%>
-          <li>
-           <%= image_tag(video.image.url(:large), class:'slider_img')%>
-            <div id="container2">  
-                <div class="song_info">
-                </div>  
-                <div class="song_info_box">   
-                    <h2><%=video.band%> </h2>
-                    <p>Official video "<span><%= video.title%></span>" </p>
-                    <p class="blurb"><%=video.blurb%></p>
-                </div>  
-            </div>    
-              <div class="play">
-                <%=link_to (image_tag('big_play.png')), video_path(video),method: :get%>
-              </div>
-              <%= flag_for(video.vid_type_id)%>
-          </li>
-         <%end%>
-        </ul> 
-        <div class="browse_top">       
-           <h3 class="ui large left floated red play_head header ">
-              <span class="hot_title">Watch now: trending in the </span> Library
-           </h3>
-           
-         <div class ="results">
-           <ul class="right floated">
-                <% @videos.each do |video|%> 
-                <li>
-                     <%=form_for(Heart.new,:remote => true) do |f| %>
-                         <%= f.hidden_field :video_id, value: video.id %>
-                         <div class="ui fluid image ">
-                           <%= f.button " ", class: 'ui red right corner label' do %>  
-                             <i class="heart icon"></i>
-                           <%end%>
-                           <%= image_tag video.image.url(:featured)%>
-                        </div>   
-                     <%end%>
-                    <div class="tile_info">
-                        <div class="tile_play">
-                           <%=link_to image_tag('small_play.png'), video_path(video),method: :get%>
-                        </div>
-                        <div class="tile_details">
-                            <h4><%=video.views%> views</h4>
-                            <h2><%=video.band%> </h2>
-                            <p>"<span><%=video.title%></span>"</p>
-                            <div class="popup">
-                                <i class=" red circular plus icon link" data-content="Hello. This is a mini popup" data-variation="mini"></i>
-                            </div>
-                        </div>   
-                    </div>
-                </li>
-              <%end%>
-            </ul>
-         </div>
-        </div>
-             <div class="ui grid container move_left ">
-                <%= will_paginate @videos, class:'ui pagination menu ' %>
-            </div>
-              <div class="push"></div>
-            </div>
-        </div>
 
+<div class="w-section w-hidden-small w-hidden-tiny videoplay">
+    <div class="browse_top">
+       <span class="hot_title">Watch now: trending in the library </span> 
+    </div>
+    <div class="browse_list">
+        <%= render @videos %>
+    </div>
+   
+   </div>
+    <div id="infinite-scrolling">
+      <%= will_paginate @videos %>
+    </div>
+  </div>
+</div>
+
+ 
+       

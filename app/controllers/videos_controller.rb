@@ -5,11 +5,12 @@ class VideosController < ApplicationController
   respond_to :html ,:js, :json
 
   def index
+       @videos =Video.paginate(page: params[:page], per_page: 20).order('created_at DESC')
       if params[:q].present?
           @videos = @q.result.paginate(page: params[:page],:per_page => 20).order(created_at: :desc)
           @categories =Category.all
       else
-          @videos =Video.all
+          #@videos =Video.all
           @main   = @videos.limit(10).order(created_at: :desc)
           @vids   = @videos.weekly.shuffle.sample(10)
           @hot_video = @videos.weekly.shuffle.take(10).uniq

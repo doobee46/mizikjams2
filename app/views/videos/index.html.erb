@@ -1,10 +1,20 @@
-<div class="w-section w-hidden-small w-hidden-tiny mid_section">
+<% if params[:q] %>
+ <div class="w-section w-hidden-small w-hidden-tiny mid_section"> 
+        <div class="">
+            <h3 class=" ">
+                <span class="">search results</span> 
+            </h3>
+        </div>
+    </div>
+    <%= render :partial =>'videos/search' %>
+  <% else %>
+  <div class="w-section w-hidden-small w-hidden-tiny mid_section">
     <div class="hero">
       <div data-animation="outin" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider mainslider">
         <div class="w-slider-mask mask">
           <div class="w-slide slide">
            <%= content_tag(:div, :data => {:'autoplay' => 'autoplay', :'loop'=>'loop', :'wf-ignore'=>'ignore' ,
-                           :'poster-url'=> 'http://content.jwplatform.com/thumbs/UtSW3f4k-1280.jpg',
+                           :'poster-url'=> "http://content.jwplatform.com/thumbs/UtSW3f4k-1280.jpg",
                            :'video-urls'=> ''},
                              class: 'w-background-video videobg stony') do %>
               <%= (image_tag "play_mizikjams.png", class: "play")%> 
@@ -40,17 +50,6 @@
       </div>
     </div>
   </div>
-<% if params[:q] %>
-  <div class="">
-        <div class="">
-            <h3 class=" ">
-                <span class="">search results</span> 
-            </h3>
-        </div>
-    </div>
-    <%= render :partial =>'videos/search' %>
-  <% else %>
-
 <div class="w-section w-hidden-small w-hidden-tiny newreleases">
     <div class="sectiontitle">NEW RELEASES</div>
     <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
@@ -160,9 +159,7 @@
         </div>
      </div> 
   </div>
-<%end%>
-    
-    <div class="sectiontitle">GENRES</div>
+ <div class="sectiontitle">GENRES</div>
     <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
       <div class="w-slider-mask mask">
        <% @categories.each do |category|%>
@@ -182,9 +179,10 @@
       <div class="w-slider-arrow-right">
         <div class="w-icon-slider-right hotprev right"></div>
       </div>
-    </div>    
+    </div> 
 </div>
-
+</div>
+<%end%>
 
 
 

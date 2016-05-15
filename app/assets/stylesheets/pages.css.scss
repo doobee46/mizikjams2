@@ -2,5 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.hot_title{
+  font-family: 'Open Sans', sans-serif;
+  color:#fff;
+  text-transform:uppercase;
+  font-size:25px;  
+}
 
+.browse_top{
+  margin-top:135px;
+  margin-left:30px;
+}
+
+.browse_list{
+  padding:15px 0px 20px 20px;
+  display:inline;
+  width:100%;
+  margin:auto;
+  position:relative;
+  top:0;
+  left:40px;
+  
+}
+
+.browse_list ul{
+  padding:0 ; margin:0;
+  list-style-type:none;
+}
+
+.browse_list ul li{
+  float:left;
+  display:block;
+  padding:0 18px 18px 0px;
+}
 
