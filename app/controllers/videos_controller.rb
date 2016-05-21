@@ -5,16 +5,16 @@ class VideosController < ApplicationController
   respond_to :html ,:js, :json
 
   def index
-       @videos =Video.paginate(page: params[:page], per_page: 20).order('created_at DESC')
+        
       if params[:q].present?
           @videos = @q.result.paginate(page: params[:page],:per_page => 20).order(created_at: :desc)
           @categories =Category.all
       else
-          #@videos =Video.all
+          @videos = Video.all.includes(:impressions, :hearts, :category).paginate(page: params[:page], per_page: 20).order('created_at DESC')
           @main   = @videos.limit(10).order(created_at: :desc)
-          @vids   = @videos.weekly.shuffle.sample(10)
+          @top  = @videos.weekly.shuffle.sample(10)
           @hot_video = @videos.weekly.shuffle.take(10).uniq
-          @featured = Video.featured.limit(10)
+          @featured = @videos.featured.limit(10)
           @categories =Category.all
           prepare_meta_tags title: "Video Library", 
                             description: "All the new releases from the best caribbean artist and group ",
@@ -26,6 +26,7 @@ class VideosController < ApplicationController
   end
 
   def show
+      @videos = Video.preload(:impressions, :hearts, :category).paginate(page: params[:page], per_page: 20).order('created_at DESC').limit(20)
       @related = @video.related(@video.category_id).sample(12)
       @featured = Video.weekly.take(4)
       impressionist @video 

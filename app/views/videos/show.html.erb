@@ -43,7 +43,7 @@
         <div data-w-tab="more videos" class="w-tab-pane w--tab-active pane">
           <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider showdetails">
           <div class="w-slider-mask mask">
-            <%@related.each do |video|%>  
+            <%@videos.each do |video|%>  
             <div class="w-slide hotslide">
               <div class="songwrapper">
                   <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>

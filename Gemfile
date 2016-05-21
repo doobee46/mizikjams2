@@ -46,7 +46,7 @@ gem 'will_paginate', '~> 3.0.6'
 #gem 'semantic-ui-sass',:github => 'doabit/semantic-ui-sass'
 gem 'jquery-fileupload-rails',:github => 'Springest/jquery-fileupload-rails'
 #gem 'batch_videos_uploader',:github => 'doobee46/batch-videos-uploader'
-gem 'rails_12factor'
+#gem 'rails_12factor'
 gem 'spinner.rb'
 #gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
@@ -56,7 +56,8 @@ gem 'sqlite3'
 
 group :production do
   gem 'puma'  
-  gem 'pg'  
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development do

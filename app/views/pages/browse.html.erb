@@ -5,7 +5,13 @@
        <span class="hot_title">Watch now: trending in the library </span> 
     </div>
     <div class="browse_list">
-        <%= render @videos %>
+        <ul>
+          <%@videos.each do |video|%> 
+            <li data-no-turbolink>
+            <%= render @videos %>
+            </li>
+          <%end%>
+        </ul>
     </div>
    
    </div>

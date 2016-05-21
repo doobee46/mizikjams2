@@ -31,7 +31,7 @@ class PagesController < ApplicationController
           @videos = @q.result.paginate(page: params[:page],:per_page => 20).order(title: :asc)
           
       else
-          @videos = Video.paginate(page: params[:page], per_page: 20).order('created_at DESC')
+          @videos = Video.all.includes(:impressions, :hearts).paginate(page: params[:page], per_page: 20).order('created_at DESC')
           @main   = @videos.limit(10).shuffle
           @category = Category.all
       end
