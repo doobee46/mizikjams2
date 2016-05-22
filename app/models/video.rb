@@ -69,6 +69,5 @@
         "#{current.strftime("%m.%d.%Y")} - #{end_date.strftime("%m.%d.%Y")}"
     end
     
-  
     
 end

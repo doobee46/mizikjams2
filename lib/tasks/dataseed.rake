@@ -4,7 +4,7 @@ namespace :site do
   task :sync do |t, args|
       spinner = Spinner.new
     spinner.task("Cleanning Database", 'db:all')
-    spinner.task("Creating Catgeory", 'category:create')
+    spinner.task("Creating Category", 'category:create')
     spinner.task("Syncing video with app", 'site:publish')
     spinner.spin!
   end

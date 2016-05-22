@@ -5,19 +5,14 @@
        <span class="hot_title">Watch now: trending in the library </span> 
     </div>
     <div class="browse_list">
-        <ul>
-          <%@videos.each do |video|%> 
-            <li data-no-turbolink>
-            <%= render @videos %>
-            </li>
-          <%end%>
-        </ul>
+       <%= render @videos %>   
     </div>
-   
+     <div id="infinite-scrolling">
+        <%= will_paginate @videos %>
+    </div>
+    
    </div>
-    <div id="infinite-scrolling">
-      <%= will_paginate @videos %>
-    </div>
+     
   </div>
 </div>
 

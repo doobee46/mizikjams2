@@ -4,8 +4,8 @@ namespace :category do
 
     Category.create([
                {name: 'Kompa'},
-               {name: 'Zouk'},
                {name: 'Kizomba'},
+               {name: 'Zouk'},
                {name: 'HipHop Kreyol'},
                {name: 'Roots'}
                ])

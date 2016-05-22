@@ -26,7 +26,7 @@ class VideosController < ApplicationController
   end
 
   def show
-      @videos = Video.preload(:impressions, :hearts, :category).paginate(page: params[:page], per_page: 20).order('created_at DESC').limit(20)
+      @videos = Video.includes(:impressions, :hearts, :category).paginate(page: params[:page], per_page: 20).order('created_at DESC').limit(20)
       @related = @video.related(@video.category_id).sample(12)
       @featured = Video.weekly.take(4)
       impressionist @video 
@@ -36,7 +36,7 @@ class VideosController < ApplicationController
                       twitter: {card: "summary_large_image"})
       respond_with(@video)  
   end
-
+        
   def new
     @video = Video.new
     respond_with(@video)

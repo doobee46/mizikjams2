@@ -22,8 +22,9 @@ Rails.application.routes.draw do
   get 'intro'          => "pages#intro"
   get 'news'           => "pages#news"
   get 'manage'         => "pages#manage_videos"
+  
     
-
+  resources :category, only: :show
   resources :videos
   resources :hearts, only: :create  
 

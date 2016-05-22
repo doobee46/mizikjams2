@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
     
-  before_filter :authenticate_user!, except: [:about, :contact, :browse, :intro, :streaming]
+  before_filter :authenticate_user!, except: [:about, :contact, :browse, :intro, :streaming, :category]
   respond_to :html ,:js, :json
     
   def admin
@@ -21,7 +21,7 @@ class PagesController < ApplicationController
     
   def news
   end
-    
+       
   def manage_videos
       @videos = Video.all
   end

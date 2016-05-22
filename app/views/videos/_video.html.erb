@@ -1,3 +1,5 @@
+<ul> 
+<li data-no-turbolink>
 <div class="songwrapper">
   <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
   <%= link_to (image_tag "play_mizikjams.png", class: "playslide"), video_path(video),method: :get, :class => "w-inline-block playlink"%>
@@ -16,3 +18,6 @@
    <%end%>            
 </div>
 </div>
+</li>
+</ul>
+

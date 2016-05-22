@@ -29,9 +29,10 @@ namespace :site do
     result = JSON.parse(buffer)
     videos = result['videos']
     
-   # p videos
+    #p videos
 
-   def songinfo(str, kind)
+        
+     def songinfo(str, kind)
          arry = str.split('-')
         if kind == "title"
            title = arry[0]
@@ -46,14 +47,16 @@ namespace :site do
         end
     end
             
-    def return_category(str)
+    def get_category(str)
+        unless str.blank?
         Category.all.each do |category|
-            if category == str
-                return category.id
-            else 
-                 nil #no category entered
-            end 
+           if str == category.name
+               category_id = category.id
+               category_id
+          end      
         end
+      end
+        category_id = nil 
     end
                 
     def get_image(url)
@@ -69,10 +72,11 @@ namespace :site do
                 blurb: video['description'],
                 key:   video['key'],
                 image: get_image(video['custom']['poster']),
-                category_id: return_category(video['custom']['category']),
+                #category_id: get_category(video['custom']['category']),
                 poster: video['custom']['poster']
                })                    
     end
+      
     sleep(2)
     puts "Checking missing video information"
             Video.where(title: "").update_all(title: "None")
@@ -82,7 +86,6 @@ namespace :site do
     sleep(2)
                 
     puts "Publishing Finished!\n\n"
-
-    end
-  
+    
+    end 
 end
