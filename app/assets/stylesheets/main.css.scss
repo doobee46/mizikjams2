@@ -121,22 +121,25 @@ body.browse {
 }
 
 .songinfo {
-  position: static;
-  left: 0px;
-  top: -326px;
-  display: inline-block;
-  width: 680px;
-  padding-bottom: 8px;
-  float: left;
-  font-family: 'lato', sans-serif;
-  color: #fff;
-  font-size: 47px;
-  line-height: 30px;
-  text-align: left;
-  letter-spacing: 1.4px;
-  text-indent: 1px;
-  text-transform: uppercase;
-  font-weight:600;
+    position: relative;
+    left: 0px;
+    /* top: -50px; */
+    display: inline-block;
+    width: 680px;
+    padding-bottom: 8px;
+    float: left;
+    font-family: 'lato', sans-serif;
+    color: #fff;
+    font-size: 47px;
+    line-height: 47px;
+    text-align: left;
+    letter-spacing: 1.4px;
+    text-indent: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .songdescrition {
@@ -770,6 +773,28 @@ body.browse {
   background-color: transparent;
 }
 
+.boxholder {
+    width: 100%;
+    height: 163px;
+    border: 3px dashed #222;
+    margin: 10px 0px 20px 25px;
+    padding: 15px 25px;
+    border-radius: 3px;
+}
+
+.boxholder p {
+    font-family: 'lato', sans-serif;
+    color: rgba(221, 221, 221, 0.48);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    top: 40%;
+    left: 0px;
+}
+
 .details{
     display:block;
 }
@@ -800,7 +825,7 @@ body.browse {
   top: 15px;
   padding-top: 1px;
   padding-left: 17px;
-  font-family: 'Proximanovacond regular', sans-serif;
+  font-family: 'lato', sans-serif;
   color: #fff;
   font-size: 20px;
   font-weight: 400;

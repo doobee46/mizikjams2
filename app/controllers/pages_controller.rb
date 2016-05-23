@@ -35,7 +35,7 @@ class PagesController < ApplicationController
           @main   = @videos.limit(10).shuffle
           @category = Category.all
       end
-          
+               
   end
     
     

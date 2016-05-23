@@ -52,10 +52,9 @@ gem 'spinner.rb'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'vider'
 gem 'sqlite3'
+gem 'puma', '2.11.1'
 
-
-group :production do
-  gem 'puma'  
+group :production do 
   gem 'pg'
   gem 'rails_12factor'
 end

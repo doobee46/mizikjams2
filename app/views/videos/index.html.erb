@@ -6,40 +6,29 @@
             </h3>
         </div>
     </div>
-    <%= render :partial =>'videos/search' %>
+  <%= render :partial =>'videos/search' %>
   <% else %>
   <div class="w-section w-hidden-small w-hidden-tiny mid_section">
     <div class="hero">
       <div data-animation="outin" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider mainslider">
         <div class="w-slider-mask mask">
+          <%@main.each do |video| %>
           <div class="w-slide slide">
            <%= content_tag(:div, :data => {:'autoplay' => 'autoplay', :'loop'=>'loop', :'wf-ignore'=>'ignore' ,
-                           :'poster-url'=> "http://content.jwplatform.com/thumbs/UtSW3f4k-1280.jpg",
-                           :'video-urls'=> ''},
+                           :'poster-url'=> image_path(video.poster) ,
+                           :'video-urls'=> asset_path("SAN WONT.mp4"),
+                           },
                              class: 'w-background-video videobg stony') do %>
-              <%= (image_tag "play_mizikjams.png", class: "play")%> 
+              <%=link_to (image_tag "play_mizikjams.png", class: "play"),video_path(video)%> 
             <% end %>           
             <div class="sliderinfo_wrapper">
               <div class="w-clearfix mainwrapper">
-                <div class="songinfo">rylax “san wont”</div>
-                <div class="songdescrition">New release from the upcoming kompa band ,Follow by their debut album for 2016</div>
+                <div class="songinfo"><%=video.band%> "<%=video.title%>" </div>
+                <div class="songdescrition"><%= video.blurb %></div>
               </div>
             </div>
-          </div>
-           <div class="w-slide slide">
-           <%= content_tag(:div, :data => {:'autoplay' => 'data-autoplay', :'loop'=>'loop', :'wf-ignore'=>'ignore' ,
-                           :'poster-url'=> 'https://daks2k3a4ib2z.cloudfront.net/572640c5639cfa231e78aa98/572d4c0cf586648f39f7a400_Mizikjams Intro-poster-00001.png',
-                           :'video-urls'=> 'https://daks2k3a4ib2z.cloudfront.net/572640c5639cfa231e78aa98/57297cbf7e99926e771275c7_RYLAX - SAN WONT-transcode.mp4'},
-                             class: 'w-background-video videobg stony') do %>
-              <%= (image_tag "play_mizikjams.png", class: "play")%> 
-            <% end %>           
-            <div class="sliderinfo_wrapper">
-              <div class="w-clearfix mainwrapper">
-                <div class="songinfo">rylax “san wont”</div>
-                <div class="songdescrition">New release from the upcoming kompa band ,Follow by their debut album for 2016</div>
-              </div>
-            </div>
-          </div>     
+          </div> 
+         <%end%>
         </div>
         <div class="w-slider-arrow-left">
             <%= (image_tag "prev.png", class: "arrow")%>
@@ -51,10 +40,10 @@
     </div>
   </div>
 <div class="w-section w-hidden-small w-hidden-tiny newreleases">
-    <div class="sectiontitle">NEW RELEASES</div>
+    <div class="sectiontitle">Playin Now in the library</div>
     <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
       <div class="w-slider-mask mask">
-         <%@main.each do |video|%>  
+        <%@main.each do |video|%>  
         <div class="w-slide hotslide">
           <div class="songwrapper">
           <%= image_tag (video.image.url(:featured)), class: "slideimage",:data => {:'ix' => 'fade'}%>
@@ -85,8 +74,12 @@
         </div>
      </div> 
   </div>
-    <% if @featured == nil || @featured.count < 2 %>    
+    <% if @featured == nil || @featured.count < 5 %>    
     <div>
+        <div class="sectiontitle">TOP VIDEOS <%=Video.publish_week%></div>
+        <div class="boxholder">
+            <p>No data yet to show</p>
+        </div>  
     </div>
     <%else%>
     <div class="sectiontitle">TOP VIDEOS <%=Video.publish_week%></div>
@@ -124,7 +117,14 @@
      </div> 
   </div>
   <%end%>
-    
+   <% if @top == nil || @top.count < 5 %>    
+    <div>
+        <div class="sectiontitle">HOT THIS WEEK <%=Video.publish_week%></div>
+        <div class="boxholder">
+            <p>No data yet to show</p>
+        </div>  
+    </div>
+   <%else%>
    <div class="sectiontitle">HOT THIS WEEK <%=Video.publish_week%></div>
      <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">
       <div class="w-slider-mask mask">
@@ -157,7 +157,8 @@
         <div class="w-slider-arrow-right">
           <div class="w-icon-slider-right hotprev right"></div>
         </div>
-     </div> 
+     </div>
+   <%end%>
   </div>
  <div class="sectiontitle">GENRES</div>
     <div data-animation="slide" data-duration="500" data-infinite="1" data-hide-arrows="1" class="w-slider hotslider">

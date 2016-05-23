@@ -5,14 +5,15 @@
        <span class="hot_title">Watch now: trending in the library </span> 
     </div>
     <div class="browse_list">
-       <%= render @videos %>   
+        <ul>
+           <%= render :partial => 'pages/template' %>  
+        </ul>     
     </div>
      <div id="infinite-scrolling">
         <%= will_paginate @videos %>
     </div>
     
-   </div>
-     
+   </div>  
   </div>
 </div>
 

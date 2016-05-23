@@ -39,22 +39,7 @@
         }(document, 'script', 'facebook-jssdk'));
         </script>
         <%=render :partial =>'shared/header'%>
-         <div class="ui grid container">
-             <div class="column">
-                <div class="message">
-                   <% flash.each do |key, value| %>
-                      <div class="<%= flash_class(key) %> closable">
-                        <i class="close icon"></i>
-                        <%= value %>
-                      </div>
-                    <% end %>  
-                </div>  
-             </div>
-         </div>  
-        <%= yield %>
-        <div class="push"></div>
-        <div class="footer">    
+        <%= yield %>   
         <%=render :partial =>'shared/footer'%>
-        </div>
     </body>
 </html>

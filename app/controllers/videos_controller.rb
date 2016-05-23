@@ -27,8 +27,8 @@ class VideosController < ApplicationController
 
   def show
       @videos = Video.includes(:impressions, :hearts, :category).paginate(page: params[:page], per_page: 20).order('created_at DESC').limit(20)
-      @related = @video.related(@video.category_id).sample(12)
-      @featured = Video.weekly.take(4)
+      @related = @video.related(@video.category_id).sample(15)
+      @featured = @videos.weekly.take(4)
       impressionist @video 
       prepare_meta_tags(title: @video.title,
                       description: @video.blurb,

@@ -1,4 +1,4 @@
-$('.browse_list').append('<%= j render @videos%>');
+$('.browse_list ul').append('<%= j render :partial => 'pages/template'%>');
 <% if @videos.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @videos %>');
 <% else %>
