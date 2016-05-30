@@ -1,4 +1,4 @@
- # http://ruby-doc.org/stdlib-2.0.0/libdoc/open-uri/rdoc/OpenURI.html
+# http://ruby-doc.org/stdlib-2.0.0/libdoc/open-uri/rdoc/OpenURI.html
     require 'uri' 
     require 'open-uri'
     # https://github.com/flori/json

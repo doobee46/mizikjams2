@@ -11,8 +11,8 @@ class VideosController < ApplicationController
           @categories =Category.all
       else
           @videos = Video.all.includes(:impressions, :hearts, :category).paginate(page: params[:page], per_page: 20).order('created_at DESC')
-          @main   = @videos.limit(10).order(created_at: :desc)
-          @top  = @videos.weekly.shuffle.sample(10)
+          @main   = @videos.limit(10).order(created_at: :desc).shuffle(random: Random.new(1))
+          @top  = @videos.weekly.sample(10)
           @hot_video = @videos.weekly.shuffle.take(10).uniq
           @featured = @videos.featured.limit(10)
           @categories =Category.all

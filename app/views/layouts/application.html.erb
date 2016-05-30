@@ -38,8 +38,17 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
         </script>
-        <%=render :partial =>'shared/header'%>
-        <%= yield %>   
-        <%=render :partial =>'shared/footer'%>
+        <div id="wrapper">
+            <div id="header">
+                <%=render :partial =>'shared/header'%>
+            </div>
+        <%= yield %>
+        <div id="push"></div>
+        </div>
+        <div id="bottom">
+            <div id="footer">
+            <%=render :partial =>'shared/footer'%>
+            </div>
+        </div>        
     </body>
 </html>
